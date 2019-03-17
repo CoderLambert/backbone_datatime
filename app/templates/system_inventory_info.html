@@ -1,0 +1,135 @@
+<section class="content-header">
+    <h1>
+        <%= locale.title %>
+        <small> <%= locale.tag %> </small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-home"></i><%= locale.home %></a></li>
+        <li>
+            <a href="#home">
+                <%= locale.home %>
+            </a>
+        </li>
+        <li>
+            <a href="#home/system_inventory">
+                <%= locale.system_inventory %>
+            </a>
+        </li>
+        <li class="active">
+            <%= locale.title %>
+        </li>
+    </ol>
+</section>
+<!-- Main content -->
+<section class="content">
+    <div class="pull-right help"><a class="col-sm-1 help-link" href="#"><i class="fa fa-question-circle"></i></a></div>
+    <!--
+        <div class="row">
+        <div class="col-md-12">
+            <~~! search events ~~>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <div class="input-group" id="filter">
+                        <input type="text" class="form-control" placeholder="Search <%= locale.title %>" />
+                        <span class="input-group-addon">
+                            <span class="glyphicon-search glyphicon"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    -->
+    <div class="row">
+        <div class='col-md-12'>
+            <div class="alert alert-info" role="alert" id="lblsysteminventoryHeader"><%= locale.sys_inventory_note%></div>
+            <div class="row">
+                <div class="alert alert-info help-item hide" role="alert">
+                    <%= locale.sys_inventory_hlp %>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <div class="alert alert-success hide"><b></b> </div>
+                    <div class="alert alert-danger hide"><b></b></div>
+                    <div class="rdo_sys">
+                        <label>
+                            <input type='radio' value='0' name='rdo_view_type' checked="true" id='idrdo_view_type_block'>
+                            <%= locale.view_type_0 %>
+                        </label>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <label>
+                            <input type='radio' value='1' name='rdo_view_type' id='idrdo_view_type_layout'>
+                            <%= locale.view_type_1 %>
+                        </label>
+                    </div>
+
+                    <div id="model">
+                        <div class="model_head">
+                            <span class="model_title"></span>
+                            <!--<img src="" class="model_close"/>-->
+                            <a class="model_close"><i class="ion ion-close-circled larger"></i></a>
+                        </div>
+                        <div class="sys_container">
+                            <div class="sys_header" data-header-type="list"><span>Details <l class='ion-arrow-down-b'></l></span>
+                            </div>
+                            <div class="sys_content">
+                                <div class="comp_content">
+                                </div>
+                            </div>&nbsp;
+                            <div class="sys_header" data-header-type="table"><span>Event Logs <l class='ion-arrow-down-b'></l></span>
+                            </div>
+                            <div class="sys_content">
+                                <table id="event_table" class="footable table" data-page-navigation=".pagination" data-page-size="5">
+                                    <thead>
+                                        <tr>
+                                            <th data-type="numeric" >Event ID</th>
+                                            <th>TimeStamp</th>
+                                            <th>Sensor Name</th>
+                                            <th>Sensor Type</th>
+                                            <th>Description</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td colspan="5">
+                                                <div class="pagination pagination-centered hide-if-no-paging"></div>
+                                            </td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+					<div>
+                     	<div class='my-legend legend'>
+                            <div class='legend-scale'>
+                              <ul class='legend-labels'>
+                                <li><span style='background:gold' class='cpulegend'></span>CPU</li>
+                                <li><span style='background:green'></span>Active DIMM/PCI Slots</li>
+                                <li><span style='background-color:rgb(235, 235, 224);'></span>Inactive DIMM/PCI Slots</li>
+                                <li><span style='background-color:red'></span>Critical</li>
+                              </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-12 table-list">
+                            <div id="iddivSystemInventory"></div>
+                            <div id="Mainserver" style="margin-left:2%;margin-top: 0%; display:none;">
+                            </div>
+                        </div>
+                    </div>
+
+                    <ul id='activemenu' class='dropdown-menu' role='menu' >
+                        <li ><a id="aActivate">Activate</a></li>
+                    </ul>
+
+                    <ul id='inactivemenu' class='dropdown-menu' role='menu' >
+                        <li><a id="aDeActivate">DeActivate</a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

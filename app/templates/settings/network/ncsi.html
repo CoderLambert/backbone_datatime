@@ -1,0 +1,76 @@
+<section class="content-header">
+    <h1>
+        <%= locale.network_setting %>
+        <small> <%= locale.tag %> </small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-home"></i><%= locale.home %></a></li>
+        <li><a href="#settings"><%= locale.settings %></a></li>
+        <li class="active"><%= locale.network_setting %></li>
+    </ol>
+</section>
+
+<!-- Main content -->
+<section class="content tabs-content">
+    <div class="row" style="margin-top:-10px;margin-bottom:20px;">
+        <div class="col-md-12 tab">
+            <a id="nt_ip" class="menu_tab" onclick="replace_url('#settings/network/ip')"><%=locale.nt_ip %></a>
+            <a id="nt_bond" class="menu_tab" onclick="replace_url('#settings/network/bond')"><%=locale.nt_bond %></a>
+            <a id="nt_dns" class="menu_tab"  onclick="replace_url('#settings/network/dns')"><%=locale.nt_dns %></a>
+            <a id="nt_ncsi" class="menu_tab menu_active"><%=locale.nt_ncsi %></a>
+        </div>
+    </div>
+
+    <div class="box">
+        <div class="box-header">
+            <div class="pull-right help"><a class="col-sm-1 help-link" href="#"><i class="fa fa-question-circle"></i></a></div>
+            <h3 class="box-title"><%= locale.ncsi %></h3>
+        </div>
+        <div class="box-body">
+            <div class="alert alert-success hide">
+                <!-- <i class="fa fa-check"></i> -->
+                <!-- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> -->
+                <b><%= locale.strongSuccessMsg %></b> <%= locale.successMsg %>
+            </div>
+            <div class="alert alert-danger hide">
+                <!-- <i class="fa fa-ban"></i> -->
+                <!-- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> -->
+                <b><%= locale.strongFailureMsg %></b> <%= locale.failureMsg %>
+            </div>
+            <form action="javascript://" method="POST" role="form">
+                <div class="form-group"  >
+	<div class="alert alert-info help-item hide"    role="alert"><%= locale.ncsiselect_this_radio_button_to_change_ncsi_mode_to_auto_failover_mode_or_manual_switch_mode %></div>
+	<label for="ncsi_mode"><%= locale.ncsincsi_mode %></label><br/>
+	<label>
+							        <input type='radio' value='1' name='ncsi_mode' id='idncsi_mode' > <%= locale.ncsiauto_failover_mode %>
+							    </label>&nbsp;&nbsp;&nbsp;&nbsp;<label>
+							        <input type='radio' value='0' name='ncsi_mode' id='idncsi_mode' > <%= locale.ncsimanual_switch_mode %>
+							    </label>&nbsp;&nbsp;&nbsp;&nbsp;    
+</div><div class="form-group"  >
+	<div class="alert alert-info help-item hide"    role="alert"><%= locale.ncsiit_lists_the_supported_interface_names_in_list_box_choose_the_particular_interface_name_for_which_you_need_to_configure_ncsi_settings_ %></div>
+    <label for="ncsi_interface"><%= locale.ncsincsi_interface %></label>
+    <select name="ncsi_interface" id="idncsi_interface" class="form-control">
+    	
+    </select>
+</div><div class="form-group"  >
+	<div class="alert alert-info help-item hide"    role="alert"><%= locale.ncsichoose_the_channel_number_to_be_configured_for_the_selected_interface_name %></div>
+    <label for="channel_number"><%= locale.ncsichannel_number %></label>
+    <select name="channel_number" id="idchannel_number" class="form-control">
+    	
+    </select>
+</div><div class="form-group"  >
+	<div class="alert alert-info help-item hide"    role="alert"><%= locale.ncsichoose_the_package_id_to_be_configured_for_the_selected_interface_name %></div>
+    <label for="package_id"><%= locale.ncsipackage_id %></label>
+    <select name="package_id" id="idpackage_id" class="form-control">
+        <option value="0">OCP</option>
+        <option value="1">LOM</option>  
+    </select>
+</div><div class="pull-right">
+    <a class="btn btn-primary" id="save"><i id='save-icon' class="fa fa-save"></i> &nbsp; <%= locale.saveLabel %></a>
+</div>
+                <div class="clearfix"></div>
+            </form>
+        </div>
+        <!-- /.box-body -->
+    </div>
+</section>

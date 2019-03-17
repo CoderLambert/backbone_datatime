@@ -1,0 +1,196 @@
+<div>
+    <!-- 导航栏 -->
+    <section class="content-header">
+        <h1>
+            <%= locale.title %>
+                <small> <%= locale.tag %> </small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-home"></i><%= locale.home %></a></li>
+            <li><a href="#settings"><%= locale.bmc_settings %></a></li>
+            <li class="active"><%= locale.title %></li>
+        </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content  tabs-content" style="height: 200px; overflow: auto;">
+
+        <!-- 表格结构 -->
+        <div class="row" style="margin-top:-10px;margin-bottom:10px;">
+            <div class="col-md-12 tab">
+                <a id="safe_login_control" class="menu_tab" onclick="replace_url('#settings/loginControl')">
+                    <%=locale.loginControl%>
+                </a>
+                <a id="safe_snmp" class="menu_tab" onclick="replace_url('#settings/snmp')">
+                    <%=locale.snmpv%>
+                </a>
+                <a id="safe_ssl" class="menu_tab menu_active">
+                    <%=locale.ssl_settings%>
+                </a>
+                <a id="safe_badpassword" class="menu_tab" onclick="replace_url('#settings/badpassword')">
+                    <%=locale.user_badpassword%>
+                </a>
+            </div>
+        </div>
+
+            <div class="box box-primary">
+            <div class="box-header">
+                <ul class="my-tabs">
+                    <li  class="my-tabs-active">
+                        <a>
+                            <%= locale.view_ssl_certificate %>
+                        </a>
+                    </li>
+                    <li>
+                        <a onclick="replace_url('#settings/ssl/generate_ssl')">
+                            <%= locale.generate_ssl_certificate %>
+                        </a>
+                    </li>
+                    <li>
+                        <a onclick="replace_url('#settings/ssl/upload_ssl')">
+                            <%= locale.upload_ssl_certificate %>
+                        </a>
+                    </li>
+                </ul>
+                <div class="pull-right help"><a class="col-sm-1 help-link" href="#"><i class="fa fa-question-circle"></i></a>
+                </div>
+            </div>
+                <div class="box-body">
+                    <div class="alert alert-success hide">
+                        <!-- <i class="fa fa-check"></i> -->
+                        <!-- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> -->
+                        <b><%= locale.strongSuccessMsg %></b>
+                        <%= locale.successMsg %>
+                    </div>
+                    <div class="alert alert-danger hide">
+                        <!-- <i class="fa fa-ban"></i> -->
+                        <!-- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> -->
+                        <b><%= locale.strongFailureMsg %></b>
+                        <%= locale.failureMsg %>
+                    </div>
+                    <form action="javascript://" method="POST" role="form">
+                        <div class="form-group">
+                            <div class="alert alert-info help-item hide" role="alert">
+                                <%= locale.view_sslbbasic_informationbbrit_displays_the_basic_information_about_the_uploaded_ssl_certificateit_displays_the_following_fieldsulli_version_serial_numberlili_signature_algorithmlili_public_keyliul %>
+                            </div>
+                            <label for="certificate_version"><%= locale.view_sslcertificate_version %></label>
+                            <div class="form-control-static" id="idcertificate_version"></div>
+                        </div>
+                        <div class="form-group">
+
+                            <label for="serial_number"><%= locale.view_sslserial_number %></label>
+                            <div class="form-control-static" id="idserial_number"></div>
+                        </div>
+                        <div class="form-group">
+
+                            <label for="signature_algorithm"><%= locale.view_sslsignature_algorithm %></label>
+                            <div class="form-control-static" id="idsignature_algorithm"></div>
+                        </div>
+                        <div class="form-group">
+
+                            <label for="public_key"><%= locale.view_sslpublic_key %></label>
+                            <div class="form-control-static" id="idpublic_key"></div>
+                        </div>
+                        <div class="form-group">
+                            <hr/>
+                        </div>
+                        <div class="form-group">
+                            <div class="alert alert-info help-item hide" role="alert">
+                                <%= locale.view_sslbissued_frombbrthis_contains_the_information_about_the_certificate_issuerulli_common_namecnlili_organizationolili_organization_unitoulili_city_or_localityllili_state_or_provincestlili_countryclili_email_addressliul %>
+                            </div>
+                            <label for="from_common_name"><%= locale.view_sslissuer_common_name_cn %></label>
+                            <div class="form-control-static" id="idfrom_common_name"></div>
+                        </div>
+                        <div class="form-group">
+
+                            <label for="from_organization"><%= locale.view_sslissuer_organization_o %></label>
+                            <div class="form-control-static" id="idfrom_organization"></div>
+                        </div>
+                        <div class="form-group">
+
+                            <label for="from_organization_unit"><%= locale.view_sslissuer_organization_unit_ou %></label>
+                            <div class="form-control-static" id="idfrom_organization_unit"></div>
+                        </div>
+                        <div class="form-group">
+
+                            <label for="from_city"><%= locale.view_sslissuer_city_or_locality_l %></label>
+                            <div class="form-control-static" id="idfrom_city"></div>
+                        </div>
+                        <div class="form-group">
+
+                            <label for="from_state"><%= locale.view_sslissuer_state_or_province_st %></label>
+                            <div class="form-control-static" id="idfrom_state"></div>
+                        </div>
+                        <div class="form-group">
+
+                            <label for="from_country"><%= locale.view_sslissuer_country_c %></label>
+                            <div class="form-control-static" id="idfrom_country"></div>
+                        </div>
+                        <div class="form-group">
+
+                            <label for="from_email_id"><%= locale.view_sslissuer_email_address %></label>
+                            <div class="form-control-static" id="idfrom_email_id"></div>
+                        </div>
+                        <div class="form-group">
+                            <hr/>
+                        </div>
+                        <div class="form-group">
+                            <div class="alert alert-info help-item hide" role="alert">
+                                <%= locale.view_sslbvalidity_informationbbrit_displays_the_validity_period_of_the_uploaded_certificateulli_valid_fromlili_valid_toliul %>
+                            </div>
+                            <label for="valid_from"><%= locale.view_sslvalid_from %></label>
+                            <div class="form-control-static" id="idvalid_from"></div>
+                        </div>
+                        <div class="form-group">
+
+                            <label for="valid_till"><%= locale.view_sslvalid_till %></label>
+                            <div class="form-control-static" id="idvalid_till"></div>
+                        </div>
+                        <div class="form-group">
+                            <hr/>
+                        </div>
+                        <div class="form-group">
+                            <div class="alert alert-info help-item hide" role="alert">
+                                <%= locale.view_sslbissued_tobbrit_displays_about_the_information_to_whom_the_certificate_is_issuedulli_common_namecnlili_organizationolili_organization_unitoulili_city_or_localityllili_state_or_provincestlili_countryclili_email_addressliul %>
+                            </div>
+                            <label for="to_common_name"><%= locale.view_sslissued_to_common_name_cn %></label>
+                            <div class="form-control-static" id="idto_common_name"></div>
+                        </div>
+                        <div class="form-group">
+
+                            <label for="to_organization"><%= locale.view_sslissued_to_organization_o %></label>
+                            <div class="form-control-static" id="idto_organization"></div>
+                        </div>
+                        <div class="form-group">
+
+                            <label for="to_organization_unit"><%= locale.view_sslissued_to_organization_unit_ou %></label>
+                            <div class="form-control-static" id="idto_organization_unit"></div>
+                        </div>
+                        <div class="form-group">
+
+                            <label for="to_city"><%= locale.view_sslissued_to_city_or_locality_l %></label>
+                            <div class="form-control-static" id="idto_city"></div>
+                        </div>
+                        <div class="form-group">
+
+                            <label for="to_state"><%= locale.view_sslissued_to_state_or_province_st %></label>
+                            <div class="form-control-static" id="idto_state"></div>
+                        </div>
+                        <div class="form-group">
+
+                            <label for="to_country"><%= locale.view_sslissued_to_country_c %></label>
+                            <div class="form-control-static" id="idto_country"></div>
+                        </div>
+                        <div class="form-group">
+
+                            <label for="to_email_id"><%= locale.view_sslissued_to_email_address %></label>
+                            <div class="form-control-static" id="idto_email_id"></div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </form>
+                </div>
+                <!-- /.box-body -->
+            </div>
+        
+    </section>
+</div>

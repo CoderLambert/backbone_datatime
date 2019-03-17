@@ -1,0 +1,73 @@
+<section class="content-header">
+    <h1>
+        <%= locale.title %>
+        <small> <%= locale.tag %> </small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-home"></i><%= locale.home %></a></li>
+        <li><a href="#settings"><%= locale.settings %></a></li>
+        <li><a href="#settings/ext_users/ldap/rolegroup_ldap"><%= locale.external_user_settings %></a></li>
+        <li class="active"><%= locale.title %></li>
+    </ol>
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="col-md-5">
+    <div class="box box-primary animated fadeInUp">
+        <div class="box-header">
+            <div class="pull-right help"><a class="col-sm-1 help-link" href="#"><i class="fa fa-question-circle"></i></a></div>
+            <h3 class="box-title"><%= locale.rolegroup_ldap %></h3>
+        </div>
+        <div class="box-body">
+            <div class="alert alert-success hide">
+                <!-- <i class="fa fa-check"></i> -->
+                <!-- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> -->
+                <b><%= locale.strongSuccessMsg %></b> <%= locale.successMsg %>
+            </div>
+            <div class="alert alert-danger hide">
+                <!-- <i class="fa fa-ban"></i> -->
+                <!-- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> -->
+                <b><%= locale.strongFailureMsg %></b> <%= locale.failureMsg %>
+            </div>
+            <form action="javascript://" method="POST" role="form">
+                <div class="form-group"  >
+	<div class="alert alert-info help-item hide"    role="alert"><%= locale.rolegroup_ldapenter_the_role_group_name_this_name_identifies_the_role_group_in_ldapedirectoryulli_role_group_name_is_a_string_of_64_alphanumeric_characterslili_special_symbols_hyphen_and_underscore_are_allowedliul %></div>
+    <label for="role_group_name"><%= locale.rolegroup_ldapgroup_name %></label>
+    <input type="text" class="form-control" id="idrole_group_name" value="" placeholder="">
+</div><div class="form-group"  >
+	<div class="alert alert-info help-item hide"    role="alert"><%= locale.rolegroup_ldapenter_the_role_group_domain_this_is_the_domain_where_the_role_group_is_located_ulli_domain_name_is_a_string_of_4_to_64_alphanumeric_characterslili_it_must_start_with_an_alphabetical_characterlili_special_symbols_like_dot_comma_hyphen_underscore_equalto_are_allowedli_li_example_cnmanageroulogin_dcdomaindccomliul %></div>
+    <label for="role_group_domain"><%= locale.rolegroup_ldapgroup_domain %></label>
+    <input type="text" class="form-control" id="idrole_group_domain" value="" placeholder="<%= locale.eg_dcdomain %>">
+</div><div class="form-group" data-feature='OEM_PROPRIETARY_LEVEL_SUPPORT' >
+	<div class="alert alert-info help-item hide"  data-feature='OEM_PROPRIETARY_LEVEL_SUPPORT'  role="alert"><%= locale.rolegroup_ldapenter_the_role_group_privilege_this_is_the_level_of_privilege_to_be_assigned_for_this_role_group %></div>
+    <label for="role_group_withoem_privilege"><%= locale.rolegroup_ldapgroup_privilege %></label>
+    <select name="role_group_withoem_privilege" id="idrole_group_withoem_privilege" class="form-control">
+    	<option value='user'><%= locale.rolegroup_ldapuser %></option><option value='administrator'><%= locale.rolegroup_ldapadministrator %></option><option value='operator'><%= locale.rolegroup_ldapoperator %></option><option value='oem'><%= locale.rolegroup_ldapoem %></option><option value='none'><%= locale.rolegroup_ldapnone %></option>
+    </select>
+</div><div class="form-group" data-not-feature='OEM_PROPRIETARY_LEVEL_SUPPORT' >
+	<div class="alert alert-info help-item hide"  data-not-feature='OEM_PROPRIETARY_LEVEL_SUPPORT'  role="alert"><%= locale.rolegroup_ldapenter_the_role_group_privilege_this_is_the_level_of_privilege_to_be_assigned_for_this_role_group %></div>
+    <label for="role_group_privilege"><%= locale.rolegroup_ldapgroup_privilege %></label>
+    <select name="role_group_privilege" id="idrole_group_privilege" class="form-control">
+    	<option value='user'><%= locale.rolegroup_ldapuser %></option><option value='administrator'><%= locale.rolegroup_ldapadministrator %></option><option value='operator'><%= locale.rolegroup_ldapoperator %></option><option value='none'><%= locale.rolegroup_ldapnone %></option>
+    </select>
+</div><div class="form-group" data-feature='EXTENDED_PRIV' >
+	<div class="alert alert-info help-item hide"  data-feature='EXTENDED_PRIV'  role="alert"><%= locale.rolegroup_ldapthis_field_used_to_assign_the_kvm_privilege_for_this_role_group %></div>
+    <label>
+        <input type="checkbox" value="1" id="idrole_group_kvm_privilege" > <%= locale.rolegroup_ldapkvm_access %>
+    </label>
+</div><div class="form-group" data-feature='EXTENDED_PRIV' >
+	<div class="alert alert-info help-item hide"  data-feature='EXTENDED_PRIV'  role="alert"><%= locale.rolegroup_ldapthis_field_used_to_assign_the_vmedia_privilege_for_this_role_group %></div>
+    <label>
+        <input type="checkbox" value="1" id="idrole_group_vmedia_privilege" > <%= locale.rolegroup_ldapvmedia_access %>
+    </label>
+</div><div class="pull-right">
+    <a class="btn btn-primary" id="save"><i id='save-icon' class="fa fa-save"></i> &nbsp; <%= locale.saveLabel %></a>
+</div>
+                <div class="clearfix"></div>
+            </form>
+        </div>
+        <!-- /.box-body -->
+    </div>
+</div>
+</section>

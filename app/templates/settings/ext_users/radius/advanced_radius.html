@@ -1,0 +1,72 @@
+<section class="content-header">
+    <h1>
+        <%= locale.external_user_services %>
+        <small></small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-home"></i><%= locale.home %></a></li>
+        <li><a href="#settings"><%= locale.settings %></a></li>
+        <li class="active"><%= locale.external_user_services %></li>
+    </ol>
+</section>
+
+<!-- Main content -->
+<section class="content tabs-content">
+
+    <div class="row" style="margin-top:-10px;margin-bottom:20px;">
+        <div class="col-md-12 tab">
+            <a id="ext_ldap" class="menu_tab" onclick="replace_url('#settings/ext_users/ldap/general_ldap')"><%=locale.ext_ldap %></a>
+            <a id="ext_active_directory" class="menu_tab" onclick="replace_url('#settings/ext_users/active_directory/general_active_directory')" ><%=locale.ext_active_directory %></a>
+            <a id="ext_radius" class="menu_tab menu_active" ><%=locale.ext_radius %></a>
+        </div>
+    </div>
+
+    <div class="box">
+        <div class="box-header">
+            <ul class="my-tabs">
+                <li><a onclick="replace_url('#settings/ext_users/radius/general_radius')"><%= locale.ext_general_radius_settings %></a></li>
+                <li class="my-tabs-active"><a><%= locale.ext_advanced_radius_settings %></a></li>
+            </ul>
+            <div class="pull-right help"><a class="col-sm-1 help-link" href="#"><i class="fa fa-question-circle"></i></a></div>
+        </div>
+        <div class="box-body">
+            <div class="alert alert-success hide">
+                <!-- <i class="fa fa-check"></i> -->
+                <!-- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> -->
+                <b><%= locale.strongSuccessMsg %></b> <%= locale.successMsg %>
+            </div>
+            <div class="alert alert-danger hide">
+                <!-- <i class="fa fa-ban"></i> -->
+                <!-- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> -->
+                <b><%= locale.strongFailureMsg %></b> <%= locale.failureMsg %>
+            </div>
+            <form action="javascript://" method="POST" role="form">
+                <div class="form-group"  >
+	<div class="alert alert-info help-item hide"    role="alert"><%= locale.advanced_radiush4radius_user_authorization_h4for_authorization_purpose_you_should_configure_radius_user_with_vendor_specific_attribute_in_server_sidebrbrh4vendor_specific_attribute_in_server_sideh4you_have_to_configure_vsa_values_in_radius_serverbrul_styleliststylenoneli_example1li_litestadmin_authtype_papcleartextpasswordadminliliauthtype_pap_vendorspecifich4liulul_styleliststylenoneli_example2lilitestoperator_authtype_papcleartextpassword_operatorliliauthtype_pap_vendorspecifich3liulbrif_you_change_the_vendorspecific_value_then_you_should_change_the_same_values_in_this_pagebrstrongnotestrongbr_ul_styleliststylenonelithese_fields_will_not_allow_more_than_127_characterslili_is_not_allowedliul %></div>
+    <label for="administrator"><%= locale.advanced_radiusadministrator %></label>
+    <input type="text" class="form-control" id="idadministrator" value="" placeholder="">
+</div><div class="form-group"  >
+	
+    <label for="operator"><%= locale.advanced_radiusoperator %></label>
+    <input type="text" class="form-control" id="idoperator" value="" placeholder="">
+</div><div class="form-group"  >
+	
+    <label for="user"><%= locale.advanced_radiususer %></label>
+    <input type="text" class="form-control" id="iduser" value="" placeholder="">
+</div><div class="form-group" data-feature='OEM_PROPRIETARY_LEVEL_SUPPORT' >
+	
+    <label for="oem"><%= locale.advanced_radiusoem_proprietary %></label>
+    <input type="text" class="form-control" id="idoem" value="" placeholder="">
+</div><div class="form-group"  >
+	
+    <label for="none"><%= locale.advanced_radiusno_access %></label>
+    <input type="text" class="form-control" id="idnone" value="" placeholder="">
+</div><div class="pull-right">
+    <a class="btn btn-primary" id="save"><i id='save-icon' class="fa fa-save"></i> &nbsp; <%= locale.saveLabel %></a>
+</div>
+                <div class="clearfix"></div>
+            </form>
+        </div>
+        <!-- /.box-body -->
+    </div>
+</section>

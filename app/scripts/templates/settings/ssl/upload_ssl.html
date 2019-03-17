@@ -1,0 +1,131 @@
+<div>
+    <!-- 导航栏 -->
+    <section class="content-header">
+        <h1>
+            <%= locale.title %>
+                <small> <%= locale.tag %> </small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-home"></i><%= locale.home %></a></li>
+            <li><a href="#settings"><%= locale.bmc_settings %></a></li>
+            <li class="active"><%= locale.title %></li>
+        </ol>
+    </section>
+
+
+    <!-- Main content -->
+    <section class="content  tabs-content" style="height: 200px; overflow: auto;">
+
+        <!-- 表格结构 -->
+        <div class="row" style="margin-top:-10px;margin-bottom:10px;">
+            <div class="col-md-12 tab">
+                <a id="safe_login_control" class="menu_tab " onclick="replace_url('#settings/loginControl')">
+                    <%=locale.loginControl%>
+                </a>
+                <a id="safe_snmp" class="menu_tab" onclick="replace_url('#settings/snmp')">
+                    <%=locale.snmpv%>
+                </a>
+                <a id="safe_ssl" class="menu_tab menu_active">
+                    <%=locale.ssl_settings%>
+                </a>
+                <a id="safe_badpassword" class="menu_tab" onclick="replace_url('#settings/badpassword')">
+                    <%=locale.user_badpassword%>
+                </a>
+            </div>
+        </div>
+
+        <!-- 部件设置项 -->
+        <div class="box">
+            <div class="box-header">
+                <ul class="my-tabs">
+                    <li>
+                        <a onclick="replace_url('#settings/ssl/view_ssl')">
+                            <%= locale.view_ssl_certificate %>
+                        </a>
+                    </li>
+                    <li>
+                        <a onclick="replace_url('#settings/ssl/generate_ssl')">
+                            <%= locale.generate_ssl_certificate %>
+                        </a>
+                    </li>
+                    <li class="my-tabs-active">
+                        <a>
+                            <%= locale.upload_ssl_certificate %>
+                        </a>
+                    </li>
+                </ul>
+                <div class="pull-right help"><a class="col-sm-1 help-link" href="#"><i class="fa fa-question-circle"></i></a>
+                </div>
+            </div>
+            <div class="box-body">
+
+                <div class="box-primary">
+                    <div class="box-body">
+                        <div class="alert alert-success hide">
+                            <!-- <i class="fa fa-check"></i> -->
+                            <!-- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> -->
+                            <b><%= locale.strongSuccessMsg %></b>
+                            <%= locale.successMsg %>
+                        </div>
+                        <div class="alert alert-danger hide">
+                            <!-- <i class="fa fa-ban"></i> -->
+                            <!-- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> -->
+                            <b><%= locale.strongFailureMsg %></b>
+                            <%= locale.failureMsg %>
+                        </div>
+                        <form action="javascript://" method="POST" role="form">
+                            <div class="form-group">
+                                <div class="alert alert-info help-item hide" role="alert">
+                                    <%= locale.upload_sslthe_information_as_current_certificate_and_uploaded_datetime_will_be_displayed_readonly %>
+                                </div>
+                                <label for="current_certificate"><%= locale.upload_sslcurrent_certificate %></label>
+                                <div class="form-control-static" id="idcurrent_certificate"></div>
+                            </div>
+                            <div class="form-group">
+                                <div class="alert alert-info help-item hide" role="alert">
+                                    <%= locale.upload_sslbrowse_and_navigate_to_the_certificate_fileulli_certificate_file_should_be_of_pem_typeliul %>
+                                </div>
+                                <label for="new_certificate"><%= locale.upload_sslnew_certificate %></label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="idnew_certificate" value="" readonly>
+                                    <span class="input-group-btn">
+		    		<span class="btn btn-primary btn-file">
+		    			<i class="fa fa-folder-open"></i>&hellip; <input type="file" id="filenew_certificate">
+		    		</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="alert alert-info help-item hide" role="alert">
+                                    <%= locale.upload_sslthe_information_as_current_private_key_and_uploaded_datetime_will_be_displayed_readonly %>
+                                </div>
+                                <label for="current_private_key"><%= locale.upload_sslcurrent_private_key %></label>
+                                <div class="form-control-static" id="idcurrent_private_key"></div>
+                            </div>
+                            <div class="form-group">
+                                <div class="alert alert-info help-item hide" role="alert">
+                                    <%= locale.upload_sslbrowse_and_navigate_to_the_private_key_fileulli_private_key_file_should_be_of_the_type_pem_liul %>
+                                </div>
+                                <label for="new_private_key"><%= locale.upload_sslnew_private_key %></label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="idnew_private_key" value="" readonly>
+                                    <span class="input-group-btn">
+		    		<span class="btn btn-primary btn-file">
+		    			<i class="fa fa-folder-open"></i>&hellip; <input type="file" id="filenew_private_key">
+		    		</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="pull-right">
+                                <a class="btn btn-primary" id="save"><i id='save-icon' class="fa fa-save"></i> &nbsp; <%= locale.saveLabel %></a>
+                            </div>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+        </div>
+    </section>
+
+</div>

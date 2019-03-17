@@ -1,0 +1,45 @@
+<section class="content-header">
+    <h1>
+        <%= locale.title %>
+        <small> <%= locale.tag %> </small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-home"></i><%= locale.home %></a></li><li><a href="#settings"><%= locale.settings %></a></li><li><a href="#settings/video"><%= locale.video %></a></li>
+        <li class="active">
+           <%= locale.title %>
+        </li>
+    </ol>
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="box box-solid bg-gray-transparent pad10 animated fadeInUp">
+    <div class="row">
+        <div class="col-md-3"   >
+    <a href="#settings/video/sol/sol_trigger_settings" class="big-button">
+            
+            <div class="icon"><i class="ion-ios-alarm"></i></div>
+            <span class="name"><%= locale.sol_trigger_settings %></span>
+    </a>
+</div><div class="col-md-3"   >
+    <a href="#settings/video/sol/sol_remote_storage" class="big-button">
+            
+            <div class="icon"><i class="ion-ios-upload"></i></div>
+            <span class="name"><%= locale.sol_video_remote_storage %></span>
+    </a>
+</div><div class="col-md-3" data-feature='UARTLOG'  >
+    <a href="#settings/video/sol/sol_recorded_video" class="big-button">
+            
+            <div class="icon"><i class="ion-ios-videocam"></i></div>
+            <span class="name"><%= locale.sol_recorded_video %></span>
+    </a>
+</div><div class="col-md-3" data-feature='JAVASOL'  >
+    <a href="#settings/video/sol/javasol" class="big-button">
+            
+            <div class="icon"><i class="fa fa-hdd-o"></i></div>
+            <span class="name"><%= locale.java_sol %></span>
+    </a>
+</div>
+    </div>
+</div>
+</section>

@@ -1,0 +1,49 @@
+
+   <div class="header" style="background:#ffffff;box-shadow:0px 0px; width:391px;height:55px;">
+   			<!-- set src="", will reset this in LoginView.js by songjun 201803-->
+   		<img id="idsugonlogo_login"style="float:left;margin-left:20px;margin-top:5px;" src="" />
+   </div>
+    <form action="javascript://" style="width:391px;">
+        <div class="body">
+
+			<div style="position:relative;">
+				<div id="msglbl" style="position: absolute;font-size:16px;margin-left:10px;color:#c60001;height:35px;"></div>
+			</div>
+
+        	<div style="border: 1.5px solid #B6B6B6;border-radius:3px;height:50px;margin-left:10px;width:331px;margin-top:20px;">
+                <label style="margin-left:20px;margin-top:9px;">
+					<img src="../images/lg_yh.png"/>
+                    <input type="text" id="userid" placeholder="<%=locale.username%>" style="border:0px;width:270px;">
+                </label>
+            </div>
+
+			<div style="border: 1.5px solid #B6B6B6;border-radius:3px;height:50px;margin-left:10px;width:331px;margin-top:20px;">
+                <label style="margin-left:20px;margin-top:9px;">
+					<img src="../images/lg_mm.png" />
+                    <input type="password" id="password" placeholder="<%=locale.password%>" style="border:0px;width:270px;">
+                </label>
+            </div>
+
+
+            <!-- <div class="form-group">
+                <input type="text" id="userid" class="form-control" placeholder="<%=locale.username%>"/>
+            </div>
+            <div class="form-group">
+                <input type="password" id="password" class="form-control" placeholder="<%=locale.password%>"/>
+            </div> -->
+
+            <div class="form-group" style="margin-left:10px;width:331px;">
+                <input type="checkbox" id="remember_me" name="remember_me"/> <%=locale.rememberme%>
+
+                <p style="float:right;" >
+                	<a href="javascript://" id="forgot-password"><%=locale.forgotpassword%></a>
+                </p>
+            </div>
+        </div>
+        <div class="footer" style="padding-top:5px;">
+            <button type="submit" id="btn-login" class="btn bg-olive btn-block" style="background-color:#428bca !important; margin-left:10px;width:331px;"><%=locale.signmein%></button>
+
+            <!-- <p><a href="javascript://" id="forgot-password"><%=locale.forgotpassword%></a></p> -->
+
+        </div>
+    </form>

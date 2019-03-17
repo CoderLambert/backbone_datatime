@@ -1,0 +1,79 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        <%= locale.server_locate %>
+        <small><%= locale.tag %></small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-home"></i> <%= locale.home %></a></li>
+        <li><a href="#longRangeControl"><%= locale.parenttitle %></a></li>
+        <!-- <li><a href="#server-configuration"><%= locale.server_config %></a></li> -->
+        <li class="active"><%= locale.idled_actions %></li>
+    </ol>
+</section>
+<!-- Main content -->
+<section class="content">
+    <!--
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <div class="input-group" id="filter">
+                        <input type="text" class="form-control" placeholder="Search settings" />
+                        <span class="input-group-addon">
+                            <span class="glyphicon-search glyphicon"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <div class="col-md-5">
+        <div class="box box-primary animated fadeInUp">
+            <div class="box-header">
+                <div class="pull-right help"><a class="col-sm-1 help-link" href="#"><i class="fa fa-question-circle"></i></a></div>
+                <h3 class="box-title"><%= locale.idled_actions %></h3>
+            </div>
+
+            <div class="box-body">
+            	<div id="id_savaSucess" class="alert alert-success" style="display:none;"><%=locale.saveSucess %></div>
+                <form action="javascript://" method="POST" role="form">
+	                <div class="alert alert-info help-item hide" role="alert"><%= locale.help_selection %></div>
+                	<div id="id_led_status" style="font-weight:bold;color:#3c8dbc"><%= locale.id_led_status %>: </div> <br/>
+                    <div class="form-group">
+                        <label>
+                            <input type='radio' value='0' name='id_command' id='idpower_off_command'> <%= locale.force_off %>
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <input type='radio' value='1' name='id_command' id='idpower_on_command'> <%= locale.force_on %>
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <input type='radio' value='4' name='id_command' id='idpower_identify_command'> <%= locale.identify %>
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label>
+                        	<span style="float:left;margin-top:8px;"><%= locale.blink_time %></span>
+                            <input type='text' class="form-control" style="float:left;width:200px;margin-left:10px;" value='' name='id_interval' id='idpower_interval_value' maxlength="4" onkeyup="value=value.replace(/[^\0-9.-]/g,'');">
+                           	<select class="form-control" style="float:left;width:100px;margin-left:10px;" id="id_unit" name="id_unit">
+								<option value ="seconds" ><%= locale.seconds %></option>
+								<option value ="hours" ><%= locale.hours %></option>
+								<option value ="days" ><%= locale.days %></option>
+							</select>
+                        </label>
+                    </div>
+                    <div class="pull-right">
+                        <a class="btn btn-primary" id="save"><i id='save-icon' class="fa fa-power-off"></i> &nbsp; <%= locale.perform_action %></a>
+                    </div>
+                    <div class="clearfix"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /.content -->

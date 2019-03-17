@@ -1,0 +1,482 @@
+<style>
+    .receiving_label, .receiving_mail_label, .receiving_enable_btn, .receiving_test_btn,
+    .sp_label, .sp_enable_btn, .sp_test_btn {
+        vertical-align: middle;
+    }
+</style>
+
+<!-- Content Header (Page header) -->
+
+<section class="content-header">
+    <h1>
+       <%=locale.alarm_settings%>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-home"></i> <%=locale.home%></a></li>
+        <li><a href="#settings"><%= locale.settings %></a></li>
+        <li class="active"><%=locale.alarm_settings%></li>
+    </ol>
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <!--snmp trap-->
+    <div class="col-md-6" style="margin-right: 10px;">
+        <div class="box box-primary animated fadeInUp">
+            <div class="box-header">
+                <div class="pull-right help"><a class="col-sm-1 help-link" id="snmpTrap_help_link" href="#"><i class="fa fa-question-circle"></i></a></div>
+                <h3 class="box-title"><%= locale.snmp_trap_title %></h3>
+            </div>
+            <div class="box-body">
+
+                <div class="alert alert-success hide snmpTrap_alert_success"></div>
+                <div class="alert alert-danger hide snmpTrap_alert_danger"></div>
+
+                <form action="javascript://" method="POST" role="form" >
+
+                    <div class="form-group">
+                        <label for="sp_snmpTrap_enable" style="margin-right:10px;">
+                            <input value="1" name="sp_snmpTrap_enable" id="sp_snmpTrap_enable" type="checkbox"> <%= locale.whether_enable %>
+                        </label>
+                    </div>
+                    <div id="sp_snmpTrap_from" style="display:none;">
+                        <div class="form-group ">
+                            <div class="alert alert-info help-item hide snmpTrap_help_item" role="alert"><%=locale.trap_help_information%></div>
+                            <label class="col-md-4">
+                                <input value="1" name="sp_snmpTrap_version" id="sp_snmpTrap_v1" type="radio" checked="checked"> <%= locale.v1 %>
+                            </label >
+                            <label class="col-md-4">
+                                <input value="2" name="sp_snmpTrap_version" id="sp_snmpTrap_v2" type="radio"> <%= locale.v2 %>
+                            </label>
+                            <label class="col-md-4">
+                                <input value="3" name="sp_snmpTrap_version" id="sp_snmpTrap_v3" type="radio"> <%= locale.v3 %>
+                            </label>
+                        </div>
+                        <div class="form-group" id="sp_snmpTrap_community_div">
+                            <label for="sp_snmpTrap_community"><%= locale.community %></label>
+                            <input type="text" id="sp_snmpTrap_community" name="sp_snmpTrap_community" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-group" id="sp_snmpTrap_user_div" style='display:none;'>
+                            <label for="sp_snmpTrap_user"><%= locale.v3_user %></label>
+                            <select id="sp_snmpTrap_user" name="sp_snmpTrap_user" class="form-control" placeholder="">
+                            </select>
+                        </div>
+
+                        <div class="form-group" >
+                            <label for="" style="margin-right:10px;"><%=locale.alarm_grade%></label><br/>
+                            <label for="sp_check_all" style="margin-right:10px;">
+                                <input value="1" name="sp_check_all" id="sp_check_all" type="checkbox"> <%= locale.check_all %>
+                            </label>
+                            <label for="sp_alarm_grade1" style="margin-right:10px;">
+                                <input value="1" name="sp_alarm_grade" id="sp_alarm_grade1" type="checkbox" > <%= locale.urgency %>
+                            </label>
+                            <label for="sp_alarm_grade2" style="margin-right:10px;">
+                                <input value="1" name="sp_alarm_grade" id="sp_alarm_grade2" type="checkbox" > <%= locale.critical %>
+                            </label>
+                            <label for="sp_alarm_grade3" style="margin-right:10px;">
+                                <input value="1" name="sp_alarm_grade" id="sp_alarm_grade3" type="checkbox" > <%= locale.non_critical %>
+                            </label>
+                            <label for="sp_alarm_grade4" style="">
+                                <input value="1" name="sp_alarm_grade" id="sp_alarm_grade4" type="checkbox" > <%= locale.normal %>
+                            </label>
+                        </div>
+
+                        <div class="form-group" >
+                            <div class="alert alert-info help-item hide snmpTrap_help_item" role="alert"><%=locale.trap_help_snmp_addr%></div>
+                            <label for="sp_snmpTrap_community"><%= locale.snmp_addr %></label>
+                            <div>
+                                <label class="sp_label">
+                                    <input id="sp_snmpAddr_id1" type="hidden" />
+                                    <input id="sp_snmpAddr_ip1" name="sp_snmpAddr_ip1" class="form-control" type="text" value="">
+                                </label>
+                                <label class="sp_enable_btn">
+                                    <input id="sp_snmpAddr_enable1" data-size="small" type="checkbox">
+                                </label>
+                                <label class="sp_test_btn">
+                                    <button id="sp_snmpAddr_test1" type="button" class="btn btn-default" data-toggle="button" title="" style="display:none;"><%= locale.snmp_test %></button>
+                                </label>
+                            </div>
+                            <div>
+                                <label class="sp_label">
+                                    <input id="sp_snmpAddr_id2" type="hidden" />
+                                    <input id="sp_snmpAddr_ip2" name="sp_snmpAddr_ip2" class="form-control" type="text" value="">
+                                </label>
+                                <label class="sp_enable_btn">
+                                    <input id="sp_snmpAddr_enable2" data-size="small" type="checkbox">
+                                </label>
+                                <label class="sp_test_btn">
+                                    <button id="sp_snmpAddr_test2" type="button" class="btn btn-default" data-toggle="button" title="" style="display:none;"><%= locale.snmp_test %></button>
+                                </label>
+                            </div>
+                            <div>
+                                <label class="sp_label">
+                                    <input id="sp_snmpAddr_id3" type="hidden" />
+                                    <input id="sp_snmpAddr_ip3" name="sp_snmpAddr_ip3" class="form-control" type="text" value="">
+                                </label>
+                                <label class="sp_enable_btn">
+                                    <input id="sp_snmpAddr_enable3" data-size="small" type="checkbox">
+                                </label>
+                                <label class="sp_test_btn">
+                                    <button id="sp_snmpAddr_test3" type="button" class="btn btn-default" data-toggle="button" title="" style="display:none;"><%= locale.snmp_test %></button>
+                                </label>
+                            </div>
+                            <div>
+                                <label class="sp_label">
+                                    <input id="sp_snmpAddr_id4" type="hidden" />
+                                    <input id="sp_snmpAddr_ip4" name="sp_snmpAddr_ip4" class="form-control" type="text" value="">
+                                </label>
+                                <label class="sp_enable_btn">
+                                    <input id="sp_snmpAddr_enable4" data-size="small" type="checkbox">
+                                </label>
+                                <label class="sp_test_btn">
+                                    <button id="sp_snmpAddr_test4" type="button" class="btn btn-default" data-toggle="button" title="" style="display:none;"><%= locale.snmp_test %></button>
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div style="float:right;">
+                        <a class="btn btn-primary" id="sp_snmpTrap_save"><i id='sp_snmpTrap_icon' class="fa fa-save"></i> &nbsp; <%= locale.snmpTrapSaveLabel %></a>
+                    </div>
+                    <div class="clearfix"></div>
+
+
+                </form>
+
+            </div>
+
+            <!-- /.box-body -->
+        </div>
+    </div>
+
+
+    <!--smtp-->
+    <div class="col-md-6" style="margin-right: 10px;">
+        <div class="box box-primary animated fadeInUp">
+            <div class="box-header">
+                <div class="pull-right help"><a class="col-sm-1 help-link" id="smtp_help_link" href="#"><i class="fa fa-question-circle"></i></a></div>
+                <h3 class="box-title"><%= locale.smtp_title %></h3>
+            </div>
+            <div class="box-body">
+                <div id="smtp_success" class="alert alert-success hide smtp_alert_success">
+                    <!-- <i class="fa fa-check"></i> -->
+                    <!-- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> -->
+                    <%= locale.snmpTrapStrongSuccessMsg %>
+                </div>
+                <div id="smtp_danger" class="alert alert-danger hide smtp_alert_danger">
+                    <!-- <i class="fa fa-ban"></i> -->
+                    <!-- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> -->
+                    <%= locale.snmpTrapStrongFailureMsg %>
+                </div>
+                <form action="javascript://" method="POST" role="form">
+
+                    <div class="form-group"  >
+                        <div class="alert alert-info help-item hide smtp_help_item" role="alert"><%= locale.smtpcheck_this_option_to_enable_smtp_support_for_the_bmc %></div>
+                        <label>
+                            <input type="checkbox" value="1" id="idprimary_smtp_enable" > <%= locale.smtpprimary_smtp_support %>
+                        </label>
+                    </div>
+
+                    <div id="smtp_form" style="display:none;">
+
+                        <div class="form-group"  >
+                            <div class="alert alert-info help-item hide smtp_help_item"    role="alert"><%= locale.smtpenter_the_machine_name_of_the_smtp_server_ul_li_machine_name_is_a_string_of_maximum_15_alphanumeric_charactersli_li_space_special_characters_are_not_allowedli_ul %></div>
+                            <label for="primary_server_name"><%= locale.smtpprimary_server_name %></label>
+                            <input type="text" class="form-control" id="idprimary_server_name" value="" placeholder="">
+                        </div>
+
+                        <div class="form-group"  >
+                            <div class="alert alert-info help-item hide smtp_help_item"    role="alert"><%= locale.smtp_enter_the_ip_address_of_the_smtp_server_it_is_a_mandatory_field_ul_li_ip_address_made_of_4_numbers_separated_by_dots_as_in_xxxxxx_xxxxxxli_li_each_number_ranges_from_0_to_255li_li_first_number_must_not_be_0li_ul_server_address_will_support_the_following_ul_li_ipv4_address_format_li_ipv6_address_format_ul %></div>
+                            <label for="primary_server_ip"><%= locale.smtpprimary_server_ip %></label>
+                            <input type="text" class="form-control" id="idprimary_server_ip" value="" placeholder="">
+                        </div>
+
+                        <!-- 发件人邮件信息 -->
+                        <div class="form-group"  >
+                            <div class="alert alert-info help-item hide smtp_help_item"    role="alert"><%= locale.smtpcheck_email_help %></div>
+                            <label for="email_id"><%= locale.smtpsender_email_id %></label>
+                            <input type="text" class="form-control" maxlength="64" id="idemail_id" value="" placeholder="">
+                        </div>
+                        <div class="form-group"  >
+                            <div class="alert alert-info help-item hide smtp_help_item"    role="alert"><%= locale.smtpenter_the_password_for_the_smtp_user_account_ul_li_password_must_be_at_least_4_characters_longli_li_white_space_is_not_allowedli_ul_strongnotestrong_this_field_will_not_allow_more_than_64_characters %></div>
+                            <label for="primary_password"><%= locale.smtpprimary_password %></label>
+                            <input type="password" class="form-control" id="idprimary_password" value="" placeholder="" maxlength="64">
+                        </div>
+                        <div class="form-group"  >
+                            <div class="alert alert-info help-item hide smtp_help_item"    role="alert"><%= locale.mail_theme_help %></div>
+                            <label for="mail_theme"><%= locale.mail_theme %></label>
+                            <input type="text" class="form-control" id="idmail_theme" value="" placeholder="">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="" style="margin-right:10px;"><%=locale.alarm_grade%></label><br/>
+                            <label for="smtp_check_all" style="margin-right:10px;">
+                                <input value="1" name="smtp_check_all" id="smtp_check_all" type="checkbox"> <%= locale.check_all %>
+                            </label>
+                            <label for="smtp_alarm_Urgency" style="margin-right:10px;">
+                                <input value="1" name="smtp_alarm_Urgency" id="smtp_alarm_Urgency" type="checkbox" > <%= locale.urgency %>
+                            </label>
+                            <label for="smtp_alarm_Critical" style="margin-right:10px;">
+                                <input value="1" name="smtp_alarm_Critical" id="smtp_alarm_Critical" type="checkbox" > <%= locale.critical %>
+                            </label>
+                            <label for="smtp_alarm_NonCritical" style="margin-right:10px;">
+                                <input value="1" name="smtp_alarm_NonCritical" id="smtp_alarm_NonCritical" type="checkbox" > <%= locale.non_critical %>
+                            </label>
+                            <label for="smtp_alarm_Info" style="">
+                                <input value="1" name="smtp_alarm_Info" id="smtp_alarm_Info" type="checkbox" > <%= locale.normal %>
+                            </label>
+                        </div>
+
+                        <div class="form-group">
+                            <hr/>
+                        </div>
+
+                        <div class="form-group" >
+                            <div class="alert alert-info help-item hide smtp_help_item" role="alert"><%=locale.receiving_mail_help %></div>
+                            <label for=""><%= locale.receiving_mail %></label>
+                            <div>
+                                <label style="font-weight:normal;" class="receiving_label">
+                                    <input id="receiving_mail_id_1" type="hidden" />
+                                    <input id="receiving_mail_addr_1" name="receiving_mail_addr_1" class="form-control" type="text" value="<%= locale.mailbox %>">
+                                </label>
+                                <label style="font-weight:normal;" class="receiving_mail_label">
+                                    <input id="receiving_mail_desc_1" name="receiving_mail_desc_1" class="form-control" type="text" value="<%= locale.description %>">
+                                </label>
+                                <label class="receiving_enable_btn">
+                                    <input id="receiving_mail_enable_1" data-size="small" type="checkbox">
+                                </label>
+                                <label class="receiving_test_btn">
+                                    <button id="receiving_mail_test_1" type="button" class="btn btn-default" data-toggle="button" title="" style="display:none;"><%= locale.test_mailbox %></button>
+                                </label>
+                            </div>
+                            <div>
+                                <label style="font-weight:normal;" class="receiving_label">
+                                    <input id="receiving_mail_id_2" type="hidden" />
+                                    <input id="receiving_mail_addr_2" name="receiving_mail_addr_2" class="form-control" type="text" value="<%= locale.mailbox %>">
+                                </label>
+                                <label style="font-weight:normal;" class="receiving_mail_label">
+                                    <input id="receiving_mail_desc_2" name="receiving_mail_desc_2" class="form-control" type="text" value="<%= locale.description %>">
+                                </label>
+                                <label class="receiving_enable_btn">
+                                    <input id="receiving_mail_enable_2" data-size="small" type="checkbox">
+                                </label>
+                                <label class="receiving_test_btn">
+                                    <button id="receiving_mail_test_2" type="button" class="btn btn-default" data-toggle="button" title="" style="display:none;"><%= locale.test_mailbox %></button>
+                                </label>
+                            </div>
+                            <div>
+                                <label style="font-weight:normal;" class="receiving_label">
+                                    <input id="receiving_mail_id_3" type="hidden" />
+                                    <input id="receiving_mail_addr_3" name="receiving_mail_addr_3" class="form-control" type="text" value="<%= locale.mailbox %>">
+                                </label>
+                                <label style="font-weight:normal;" class="receiving_mail_label">
+                                    <input id="receiving_mail_desc_3" name="receiving_mail_desc_3" class="form-control" type="text" value="<%= locale.description %>">
+                                </label>
+                                <label class="receiving_enable_btn">
+                                    <input id="receiving_mail_enable_3" data-size="small" type="checkbox">
+                                </label>
+                                <label class="receiving_test_btn">
+                                    <button id="receiving_mail_test_3" type="button" class="btn btn-default" data-toggle="button" title="" style="display:none;"><%= locale.test_mailbox %></button>
+                                </label>
+                            </div>
+                            <div>
+                                <label style="font-weight:normal;" class="receiving_label">
+                                    <input id="receiving_mail_id_4" type="hidden" />
+                                    <input id="receiving_mail_addr_4" name="receiving_mail_addr_4" class="form-control" type="text" value="<%= locale.mailbox %>">
+                                </label>
+                                <label style="font-weight:normal;" class="receiving_mail_label">
+                                    <input id="receiving_mail_desc_4" name="receiving_mail_desc_4" class="form-control" type="text" value="<%= locale.description %>">
+                                </label>
+                                <label class="receiving_enable_btn">
+                                    <input id="receiving_mail_enable_4" data-size="small" type="checkbox">
+                                </label>
+                                <label class="receiving_test_btn">
+                                    <button id="receiving_mail_test_4" type="button" class="btn btn-default" data-toggle="button" title="" style="display:none;"><%= locale.test_mailbox %></button>
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="pull-right">
+                        <a class="btn btn-primary" id="smtpSave"><i id='save-icon_smtp' class="fa fa-save"></i> &nbsp; <%= locale.smtpSaveLabel %></a>
+                    </div>
+                    <div class="clearfix"></div>
+                </form>
+            </div>
+            <!-- /.box-body -->
+        </div>
+    </div>
+
+
+    <!--advanced log-->
+    <div class="col-md-6" style="margin-right: 10px;">
+        <div class="box box-primary animated fadeInUp">
+            <div class="box-header">
+                <div class="pull-right help"><a class="col-sm-1 help-link" id="advancedLog_help_link" href="#"><i class="fa fa-question-circle"></i></a></div>
+                <h3 class="box-title"><%= locale.advanced_log %></h3>
+            </div>
+            <div class="box-body">
+                <div class="alert alert-success hide advancedLog_alert_success">
+                    <!-- <i class="fa fa-check"></i> -->
+                    <!-- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> -->
+                    <%= locale.advancedLogStrongSuccessMsg %>
+                </div>
+                <div class="alert alert-danger hide advancedLog_alert_danger">
+                    <!-- <i class="fa fa-ban"></i> -->
+                    <!-- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> -->
+                    <%= locale.advancedLogStrongFailureMsg %>
+                </div>
+                <form action="javascript://" method="POST" role="form">
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" value="1" id="enable_remote_syslog">
+                            <%=locale.enable_remote_log %>
+                        </label>
+                    </div>
+
+                    <!-- 注释原来本地日志与远程日志切换的功能
+                    <div class="form-group">
+                        <div class="alert alert-info help-item hide" role="alert">
+                            <%=locale.advanced_logselect_enable_system_log_to_view_all_system_events_entries_can_be_filtered_based_on_their_classification_levels %>
+                        </div>
+                        <label>
+                            <input type="checkbox" value="1" id="idsystem-log">
+                            <%=locale.advanced_logenable_system_log %>
+                        </label>
+                    </div>
+                    <div class="form-group" id="remote_group"  style="display:none;">
+                        <label for="remote">
+                            <%=locale.advanced_loglocation %>
+                        </label>
+                        <br/>
+                        <label>
+                            <input type='radio' value='1' name='remote' id='idremote'>
+                            <%=locale.advanced_loglocal_log %>
+                        </label>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <label>
+                            <input type='radio' value='2' name='remote' id='idremote'>
+                            <%=locale.advanced_logremote_log %>
+                        </label>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                    </div>
+                    <div class="form-group" id="idfile_size_group" style="display:none;">
+                        <div class="alert alert-info help-item hide" role="alert">
+                            <%=locale.advanced_logif_local_log_is_selected_specify_the_size_of_the_file_in_bytesulli_size_ranges_from_3_to_65535lililog_files_are_rotated_when_the_size_is_larger_than_the_mentioned_bytes_with_regards_for_the_last_rotation_time_interval_1_minuteliul %>
+                        </div>
+                        <label for="file_size">
+                            <%=locale.advanced_logfile_sizebytes %>
+                        </label>
+                        <input type="text" class="form-control" id="idfile_size" value="" placeholder="<%= locale.size_in_bytes %>">
+                    </div>
+                    <div class="form-group" id="idrotate_count_group" style="display:none;">
+                        <div class="alert alert-info help-item hide" role="alert">
+                            <%=locale.advanced_logwhen_logged_information_exceeds_the_specified_file_size_the_old_log_information_automatically_gets_moved_to_back_up_files_based_on_the_rotate_count_value_if_the_rotate_count_is_zero_the_old_log_information_gets_cleared_permanently_each_timeulli_rotate_count_value_must_be_0_or_1liul %>
+                        </div>
+                        <label for="rotate_count">
+                            <%=locale.advanced_logrotate_count %>
+                        </label>
+                        <input type="text" class="form-control" id="idrotate_count" value="" placeholder="<%= locale.maximum_count %>">
+                    </div>
+                    <div class="form-group" style="display:none;">
+                        <div class="alert alert-info help-item hide" role="alert">
+                            <%=locale.advanced_logselect_enable_audit_log_to_view_all_audit_events_for_this_device %>
+                        </div>
+                        <label>
+                            <input type="checkbox" value="1" id="idaudit-log">
+                            <%=locale.advanced_logenable_audit_log %>
+                        </label>
+                    </div>
+                    -->
+
+                    <div id="romote_form" style="display:none;">
+                        <div class="form-group" id="idserver_addr_group" style="">
+                            <div class="alert alert-info help-item hide advancedLog_help_item" role="alert">
+                                <%=locale.advanced_logspecify_the_remote_server_address_to_log_system_events_server_address_support_the_followingulli_ip_address_both_ipv4_and_ipv6_formatlili_fqdn_fully_qualified_domain_name_formatliulstrongnotestrong_maximum_allowed_size_for_remote_log_server_address_is_64_bytes %>
+                            </div>
+                            <label for="server_addr">
+                                <%=locale.advanced_logremote_log_server %>
+                            </label>
+                            <input type="text" class="form-control" id="idserver_addr" value="" placeholder="<%= locale.server_ip_or_hostname %>">
+                        </div>
+                        <div class="form-group" id="idport_group" style="">
+                            <div class="alert alert-info help-item hide advancedLog_help_item" role="alert">
+                                <%=locale.advanced_logspecify_the_port_number_to_log_system_eventsbrstrongnotestrong_the_default_port_number_is_514 %>
+                            </div>
+                            <label for="port">
+                                <%=locale.advanced_logremote_server_port %>
+                            </label>
+                            <input type="text" class="form-control" id="idport" value="" onkeyup="value=value.replace(/[^\0-9.-]/g,'');" placeholder="<%= locale.server_port %>">
+                        </div>
+
+                        <div class="form-group" id="idserver_addr_group" style="">
+                            <div class="alert alert-info help-item hide advancedLog_help_item" role="alert">
+                                <%=locale.advanced_logspecify_the_remote_server_address_to_log_system_events_server_address_support_the_followingulli_ip_address_both_ipv4_and_ipv6_formatlili_fqdn_fully_qualified_domain_name_formatliulstrongnotestrong_maximum_allowed_size_for_remote_log_server_address_is_64_bytes %>
+                            </div>
+                            <label for="server_addr">
+                                <%=locale.advanced_logremote_log_server1 %>
+                            </label>
+                            <input type="text" class="form-control" id="idserver_addr1" value="" placeholder="<%= locale.server_ip_or_hostname %>">
+                        </div>
+                        <div class="form-group" id="idport_group" style="">
+                            <div class="alert alert-info help-item hide advancedLog_help_item" role="alert">
+                                <%=locale.advanced_logspecify_the_port_number_to_log_system_eventsbrstrongnotestrong_the_default_port_number_is_514 %>
+                            </div>
+                            <label for="port">
+                                <%=locale.advanced_logremote_server_port1 %>
+                            </label>
+                            <input type="text" class="form-control" id="idport1" value="" onkeyup="value=value.replace(/[^\0-9.-]/g,'');" placeholder="<%= locale.server_port %>">
+                        </div>
+
+                        <div class="form-group" id="al_auditlogtoRemote_group" style="">
+                            <label>
+                                <input type='checkbox' value='1' name='al_auditlogtoRemote' id='al_auditlogtoRemote'>
+                                <%=locale.audit_log_to_remote %>
+                            </label>
+                        </div>
+
+                        <div class="form-group" id="al_pefseltoRemote_group" style="">
+                            <label>
+                                <input type='checkbox' value='1' name='al_pefseltoRemote' id='al_pefseltoRemote'>
+                                <%=locale.pef_sel_to_remote %>
+                            </label>
+                        </div>
+
+                        <div class="form-group" id="romote_group" style="display:none;" >
+                            <label for="" style="margin-right:10px;"><%=locale.alarm_grade%></label><br/>
+                            <label for="romote_check_all" style="margin-right:10px;">
+                                <input value="1" name="romote_check_all" id="romote_check_all" type="checkbox"> <%= locale.check_all %>
+                            </label>
+                            <label for="romote_alarm_Urgency" style="margin-right:10px;">
+                                <input value="1" name="romote_alarm_Urgency" id="romote_alarm_Urgency" type="checkbox" > <%= locale.urgency %>
+                            </label>
+                            <label for="romote_alarm_Critical" style="margin-right:10px;">
+                                <input value="1" name="romote_alarm_Critical" id="romote_alarm_Critical" type="checkbox" > <%= locale.critical %>
+                            </label>
+                            <label for="romote_alarm_NonCritical" style="margin-right:10px;">
+                                <input value="1" name="romote_alarm_NonCritical" id="romote_alarm_NonCritical" type="checkbox" > <%= locale.non_critical %>
+                            </label>
+                            <label for="romote_alarm_Info" style="">
+                                <input value="1" name="romote_alarm_Info" id="romote_alarm_Info" type="checkbox" > <%= locale.normal %>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="pull-right">
+                        <a class="btn btn-primary" id="advancedLogSave">
+                            <i id='save-icon_advancedLog' class="fa fa-save"> </i>
+                            <%=locale.advancedLogSaveLabel %>
+                        </a>
+                    </div>
+                    <div class="clearfix">
+                    </div>
+                </form>
+            </div>
+            <!-- /.box-body -->
+        </div>
+    </div>
+
+</section>
+<!-- /.content -->

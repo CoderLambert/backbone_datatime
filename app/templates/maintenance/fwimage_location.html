@@ -1,0 +1,76 @@
+<section class="content-header">
+    <h1>
+        <%= locale.fw_FirmwareUpgrade %>
+        <small> <%= locale.tag %> </small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-home"></i><%= locale.home %></a></li>
+        <li><a href="#systemMaintenance"><%= locale.system_maintenance %></a></li>
+        <li class="active"><%= locale.fw_FirmwareUpgrade %></li>
+    </ol>
+</section>
+
+<!-- Main content -->
+<section class="content tabs-content">
+
+<div class="row" style="margin-top:-10px;margin-bottom:20px;">
+    <div class="col-md-12 tab">
+        <a id="fw_BMCFirmwareUpgrade" class="menu_tab menu_active" ><%=locale.fw_BMCFirmwareUpgrade %></a>
+        <a id="fw_BIOSFirmwareUpgrade" class="menu_tab" onclick="replace_url('#maintenance/BIOSFirmwareUpgrade')" ><%=locale.fw_BIOSFirmwareUpgrade %></a>
+        <a id="fw_CPLDUpgrade" class="menu_tab"  onclick="replace_url('#maintenance/CPLDFirmwareUpgrade')" ><%=locale.fw_CPLDUpgrade %></a>
+        <a id="fw_PSUUpgrade" class="menu_tab" onclick="replace_url('#maintenance/PSUFirmwareUpgrade')" ><%=locale.fw_PSUUpgrade %></a>
+    	<a id="fw_BPUpgrade" class="menu_tab" data-feature="BP_SUPPORT" onclick="replace_url('#maintenance/BPFirmwareUpgrade')" ><%=locale.fw_BPUpgrade %></a>
+    </div>
+</div>
+
+<div class="box">
+        <div class="box-header">
+            <ul class="my-tabs">
+                <li><a onclick="replace_url('#maintenance/firmware_update')"><%= locale.fw_edit_conf %></a></li>
+                <li><a onclick="replace_url('#maintenance/restore_configuration')"><%= locale.fw_restore_conf %></a></li>
+                <li class="my-tabs-active"><a><%= locale.fw_fwimage_location %></a></li>
+            </ul>
+            <div class="pull-right help"><a class="col-sm-1 help-link" href="#"><i class="fa fa-question-circle"></i></a></div>
+        </div>
+        <div class="box-body">
+            <div class="alert alert-success hide">
+                <!-- <i class="fa fa-check"></i> -->
+                <!-- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> -->
+                <b><%= locale.strongSuccessMsg %></b> <%= locale.successMsg %>
+            </div>
+            <div class="alert alert-danger hide">
+                <!-- <i class="fa fa-ban"></i> -->
+                <!-- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> -->
+                <b><%= locale.strongFailureMsg %></b> <%= locale.failureMsg %>
+            </div>
+            <form action="javascript://" method="POST" role="form">
+                <div class="form-group"  >
+	<div class="alert alert-info help-item hide"    role="alert"><%= locale.fwimage_locationprotocol_to_be_used_to_transfer_the_firmware_image_into_the_bmc %></div>
+	<label for="protocol_type"><%= locale.fwimage_locationimage_location_type %></label><br/>
+	<label>
+							        <input type='radio' value='http' name='protocol_type' id='idprotocol_type' > <%= locale.fwimage_locationweb_upload_during_flash %>
+							    </label><br/><label>
+							        <input type='radio' value='tftp' name='protocol_type' id='idprotocol_type' > <%= locale.fwimage_locationtftp_server %>
+							    </label><br/>
+</div><div class="form-group"  >
+	<div class="alert alert-info help-item hide"    role="alert"><%= locale.fwimage_locationaddress_of_the_server_where_the_firmware_image_is_stored_it_supports_both_ipv4_and_ipv6_ulli_ip_address_made_of_4_numbers_separated_by_dots_as_in_xxxxxxxxxxxxli_li_each_number_ranges_from_0_to_255li_li_first_number_must_not_be_0liliipv6_address_made_of_8_groups_of_4_hexadecimal_digits_separated_by_colon_as_in_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxlilihexadecimal_digits_are_expressed_as_lowercase_lettersliul %></div>
+    <label for="server_address"><%= locale.fwimage_locationtftp_server_address %></label>
+    <input type="text" class="form-control" id="idserver_address" value="" placeholder="<%= locale.required_if_tftp_is_chosen %>">
+</div><div class="form-group"  >
+	<div class="alert alert-info help-item hide"    role="alert"><%= locale.fwimage_locationimage_filename_on_tftp_server %></div>
+    <label for="image_name"><%= locale.fwimage_locationtftp_image_name %></label>
+    <input type="text" class="form-control" id="idimage_name" value="" placeholder="<%= locale.required_if_tftp_is_chosen %>">
+</div><div class="form-group"  >
+	<div class="alert alert-info help-item hide"    role="alert"><%= locale.fwimage_locationnumber_of_times_to_be_retried_in_case_a_transfer_failure_occurs_retry_count_ranges_from_0_to_255 %></div>
+    <label for="retry_count"><%= locale.fwimage_locationtftp_retry_count %></label>
+    <input type="text" class="form-control" id="idretry_count" value="" placeholder="<%= locale.required_if_tftp_is_chosen %>">
+</div><div class="pull-right">
+    <a class="btn btn-primary" id="save"><i id='save-icon' class="fa fa-save"></i> &nbsp; <%= locale.saveLabel %></a>
+</div>
+                <div class="clearfix"></div>
+            </form>
+        </div>
+        <!-- /.box-body -->
+    </div>
+
+</section>

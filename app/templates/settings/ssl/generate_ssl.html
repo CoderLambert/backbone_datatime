@@ -1,0 +1,150 @@
+<div>
+    <!-- 导航栏 -->
+    <section class="content-header">
+        <h1>
+            <%= locale.title %>
+                <small> <%= locale.tag %> </small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-home"></i><%= locale.home %></a></li>
+            <li><a href="#settings"><%= locale.bmc_settings %></a></li>
+            <li class="active"><%= locale.title %></li>
+        </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content  tabs-content" style="height: 200px; overflow: auto;">
+
+        <!-- 表格结构 -->
+        <div class="row" style="margin-top:-10px;margin-bottom:10px;">
+            <div class="col-md-12 tab">
+                <a id="safe_login_control" class="menu_tab " onclick="replace_url('#settings/loginControl')">
+                    <%=locale.loginControl%>
+                </a>
+                <a id="safe_snmp" class="menu_tab" onclick="replace_url('#settings/snmp')">
+                    <%=locale.snmpv%>
+                </a>
+                <a id="safe_ssl" class="menu_tab menu_active">
+                    <%=locale.ssl_settings%>
+                </a>
+                <a id="safe_badpassword" class="menu_tab" onclick="replace_url('#settings/badpassword')">
+                    <%=locale.user_badpassword%>
+                </a>
+            </div>
+        </div>
+
+        <!-- Main content -->
+
+
+        <div class="box box-primary">
+            <div class="box-header">
+                <ul class="my-tabs">
+                    <li>
+                        <a onclick="replace_url('#settings/ssl/view_ssl')">
+                            <%= locale.view_ssl_certificate %>
+                        </a>
+                    </li>
+                    <li class="my-tabs-active">
+                        <a>
+                            <%= locale.generate_ssl_certificate %>
+                        </a>
+                    </li>
+                    <li >
+                        <a onclick="replace_url('#settings/ssl/upload_ssl')">
+                            <%= locale.upload_ssl_certificate %>
+                        </a>
+                    </li>
+                </ul>
+                <div class="pull-right help"><a class="col-sm-1 help-link" href="#"><i class="fa fa-question-circle"></i></a>
+                </div>
+            </div>
+            <div class="box-body">
+                <div class="alert alert-success hide">
+                    <!-- <i class="fa fa-check"></i> -->
+                    <!-- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> -->
+                    <b><%= locale.strongSuccessMsg %></b>
+                    <%= locale.successMsg %>
+                </div>
+                <div class="alert alert-danger hide">
+                    <!-- <i class="fa fa-ban"></i> -->
+                    <!-- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> -->
+                    <b><%= locale.strongFailureMsg %></b>
+                    <%= locale.failureMsg %>
+                </div>
+                <form action="javascript://" method="POST" role="form">
+                    <div class="form-group">
+                        <div class="alert alert-info help-item hide" role="alert">
+                            <%= locale.generate_sslcommon_name_for_which_the_certificate_is_to_be_generated_ulli_maximum_length_of_64_charactersli_li_it_is_a_string_of_alphanumeric_characters_li_special_characters_and_are_not_allowed_liul %>
+                        </div>
+                        <label for="common_name"><%= locale.generate_sslcommon_name_cn %></label>
+                        <input type="text" class="form-control" id="idcommon_name" value="" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <div class="alert alert-info help-item hide" role="alert">
+                            <%= locale.generate_sslorganization_name_for_which_certificate_to_be_generated_ulli_maximum_length_of_64_charactersli_li_it_is_a_string_of_alphanumeric_characters_li_special_characters_and_are_not_allowed_liul %>
+                        </div>
+                        <label for="organization"><%= locale.generate_sslorganization_o %></label>
+                        <input type="text" class="form-control" id="idorganization" value="" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <div class="alert alert-info help-item hide" role="alert">
+                            <%= locale.generate_sslover_all_organization_section_unit_name_for_which_certificate_to_be_generated_ulli_maximum_length_of_64_charactersli_li_it_is_a_string_of_alphanumeric_characters_li_special_characters_and_are_not_allowed_liul %>
+                        </div>
+                        <label for="organization_unit"><%= locale.generate_sslorganization_unit_ou %></label>
+                        <input type="text" class="form-control" id="idorganization_unit" value="" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <div class="alert alert-info help-item hide" role="alert">
+                            <%= locale.generate_sslcity_or_locality_has_to_be_givenulli_maximum_length_of_128_characterslili_it_is_a_string_of_alphanumeric_charactersli_special_characters_and_are_not_allowedliul %>
+                        </div>
+                        <label for="city"><%= locale.generate_sslcity_or_locality_l %></label>
+                        <input type="text" class="form-control" id="idcity" value="" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <div class="alert alert-info help-item hide" role="alert">
+                            <%= locale.generate_sslstate_or_province_has_to_be_given_ulli_maximum_length_of_128_charactersli_li_it_is_a_string_of_alphanumeric_characters_li_special_characters_and_are_not_allowed_liul %>
+                        </div>
+                        <label for="state"><%= locale.generate_sslstate_or_province_st %></label>
+                        <input type="text" class="form-control" id="idstate" value="" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <div class="alert alert-info help-item hide" role="alert">
+                            <%= locale.generate_sslcountry_code_has_to_be_given_ulli_only_two_characters_are_allowedli_li_special_characters_are_not_allowedliul %>
+                        </div>
+                        <label for="country"><%= locale.generate_sslcountry_c %></label>
+                        <input type="text" class="form-control" id="idcountry" value="" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <div class="alert alert-info help-item hide" role="alert">
+                            <%= locale.generate_sslemail_address_of_the_organization_has_to_be_given %>
+                        </div>
+                        <label for="email_id"><%= locale.generate_sslemail_address %></label>
+                        <input type="text" class="form-control" id="idemail_id" value="" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <div class="alert alert-info help-item hide" role="alert">
+                            <%= locale.generate_sslnumber_of_days_the_certificate_to_be_validated_ulli_value_ranges_from_1_to_3650_daysliul %>
+                        </div>
+                        <label for="valid_days"><%= locale.generate_sslvalid_for %></label>
+                        <input type="text" class="form-control" id="idvalid_days" value="" placeholder="<%= locale.in_days %>">
+                    </div>
+                    <div class="form-group">
+                        <div class="alert alert-info help-item hide" role="alert">
+                            <%= locale.generate_sslchoose_the_key_length_bit_value_of_the_certificate %>
+                        </div>
+                        <label for="key_length"><%= locale.generate_sslkey_length %></label>
+                        <select name="key_length" id="idkey_length" class="form-control">
+            <option value='2048'><%= locale.generate_sslstr_2048_bits %></option>
+        </select>
+                    </div>
+                    <div class="pull-right">
+                        <a class="btn btn-primary" id="save"><i id='save-icon' class="fa fa-save"></i> &nbsp; <%= locale.saveLabel %></a>
+                    </div>
+                    <div class="clearfix"></div>
+                </form>
+            </div>
+            <!-- /.box-body -->
+        </div>
+
+    </section>
+</div>

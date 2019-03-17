@@ -1,0 +1,30 @@
+{
+  "name": "LESS-Prefixer",
+  "homepage": "https://github.com/JoelSutherland/LESS-Prefixer",
+  "authors": [
+    "Joel Sutherland <joel@newmediacampaigns.com>"
+  ],
+  "description": "All of the CSS3 fun, none of the prefixes!",
+  "main": "prefixer.less",
+  "keywords": [
+    "CSS",
+    "LESS"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "1305ba6f6f",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "1305ba6f6f0b8c1edcbed03061819f9102171920"
+  },
+  "_source": "https://github.com/JoelSutherland/LESS-Prefixer.git",
+  "_target": "*",
+  "_originalSource": "less-prefixer"
+}

@@ -1,0 +1,27 @@
+define({
+	"parenttitle":"远程控制",
+   "server_locate" : "服务器定位",
+   "tag" : "打开/关闭ID灯",
+   "home" : "主页",
+   "idled_actions" : "服务器定位",
+   "force_on" : "开启",
+   "force_off" : "关闭",
+   "identify":"闪烁",
+   "blink_time" : "闪烁时间",
+   "perform_action" : "执行",
+   "server_config" : "服务器配置",
+   "confirm" : "确定执行此操作吗？",
+   "long_control" : "远程控制",
+   "id_led_status" : "当前状态",
+   "offStatus" : "未定位",
+   "onStatus" : "定位",
+   "blinkStatus" : "闪烁",
+   "seconds":"秒",
+   "hours":"小时",
+   "days":"天",
+   "help_selection":"展示并配置ID灯模式",
+   "interval_value_tip":"请输入正整数。",
+   "saveSucess" : "操作执行成功.",
+
+
+});

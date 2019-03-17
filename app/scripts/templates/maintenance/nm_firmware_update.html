@@ -1,0 +1,114 @@
+<section class="content-header">
+    <h1>
+        <%= locale.title %>
+        <small> <%= locale.tag %> </small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-home"></i><%= locale.home %></a></li><li><a href="#systemMaintenance"><%= locale.maintenance %></a></li>
+        <li class="active">
+           <%= locale.title %>
+        </li>
+    </ol>
+</section>
+
+<!-- Main content -->
+<section class="content">
+<div class="col-md-5">
+<div class="box box-primary animated fadeInUp">
+        <div class="box-header">
+            <div class="pull-right help"><a class="col-sm-1 help-link" href="#"><i class="fa fa-question-circle"></i></a></div>
+            <h3 class="box-title"><%= locale.fwimage_location %></h3>
+        </div>
+        <div class="box-body">
+            <div class="alert alert-success hide">
+                <!-- <i class="fa fa-check"></i> -->
+                <!-- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> -->
+				<b><%= locale.successMsg %></b>
+            </div>
+            <div class="alert alert-danger hide">
+                <!-- <i class="fa fa-ban"></i> -->
+                <!-- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> -->
+                <b><%= locale.strongFailureMsg %></b> <%= locale.failureMsg %>
+            </div>
+	<br>
+<!-- ================================================= -->
+<div class="focus-center" id="iddivMain">
+	<div class="http" id="iddivhttp">
+		<form action="javascript://" method="POST" role="form">
+			<div role="alert" class="alert alert-info help-item hide"><%= locale.h_meimage_upload%></div>
+			<div class="form-group">
+				<label for="firmware_image">
+					<%= locale.fwimage %>
+				</label>
+				<input type="file" class="form-control" id="filefirmware_image" value="" placeholder="<%= locale.size2mb %>">
+			</div>
+			</div> 
+	<br/>
+		<div role="alert" class="alert alert-info help-item hide"><%= locale.h_start_update%></div><br>              
+		<div>
+			<a class="btn btn-success btn-lg btn-block" id="start"><%= locale.start_fw_update %></a>
+		</div>
+	<br/>
+	<br/>
+
+		<div class="progress">
+			<div class="progress-bar progress-bar-striped active" id="upload_progress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+			</div>
+			<div class="progress-bar progress-bar-success progress-bar-striped active" id="flash_progress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" color="black">
+			</div>
+			<span class="flash-progress"></span>  
+			<!-- <div class="progress-info"></div>  -->
+		<div class="clearfix"></div>
+	</form>
+	</div>
+	</div>
+    <!-- /.box-body -->
+<!-- Progress steps Display -->
+<br/>
+<div id="nmprogressdisplay">
+	<div class="form-group">
+		<div role="alert" class="alert alert-info help-item hide"><%= locale.h_steps_display%></div>
+		<label>
+			<input type="checkbox" value="0" id="id_nmuploadimg" ><%= locale.chk_uploadimg%>
+		</label>
+	<div class="form-group">
+		<label>
+			<input type="checkbox" value="0" id="id_nmswitchflashdevice" ><%= locale.chk_switch_flash_device%>
+		</label>
+	<div class="form-group">
+		<label>
+			<input type="checkbox" value="0" id="id_nmactivate" ><%= locale.chk_activate%>
+		</label>
+	<div class="form-group">
+		<label>
+			<input type="checkbox" value="0" id="id_nmcompareversion" ><%= locale.chk_compare_version%>
+		</label>
+	<div class="form-group">
+		<label>
+			<input type="checkbox" value="0" id="id_nmeraseflash" ><%= locale.chk_erase_flash%>
+		</label>
+	<div class="form-group">
+		<label>
+			<input type="checkbox" value="0" id="id_nmecfstatus" ><%= locale.chk_ecfstatus%>
+		</label>
+	<div class="form-group">
+		<label>
+			<input type="checkbox" value="0" id="id_nmdeactivate" ><%= locale.chk_deactivate%>
+		</label>
+	</div>
+</div>
+<!-- end of Progress Display -->
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+

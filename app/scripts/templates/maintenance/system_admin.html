@@ -1,0 +1,64 @@
+<section class="content-header">
+    <h1>
+        <%= locale.title %>
+        <small> <%= locale.tag %> </small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a><i class="fa fa-home"></i><%= locale.home %></a></li>
+        <li><a href="#systemMaintenance"><%= locale.system_maintenance %></a></li>
+        <li class="active"><%= locale.title %></li>
+    </ol>
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="col-md-5">
+    <div class="box box-primary animated fadeInUp">
+        <div class="box-header">
+            <div class="pull-right help"><a class="col-sm-1 help-link" href="#"><i class="fa fa-question-circle"></i></a></div>
+            <h3 class="box-title"><%= locale.system_admin %></h3>
+        </div>
+        <div class="box-body">
+            <div class="alert alert-success hide">
+                <!-- <i class="fa fa-check"></i> -->
+                <!-- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> -->
+                <b><%= locale.strongSuccessMsg %></b> <%= locale.successMsg %>
+            </div>
+            <div class="alert alert-danger hide">
+                <!-- <i class="fa fa-ban"></i> -->
+                <!-- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> -->
+                <b><%= locale.strongFailureMsg %></b> <%= locale.failureMsg %>
+            </div>
+            <form action="javascript://" method="POST" role="form">
+                <div class="form-group"  >
+	<div class="alert alert-info help-item hide"    role="alert"><%= locale.system_adminusername_of_system_administrator_is_displayed_read_only %></div>
+    <label for="username"><%= locale.system_adminusername %></label>
+    <div class="form-control-static" id="idusername"></div>
+</div><div class="form-group"  >
+	<div class="alert alert-info help-item hide"    role="alert"><%= locale.system_admincheck_this_option_to_enable_user_access_for_system_administrator %></div>
+    <label>
+        <input type="checkbox" value="1" id="idenable_user_access" > <%= locale.system_adminenable_user_access %>
+    </label>
+</div><div class="form-group"  >
+	<div class="alert alert-info help-item hide"    role="alert"><%= locale.system_admincheck_this_option_to_change_the_existing_password_this_will_enable_the_password_fields %></div>
+    <label>
+        <input type="checkbox" value="1" id="idenable_change_password" > <%= locale.system_adminchange_password %>
+    </label>
+</div><div class="form-group"  >
+	<div class="alert alert-info help-item hide"    role="alert"><%= locale.system_adminenter_the_new_password_here_ul_lipassword_must_be_at_least_8_characters_longli_li_white_space_is_not_allowedli_ul_strongnotestrong_this_field_will_not_allow_more_than_64_characters %></div>
+    <label for="password"><%= locale.system_adminpassword %></label>
+    <input type="password" class="form-control" id="idpassword" value="" placeholder="">
+</div><div class="form-group"  >
+	<div class="alert alert-info help-item hide"    role="alert"><%= locale.system_adminenter_the_same_password_which_you_have_entered_in_the_password_field_to_confirm_the_password_ul_li_password_must_be_at_least_8_characters_longli_li_white_space_is_not_allowedli_ul_strongnotestrong_this_field_will_not_allow_more_than_64_characters %></div>
+    <label for="cpassword"><%= locale.system_adminconfirm_password %></label>
+    <input type="password" class="form-control" id="idcpassword" value="" placeholder="">
+</div><div class="pull-right">
+    <a class="btn btn-primary" id="save"><i id='save-icon' class="fa fa-save"></i> &nbsp; <%= locale.saveLabel %></a>
+</div>
+                <div class="clearfix"></div>
+            </form>
+        </div>
+        <!-- /.box-body -->
+    </div>
+</div>
+</section>

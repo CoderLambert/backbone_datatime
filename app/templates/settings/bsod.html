@@ -1,0 +1,42 @@
+<section class="content-header">
+    <h1>
+        <%= locale.title %>
+        <small> <%= locale.tag %> </small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-home"></i><%= locale.home %></a></li><li><a href="#settings"><%= locale.settings %></a></li>
+        <li class="active">
+           <%= locale.title %>
+        </li>
+    </ol>
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="pull-right help"><a class="col-sm-1 help-link" href="#"><i class="fa fa-question-circle"></i></a></div>
+    <div class="col-md-12">
+         <div class="alert alert-info help-item hide" role="alert"><%= locale.bsod_help %>
+                </div>
+    <div class="box box-primary animated fadeInUp">
+        <div class="box-header">
+            <!-- <div class="pull-right help"><a class="col-sm-1 help-link" href="#"><i class="fa fa-question-circle"></i></a></div> -->
+            <h3 class="box-title"><%= locale.bsodlast_bsod_screen_captured %></h3>
+        </div>
+        <div class="box-body">
+            <form action="javascript://" method="POST" role="form">
+                <div class="form-group">
+    <label>
+        <%= locale.bsod %>
+    </label>
+    <div id="rowDiv">
+
+    </div>
+	<!--<img class="img-responsive center-block" id="idbsod"></img>-->
+</div>
+                <div class="clearfix"></div>
+            </form>
+        </div>
+        <!-- /.box-body -->
+    </div>
+</div>
+</section>

@@ -1,0 +1,114 @@
+
+<section class="content-header">
+    <h1>
+        <%= locale.fw_FirmwareUpgrade %>
+        <small></small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-home"></i><%= locale.home %></a></li>
+        <li><a href="#systemMaintenance"><%= locale.maintenance %></a></li>
+        <li class="active"><%= locale.fw_FirmwareUpgrade %></li>
+    </ol>
+</section>
+
+<!-- Main content -->
+<section class="content tabs-content">
+    <div class="row" style="margin-top:-10px;margin-bottom:20px;">
+        <div class="col-md-12 tab">
+            <a id="fw_BMCFirmwareUpgrade" class="menu_tab" onclick="replace_url('#maintenance/firmware_update')"  ><%=locale.fw_BMCFirmwareUpgrade %></a>
+            <a id="fw_BIOSFirmwareUpgrade" class="menu_tab"  onclick="replace_url('#maintenance/BIOSFirmwareUpgrade')" ><%=locale.fw_BIOSFirmwareUpgrade %></a>
+            <a id="fw_CPLDUpgrade" class="menu_tab menu_active"  ><%=locale.fw_CPLDUpgrade %></a>
+            <a id="fw_PSUUpgrade" class="menu_tab" onclick="replace_url('#maintenance/PSUFirmwareUpgrade')" ><%=locale.fw_PSUUpgrade %></a>
+        	<a id="fw_BPUpgrade" class="menu_tab" data-feature="BP_SUPPORT" onclick="replace_url('#maintenance/BPFirmwareUpgrade')" ><%=locale.fw_BPUpgrade %></a>
+        </div>
+    </div>
+
+        <div class="box">
+            <div class="box-header">
+                <h3 class="box-title"></h3>
+            </div>
+            <div class="box-body">
+                <div class="alert alert-success alert-dismissable hide">
+                    <i class="fa fa-check"></i>
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <b><%= locale.strongSuccessMsg %></b>
+                    <%= locale.successMsg %>
+                </div>
+                <table cellspacing="0" cellpadding="0" border="0" width="100%">
+	   				<td valign="top" class="protocol_type-td">
+	   				<div>
+	   				    <%=locale.fwimage_maintance_info %>
+	   			 	</div>
+            		<div class="row">
+               			<div class="col-md-6">
+                  			 <label for="protocol_type"><%= locale.protocol_type %> <span id="protocol_type"></span></label>
+              			 </div>
+              			 <div class="col-md-6" ></div>
+            	    </div>
+            	    <div class="tftp" id="iddivtftp">
+            	    	<div class="row">
+               				<div class="col-md-6">
+                  			 	<label for="server_address"><%= locale.server_address %></label>
+              			 	</div>
+              				 <div class="col-md-6" id="server_address"></div>
+            	    	</div>
+            	   	    <div class="row">
+               				<div class="col-md-6">
+                  				 <label for="image_name"><%= locale.image_name %></label>
+              				 </div>
+              				 <div class="col-md-6" id="image_name"></div>
+            	  	    </div>
+
+            	    	<div class="row">
+               				<div class="col-md-6">
+                  			 	<label for="retry_count"><%= locale.retry_count %></label>
+              			 	</div>
+              			 	<div class="col-md-6" id="retry_count"></div>
+            	  		 </div>
+                    </div>
+	    			</td>
+	     		</table>
+                <div class="alert alert-danger alert-dismissable hide">
+                    <i class="fa fa-ban"></i>
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <b><%= locale.strongFailureMsg %></b>
+                    <%= locale.failureMsg %>
+                </div>
+                <div class="focus-center" id="iddivMain" style="margin-top: 20px">
+    				<div class="http" id="iddivhttp">
+                   	 <form action="javascript://" method="POST" role="form" name="bu_form">
+                       	 <div class="form-group">
+                          	<div>
+                                <label for="filefirmware_image" style="display: block;float: left;width: 10%;line-height: 34px">
+                                    <%= locale.fwimage %>
+                                </label>
+	                          	<input type="file" class="form-control" id="filefirmware_image" name="filefirmware_image" value="" placeholder="<%= locale.size512kb %>" style="display:none;" onchange="document.bu_form.bu_showPath.value=this.value" >
+								<input class="form-control" id="bu_showPath" name="bu_showPath" readonly="" value="<%= locale.size512kb %>" style="width:70%;float:left;color: #999;border-color: #dedede;">
+								<input value="<%= locale.selectFile %>" onclick="document.bu_form.filefirmware_image.click()" type="button" style="width:20%;float:right;padding:5px;">
+	                       		<div style="clear:both;"></div>
+	                       	</div>
+                       	</div>
+                     </div>
+                     <div id="upgrade_options" style="display:none;">
+                      	<div id="section_based_flashing_body">
+                         	<h3><%=locale.image_information%></h3>
+                             <p id="section_options"></p>
+                             <p id="check_info"><%=locale.diff_image_info %></p>
+                         </div>
+                      </div>
+
+                         <br/>
+
+                      <!--<div>-->
+                           <!--<a class="btn btn-success btn-lg btn-block" id="start"><%= locale.start_fw_update %></a>-->
+                      <!--</div>-->
+                    <div class="pull-right">
+                        <a class="btn btn-success" id="start"><%= locale.start_fw_update %></a>
+                    </div>
+
+            </div>
+            <!-- /.box-body -->
+                <div style="clear: both"></div>
+        </div>
+    </div>
+</section>

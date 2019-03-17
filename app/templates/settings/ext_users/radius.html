@@ -1,0 +1,33 @@
+<section class="content-header">
+    <h1>
+        <%= locale.title %>
+        <small> <%= locale.tag %> </small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-home"></i><%= locale.home %></a></li><li><a href="#settings"><%= locale.settings %></a></li><li><a href="#settings/ext_users"><%= locale.external_user_settings %></a></li>
+        <li class="active">
+           <%= locale.title %>
+        </li>
+    </ol>
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="box box-solid bg-gray-transparent pad10 animated fadeInUp">
+    <div class="row">
+        <div class="col-md-3"   >
+    <a href="#settings/ext_users/radius/general_radius" class="big-button">
+            
+            <div class="icon"><i class="fa fa-phone"></i></div>
+            <span class="name"><%= locale.general_radius_settings %></span>
+    </a>
+</div><div class="col-md-3"   >
+    <a href="#settings/ext_users/radius/advanced_radius" class="big-button">
+            
+            <div class="icon"><i class="fa fa-cogs"></i></div>
+            <span class="name"><%= locale.advanced_radius_settings %></span>
+    </a>
+</div>
+    </div>
+</div>
+</section>

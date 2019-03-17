@@ -1,0 +1,13 @@
+<div class="col-md-3 list-item" style="word-wrap:break-word;">
+       <div class='pull-right'>
+    <a class="hide delete" href="#settings/pef/alert_policies/edit/:id" title="Delete"><i class="ion ion-close-circled"></i></a>
+    </div>
+    <a href='#settings/pef/alert_policies/edit/:id'>
+        <div class="col-md-3 icon" style="float:left">
+            <i class="fa fa-bell-o iconic"></i>
+        </div>
+        <div class="col-md-9 contents" style="float:left">
+            <label  class='policy_group'><span><%= locale.group_ %></span><%= model.get('policy_group') %></label> <em  class='enable_policy'><% var av = model.get('enable_policy');var avset = false;%><% if(av == '1'){ avset = true; %><%= locale._active %><% } %><% if(av == '0'){ avset = true; %><%= locale._disabled %><% } %><% if(av == '-1'){ avset = true; %><%= locale._ %><% } %><% if(avset == false) { %><%= av %><% } %></em> <div  class='policy_action'><% var av = model.get('policy_action');var avset = false;%><% if(av == 'always_send_alert'){ avset = true; %><%= locale.always_send_alert_to_this_destination %><% } %><% if(av == 'skip_on_prev_success_and_proceed'){ avset = true; %><%= locale.if_previous_successful_skip_this_and_continue_if_configured %><% } %><% if(av == 'stop_on_prev_success'){ avset = true; %><%= locale.if_previous_successful_stop_alerting_further %><% } %><% if(av == 'switch_channel_on_prev_success'){ avset = true; %><%= locale.if_previous_successful_switch_to_another_channel_if_configured %><% } %><% if(av == 'switch_alert_type_on_prev_success'){ avset = true; %><%= locale.if_previous_successful_switch_to_methods_if_configured %><% } %><% if(avset == false) { %><%= av %><% } %></div> <label  class='channel_number'><span><%= locale.lan_channel_ %></span><%= model.get('channel_number') %></label> <div  class='destination_id'><span><%= locale.sent_to_ %></span><%= model.get('destination_id') %></div>             
+        </div>
+    </a>
+</div>

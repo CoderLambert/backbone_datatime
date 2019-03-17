@@ -1,0 +1,27 @@
+define({
+    "home": "主页",
+    "bmc_settings": "BMC 设置",
+    "title": "安全设置",
+    "upload_ssl": "",
+    "strongSuccessMsg": "HTTPS证书已上传，页面将在 30秒 后自动跳转到登录页面，请重新登录使新凭证生效!",
+    "successMsg": "",
+    "strongFailureMsg": "上传SSL证书时出错",
+    "failureMsg": "",
+    "upload_sslcurrent_certificate": "当前凭证",
+    "upload_sslthe_information_as_current_certificate_and_uploaded_datetime_will_be_displayed_readonly": "将显示当前证书和上载日期\/时间的信息（只读）",
+    "upload_sslnew_certificate": "新凭证",
+    "upload_sslbrowse_and_navigate_to_the_certificate_fileulli_certificate_file_should_be_of_pem_typeliul": "浏览并导航到证书文件。<ul><li>证书文件应为pem类型<\/li><\/ul>",
+    "upload_sslcurrent_private_key": "当前私钥",
+    "upload_sslthe_information_as_current_private_key_and_uploaded_datetime_will_be_displayed_readonly": "将显示当前私钥和上传日期\/时间的信息（只读）",
+    "upload_sslnew_private_key": "新的私钥",
+    "upload_sslbrowse_and_navigate_to_the_private_key_fileulli_private_key_file_should_be_of_the_type_pem_liul": "浏览并导航到私钥文件。<ul><li> 私钥文件应为pem类型 <\/li><\/ul>",
+    "saveLabel": "上传",
+    "view_ssl_certificate": "查看SSL证书",
+    "generate_ssl_certificate": "生成SSL证书",
+    "upload_ssl_certificate": "上传SSL证书",
+    "loginControl": "登录控制",
+    "snmpv": "SNMP V1/V2 设置",
+    "ssl_settings": "SSL 设置",
+    "user_badpassword": "用户密码锁定设置"
+});
+

@@ -1,0 +1,184 @@
+<section class="content-header">
+    <h1>
+        <%= locale.power_energy %>
+        <small></small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-home"></i><%= locale.home %></a></li>
+		<li><a href="#longRangeControl"><%= locale.parenttitle %></a></li>
+        <!-- <li><a href="#server-configuration"><%= locale.server_config %></a></li> -->
+        <li class="active"><%= locale.power_energy %></li>
+    </ol>
+</section>
+
+<!-- Main content -->
+<section class="content tabs-content">
+
+	<div class="row" style="margin-top:-10px;margin-bottom:20px;">
+		<div class="col-md-12 tab">
+			<a id="pe_power_control" class="menu_tab" onclick="replace_url('#power-control')" ><%=locale.pe_power_control %></a>
+			<a id="pe_power_hot_standby" class="menu_tab" onclick="replace_url('#server-configuration/power_hot_standby')" ><%=locale.pe_power_hot_standby %></a>
+			<a id="pe_me_power_policy" class="menu_tab menu_active"  ><%=locale.pe_me_power_policy %></a>
+			<a id="pe_power_restore_control" class="menu_tab" onclick="replace_url('#server-configuration/power_restore_ctrl')" ><%=locale.pe_power_restore_control %></a>
+            <!-- // ks_lz_20170711  power button lock ++>>  -->
+            <a id="pe_power_button_lock" class="menu_tab" onclick="replace_url('#server-configuration/power_button_lock')" > <%=locale.pe_power_button_lock %></a>
+            <!-- // ks_lz_20170711  power button lock ++>>  -->   		
+		</div>
+	</div>
+
+	<div class="box">
+		<div class="box-header">
+			<h3 class="box-title"><i class="fa fa-bookmark-o"></i> <%= locale.status %></h3>
+		</div>
+		<div class="box-body" id="me-static-content">
+			<table class="table table-body footable">
+				<tr class="footable-odd">
+					<th width="25%"><%=locale.domain%></th>
+					<th width="25%"><%=locale.current_power%></th>
+					<th width="25%"><%=locale.min_power%></th>
+					<th width="25%"><%=locale.max_power%></th>
+				</tr>
+			</table>
+			<div class='info'><i class='fa fa-info-circle'></i> <%=locale.load %></div>
+		</div>
+	</div>
+	<div class="box">
+                <div class="box-header">
+                    <h3 class="box-title"><i class="fa fa-bookmark-o"></i> <%= locale.policy %></h3>
+                </div>
+                <div class="box-body" id="me-policy-content">
+                    <table class="table table-body footable">
+
+                        <tr class="footable-odd">
+                            <th width="25%"><%=locale.policy_item%></th>
+                            <th width="25%"><%=locale.whether_enable%></th>
+                            <th width="25%"><%=locale.limiting_value%></th>
+                            <th width="25%"><%=locale.operation%></th>
+                        </tr>
+
+						<!-- 全平台配置 -->
+                        <tr id="me_policy_1" class="">
+							<td id="me_entire_0">
+								<span id="me_policy_open_1" style="margin-right:10px;cursor: pointer;">
+									<img id="me_policy_openImg_1" src="../../../images/icon_open1.png" onMouseOver="this.src='../../../images/icon_open2.png'" onMouseOut="this.src='../../../images/icon_open1.png'">
+									<img id="me_policy_cloImg_1" src="../../../images/icon_close.png" style="display:none;">
+								</span>
+								<%=locale.entire_limit%>
+							</td>
+							<td id="me_entire_1"></td>
+							<td id="me_entire_2"></td>
+							<td>
+								<div id="me_policy_edit_1" style="cursor: pointer;">
+									<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+									<%=locale.modify%>
+								</div>
+							</td>
+						</tr>
+						<tr id="me_policy_form_1" style="display:none;">
+							<td colspan="4" style="border-bottom: 1px solid #e3e3e3; border-top: 1px solid #e3e3e3;">
+								<!-- 全平台表单 -->
+					            <div class="form-group" style="margin-left:20px;">
+					               <label for="me_entire_enable" class="col-sm-2"><%=locale.whether_enable%></label>
+					               <input id="me_entire_enable" data-size="small" type="checkbox">
+					            </div>
+					            <div class="form-group" style="margin-left:20px;">
+					               <div class="alert alert-info help-item"><%=locale.recommend_min_val_help%></div>
+					               <label id="me_entire_max_label" for="me_entire_max" class="col-sm-2"><%=locale.policy_max%></label>
+					               <input id="me_entire_max" maxlength="4" value="" placeholder="N/A" onkeyup="value=value.replace(/[^\0-9.-]/g,'');" style="width:200px;margin-right: 20px" type="text" data-toggle="tooltip">
+									<span id="me_max_tip_entire" class="alert alert-danger" style="padding: 5px !important;display: none"></span>
+					               <a class="btn btn-default" id="me_policy_cancel_1" style="float:right;margin-right:10px;">
+					               		<%=locale.cancel%>
+					               </a>
+					               <a class="btn btn-primary" id="me_policy_save_1" style="float:right;margin-right:10px;">
+					               		<i id="save-icon" class="fa fa-save"></i>&nbsp;<%=locale.saveLabel%>
+					               </a>
+					            </div>
+							</td>
+						</tr>
+
+						<!-- CPU配置 -->
+                        <tr id="me_policy_2" class="footable-odd">
+							<td id="me_CPU_0">
+								<span id="me_policy_open_2" style="margin-right:10px;cursor: pointer;" >
+									<img id="me_policy_openImg_2" src="../../../images/icon_open1.png" onMouseOver="this.src='../../../images/icon_open2.png'" onMouseOut="this.src='../../../images/icon_open1.png'">
+									<img id="me_policy_cloImg_2" src="../../../images/icon_close.png" style="display:none;">
+								</span>
+								<%=locale.cpu_limit%>
+							</td>
+							<td id="me_CPU_1"></td>
+							<td id="me_CPU_2"></td>
+							<td>
+								<div id="me_policy_edit_2" style="cursor: pointer;">
+									<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+									<%=locale.modify%>
+								</div>
+							</td>
+						</tr>
+						<tr id="me_policy_form_2" style="display:none;">
+							<td colspan="4" style="border-bottom: 1px solid #e3e3e3; border-top: 1px solid #e3e3e3;">
+								<!-- CPU表单 -->
+					            <div class="form-group" style="margin-left:20px;">
+					               <label for="me_CPU_enable" class="col-sm-2"><%=locale.whether_enable%></label>
+					               <input id="me_CPU_enable" data-size="small" type="checkbox">
+					            </div>
+					            <div class="form-group" style="margin-left:20px;">
+					               <label id="me_CPU_max_label" for="me_CPU_max" class="col-sm-2"><%=locale.policy_max%></label>
+					               <input id="me_CPU_max" maxlength="3" value="" placeholder="N/A" onkeyup="value=value.replace(/[^\0-9.-]/g,'');" style="width:200px;margin-right: 20px" type="text" data-toggle="tooltip">
+									<span id="me_max_tip_CPU" class="alert alert-danger" style="padding: 5px !important;display: none"></span>
+					               <a class="btn btn-default" id="me_policy_cancel_2" style="float:right;margin-right:10px;">
+					               		<%=locale.cancel%>
+					               </a>
+					               <a class="btn btn-primary" id="me_policy_save_2" style="float:right;margin-right:10px;">
+					               		<i id="save-icon" class="fa fa-save"></i>&nbsp;<%=locale.saveLabel%>
+					               </a>
+					            </div>
+							</td>
+						</tr>
+
+						<!-- 内存配置 -->
+                        <tr id="me_policy_3" class="">
+							<td id="me_MEM_0">
+								<span id="me_policy_open_3" style="margin-right:10px;cursor: pointer;" >
+									<img id="me_policy_openImg_3" src="../../../images/icon_open1.png" onMouseOver="this.src='../../../images/icon_open2.png'" onMouseOut="this.src='../../../images/icon_open1.png'">
+									<img id="me_policy_cloImg_3" src="../../../images/icon_close.png" style="display:none;">
+								</span>
+								<%=locale.mem_limit%>
+							</td>
+							<td id="me_MEM_1"></td>
+							<td id="me_MEM_2"></td>
+							<td>
+								<div id="me_policy_edit_3" style="cursor: pointer;">
+									<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+									<%=locale.modify%>
+								</div>
+							</td>
+						</tr>
+						<tr id="me_policy_form_3" style="display:none;">
+							<td colspan="4" style="border-bottom: 1px solid #e3e3e3; border-top: 1px solid #e3e3e3;">
+								<!-- 内存表单 -->
+					            <div class="form-group" style="margin-left:20px;">
+					               <label for="me_MEM_enable" class="col-sm-2"><%=locale.whether_enable%></label>
+					               <input id="me_MEM_enable" data-size="small" type="checkbox">
+					            </div>
+					            <div class="form-group" style="margin-left:20px;">
+					               <label id="me_MEM_max_label" for="me_MEM_max" class="col-sm-2"><%=locale.policy_max%></label>
+					               <input id="me_MEM_max" maxlength="3" value="" placeholder="N/A" onkeyup="value=value.replace(/[^\0-9.-]/g,'');" style="width: 200px;margin-right: 20px" type="text" data-toggle="tooltip">
+									<span id="me_max_tip_MEM" class="alert alert-danger" style="padding: 5px !important;display: none"></span>
+					               <a class="btn btn-default" id="me_policy_cancel_3" style="float:right;margin-right:10px;">
+					               		<%=locale.cancel%>
+					               </a>
+					               <a class="btn btn-primary" id="me_policy_save_3" style="float:right;margin-right:10px;">
+					               		<i id="save-icon" class="fa fa-save"></i>&nbsp;<%=locale.saveLabel%>
+					               </a>
+					            </div>
+							</td>
+						</tr>
+
+                    </table>
+                    <div id="me_alert_info" class="alert alert-success" role="alert" style="text-align:center;margin-top:10px;display:none;"></div>
+                    <!-- <div class='info'><i class='fa fa-info-circle'></i><%=locale.load %></div> -->
+                </div>
+            </div>
+
+
+</section>

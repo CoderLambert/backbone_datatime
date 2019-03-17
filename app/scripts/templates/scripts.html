@@ -1,0 +1,106 @@
+<section class="content-header">
+    <h1>
+         <%=locale.scripts%>
+        <small> <%=locale.available_scriptauto%> </small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-home"></i>  <%=locale.home%> </a>
+        </li>
+        <li class="active">
+            <%=locale.scripts%>
+        </li>
+    </ol>
+</section>
+<div id="upload-modal" style="position: absolute; z-index: 10000;left: 33%;" hidden>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <!--<a href="#" class="close"></a>-->
+                <button type="button" class="close">×</button>
+                <h4>Upload Script</h4>
+            </div>
+            <div class="modal-body">
+                Browse:
+                <input id="script-file" type="file" name="script" />
+            </div>
+            <div class="modal-footer">
+                <button id="add-script" class="btn btn-success">Add to library</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Main content -->
+<section class="content">
+    <div class="pull-right help"><a class="col-sm-1 help-link" href="#"><i class="fa fa-question-circle"></i></a></div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="alert alert-info help-item hide" role="alert">
+                <%= locale.script_help %>
+            </div>
+            <!--search events -->
+            <div class="pull-right">
+                <button type="button" class="btn btn-primary btnUpload"><i class="fa fa-upload"></i>
+                    <%=locale.upload_script%>
+                </button>
+            </div>
+            <!--<div class="form-group col-sm-6">
+                <div class="input-group" id="filter">
+                    <input type="text" class="form-control" placeholder="<%=locale.seach_scripts%>" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon-search glyphicon"></span>
+                    </span>
+                </div>
+            </div>-->
+        </div>
+    </div>
+    <table class="footable table">
+        <thead>
+            <tr>
+                <th data-type="numeric" >
+                    <%= locale.script_id %>
+                </th>
+                <th data-hide='phone'>
+                    <%= locale.name %>
+                </th>
+                <th>
+                    <%= locale.creator %>
+                </th>
+                <th>
+                    <%= locale.actions %>
+                </th>
+            </tr>
+        </thead>
+        <tbody class="table-body">
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="4">
+                    <div class="pagination pagination-centered hide-if-no-paging"></div>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+    <!--<div class="container-fluid scripts-container">
+        <div class="row scripts-head hidden-xs hidden-sm">
+            <div class="col-md-1">
+                <%=locale.script_id%>
+            </div>
+            <div class="col-md-4">
+                <%=locale.name%>
+            </div>
+            <div class="col-md-2">
+                <%=locale.creator%>
+            </div>
+            <div class="col-md-3">
+                <%=locale.time%>
+            </div>
+            <div class="col-md-2">
+                <%=locale.actions%>
+            </div>
+        </div>
+        <div class="row scripts-list">
+        </div>
+    </div>-->
+</section>
+

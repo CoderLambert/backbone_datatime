@@ -1,0 +1,99 @@
+<section class="content-header">
+    <h1>
+        <%= locale.title %>
+        <small> <%= locale.tag %> </small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-home"></i><%= locale.home %></a></li>
+        <li class="active">
+           <%= locale.title %>
+        </li>
+    </ol>
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="box box-solid bg-gray-transparent pad10 animated fadeInUp">
+    <div class="row">
+        <div class="col-md-3" data-feature='BACKUP_CONFIG'  >
+    <a href="#maintenance/backup_config" class="big-button">
+            
+            <div class="icon"><i class="fa fa-download"></i></div>
+            <span class="name"><%= locale.backup_configuration %></span>
+    </a>
+</div><div class="col-md-3" data-feature='BMC_RECOVERY'  >
+    <a href="#maintenance/bmc_recovery" class="big-button">
+            
+            <div class="icon"><i class="fa fa-toggle-up"></i></div>
+            <span class="name"><%= locale.bmc_recovery %></span>
+    </a>
+</div><div class="col-md-3" data-feature='DUAL_IMAGE'  >
+    <a href="#maintenance/dual_firmware_update" class="big-button">
+            
+            <div class="icon"><i class="fa fa-toggle-up"></i></div>
+            <span class="name"><%= locale.dual_firmware_update %></span>
+    </a>
+</div><div class="col-md-3" data-feature='DUAL_IMAGE'  >
+    <a href="#maintenance/dual_image_config" class="big-button">
+            
+            <div class="icon"><i class="fa ion-settings"></i></div>
+            <span class="name"><%= locale.dual_image_configuration %></span>
+    </a>
+</div><div class="col-md-3" data-feature='FW_IMAGE'  >
+    <a href="#maintenance/fwimage_location" class="big-button">
+            
+            <div class="icon"><i class="fa fa-file-zip-o"></i></div>
+            <span class="name"><%= locale.firmware_image_location %></span>
+    </a>
+</div><div class="col-md-3"   >
+    <a href="#maintenance/fwinfo" class="big-button">
+            
+            <div class="icon"><i class="ion-information-circled"></i></div>
+            <span class="name"><%= locale.firmware_information %></span>
+    </a>
+</div><div class="col-md-3" data-not-feature='DUAL_IMAGE'  >
+    <a href="#maintenance/firmware_update" class="big-button">
+            
+            <div class="icon"><i class="fa fa-toggle-up"></i></div>
+            <span class="name"><%= locale.firmware_update %></span>
+    </a>
+</div><div class="col-md-3" data-feature='HPM_SUPPORT'  >
+    <a href="#maintenance/hpm_firmware_update" class="big-button">
+            
+            <div class="icon"><i class="fa fa-toggle-up"></i></div>
+            <span class="name"><%= locale.hpm_firmware_update %></span>
+    </a>
+</div><div class="col-md-3" data-feature='ME_SUPPORT'  >
+    <a href="#maintenance/nm_firmware_update" class="big-button">
+            
+            <div class="icon"><i class="fa fa-toggle-up"></i></div>
+            <span class="name"><%= locale.me_firmware_update %></span>
+    </a>
+</div><div class="col-md-3" data-feature='PRESERVECONF'  >
+    <a href="#maintenance/preserve_configuration" class="big-button">
+            
+            <div class="icon"><i class="ion-locked"></i></div>
+            <span class="name"><%= locale.preserve_configuration %></span>
+    </a>
+</div><div class="col-md-3" data-feature='BACKUP_CONFIG'  >
+    <a href="#maintenance/restore_config" class="big-button">
+            
+            <div class="icon"><i class="fa fa-upload"></i></div>
+            <span class="name"><%= locale.restore_configuration %></span>
+    </a>
+</div><div class="col-md-3"   >
+    <a href="#maintenance/restore_configuration" class="big-button">
+            
+            <div class="icon"><i class="fa fa-undo"></i></div>
+            <span class="name"><%= locale.restore_factory_defaults %></span>
+    </a>
+</div><div class="col-md-3"   >
+    <a href="#maintenance/system_admin" class="big-button">
+            
+            <div class="icon"><i class="ion-ribbon-b"></i></div>
+            <span class="name"><%= locale.system_administrator %></span>
+    </a>
+</div>
+    </div>
+</div>
+</section>

@@ -1,0 +1,13 @@
+<div class="col-md-3 list-item" style="word-wrap:break-word;">
+       <div class='pull-right'>
+    <a class="hide delete" href="#settings/ext_users/active_directory/rolegroup_active_directory/edit/:id" title="Delete"><i class="ion ion-close-circled"></i></a>
+    </div>
+    <a href='#settings/ext_users/active_directory/rolegroup_active_directory/edit/:id'>
+        <div class="col-md-3 icon" style="float:left">
+            <i class="fa fa-users iconic"></i>
+        </div>
+        <div class="col-md-9 contents" style="float:left">
+            <label  class='role_group_name'><% var av = model.get('role_group_name');var avset = false;%><% if(av == ''){ avset = true; %><%= locale.none %><% } %><% if(avset == false) { %><%= av %><% } %></label> <div data-feature='OEM_PROPRIETARY_LEVEL_SUPPORT' class='role_group_withoem_privilege'><% var av = model.get('role_group_withoem_privilege');var avset = false;%><% if(av == 'none'){ avset = true; %><%= locale.no_access %><% } %><% if(av == 'administrator'){ avset = true; %><%= locale.administrator %><% } %><% if(av == 'oem'){ avset = true; %><%= locale.oem %><% } %><% if(av == 'operator'){ avset = true; %><%= locale.operator %><% } %><% if(av == 'user'){ avset = true; %><%= locale.user %><% } %><% if(avset == false) { %><%= av %><% } %></div> <div data-not-feature='OEM_PROPRIETARY_LEVEL_SUPPORT' class='role_group_privilege'><% var av = model.get('role_group_privilege');var avset = false;%><% if(av == 'none'){ avset = true; %><%= locale.no_access %><% } %><% if(av == 'administrator'){ avset = true; %><%= locale.administrator %><% } %><% if(av == 'operator'){ avset = true; %><%= locale.operator %><% } %><% if(av == 'user'){ avset = true; %><%= locale.user %><% } %><% if(avset == false) { %><%= av %><% } %></div> <div class='capabilities tags'><span class='role_group_kvm_privilege'><%= locale.kvm %></span> <span class='role_group_vmedia_privilege'><%= locale.vmedia %></span> </div><div  class='role_group_domain'><%= model.get('role_group_domain') %></div>             
+        </div>
+    </a>
+</div>

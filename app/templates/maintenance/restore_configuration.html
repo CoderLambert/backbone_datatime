@@ -1,0 +1,136 @@
+<section class="content-header">
+    <h1>
+        <%= locale.fw_FirmwareUpgrade %>
+        <small></small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-home"></i><%= locale.home %></a></li>
+        <li><a href="#systemMaintenance"><%= locale.maintenance %></a></li>
+        <li class="active"><%= locale.fw_FirmwareUpgrade %></li>
+    </ol>
+</section>
+
+<!-- Main content -->
+<section class="content tabs-content">
+    <div class="row" style="margin-top:-10px;margin-bottom:20px;">
+        <div class="col-md-12 tab">
+            <a id="fw_BMCFirmwareUpgrade" class="menu_tab menu_active" ><%=locale.fw_BMCFirmwareUpgrade %></a>
+            <a id="fw_BIOSFirmwareUpgrade" class="menu_tab" onclick="replace_url('#maintenance/BIOSFirmwareUpgrade')" ><%=locale.fw_BIOSFirmwareUpgrade %></a>
+            <a id="fw_CPLDUpgrade" class="menu_tab"  onclick="replace_url('#maintenance/CPLDFirmwareUpgrade')" ><%=locale.fw_CPLDUpgrade %></a>
+            <a id="fw_PSUUpgrade" class="menu_tab" onclick="replace_url('#maintenance/PSUFirmwareUpgrade')" ><%=locale.fw_PSUUpgrade %></a>
+        	<a id="fw_BPUpgrade" class="menu_tab" data-feature="BP_SUPPORT" onclick="replace_url('#maintenance/BPFirmwareUpgrade')" ><%=locale.fw_BPUpgrade %></a>
+        </div>
+    </div>
+
+    <div class="box">
+        <div class="box-header">
+            <ul class="my-tabs">
+                <li><a onclick="replace_url('#maintenance/firmware_update')"><%= locale.fw_edit_conf %></a></li>
+                <li class="my-tabs-active"><a><%= locale.fw_restore_conf %></a></li>
+                <li><a onclick="replace_url('#maintenance/fwimage_location')"><%= locale.fw_fwimage_location %></a></li>
+            </ul>
+            <div class="pull-right help"><a class="col-sm-1 help-link" href="#"><i class="fa fa-question-circle"></i></a>
+            </div>
+        </div>
+        <div class="box-body">
+            <div class="alert alert-success alert-dismissable hide">
+                <i class="fa fa-check"></i>
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
+                <b><%= locale.strongSuccessMsg %></b>
+                <%= locale.successMsg %>
+            </div>
+
+            <div class="alert alert-danger alert-dismissable hide">
+                <i class="fa fa-ban"></i>
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
+                <b><%= locale.strongFailureMsg %></b>
+                <%= locale.failureMsg %>
+            </div>
+            <div class="alert alert-info help-item hide"    role="alert"><%= locale.restore_configurationto_preserve_any_existing_configuration_data_goto_a_hrefmaintenancepreserve_configurationpreserve_configurationa_page_and_select_them %></div>
+            <label for="info"><%= locale.restore_configurationfollowing_checked_configuration_will_be_preserved_you_can_make_changes_to_them_in_a_hrefmaintenancepreserve_configurationpreserve_configurationa_page %></label>
+            <div class="box">
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-md-12 table-list">
+                            <table class="footable table">
+                                <tbody class="table-body">
+                                <tr>
+                                    <td style="width: 5%;text-align: center;"><label for="idsdr"><input type="checkbox" value="1" id="idsdr" ></label></td>
+                                    <td><%= locale.restore_configurationsdr %></td>
+                                </tr>
+
+                                <tr>
+                                    <td style="text-align: center"><label for="idfru"><input type="checkbox" value="1" id="idfru" ></label></td>
+                                    <td><%= locale.restore_configurationfru %></td>
+                                </tr>
+
+                                <tr>
+                                    <td style="text-align: center"><label for="idsel"><input type="checkbox" value="1" id="idsel" ></label></td>
+                                    <td><%= locale.restore_configurationsel %></td>
+                                </tr>
+
+                                <tr>
+                                    <td style="text-align: center"><label for="idipmi"><input type="checkbox" value="1" id="idipmi" ></label></td>
+                                    <td><%= locale.restore_configurationipmi %></td>
+                                </tr>
+
+                                <tr>
+                                    <td style="text-align: center"><label for="idnetwork"><input type="checkbox" value="1" id="idnetwork" ></label></td>
+                                    <td><%= locale.restore_configurationnetwork %></td>
+                                </tr>
+
+                                <tr>
+                                    <td style="text-align: center"><label for="idntp"><input type="checkbox" value="1" id="idntp" ></label></td>
+                                    <td><%= locale.restore_configurationntp %></td>
+                                </tr>
+
+                                <tr>
+                                    <td style="text-align: center"><label for="idsnmp"><input type="checkbox" value="1" id="idsnmp" ></label></td>
+                                    <td><%= locale.restore_configurationsnmp %></td>
+                                </tr>
+
+                                <tr>
+                                    <td style="text-align: center"><label for="idssh"><input type="checkbox" value="1" id="idssh" ></label></td>
+                                    <td><%= locale.restore_configurationssh %></td>
+                                </tr>
+
+                                <tr>
+                                    <td style="text-align: center"><label for="idkvm"><input type="checkbox" value="1" id="idkvm" ></label></td>
+                                    <td><%= locale.restore_configurationkvm %></td>
+                                </tr>
+
+                                <tr>
+                                    <td style="text-align: center"><label for="idauthentication"><input type="checkbox" value="1" id="idauthentication" ></label></td>
+                                    <td><%= locale.restore_configurationauthentication %></td>
+                                </tr>
+
+                                <tr>
+                                    <td style="text-align: center"><label for="idsyslog"><input type="checkbox" value="1" id="idsyslog" ></label></td>
+                                    <td><%= locale.restore_configurationsyslog %></td>
+                                </tr>
+
+                                <tr>
+                                    <td style="text-align: center"><label for="idweb"><input type="checkbox" value="1" id="idweb" ></label></td>
+                                    <td><%= locale.restore_configurationweb %></td>
+                                </tr>
+
+                                <tr>
+                                    <td style="text-align: center"><label for="idredfish"><input type="checkbox" value="1" id="idredfish" ></label></td>
+                                    <td><%= locale.restore_configurationredfish %></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pull-right">
+                <a class="btn btn-primary" style="margin: 10px;" id="save"><i id='save-icon' class="fa fa-save"></i> &nbsp; <%= locale.saveLabel %></a>
+            </div>
+            <div class="clearfix"></div>
+
+            <!-- /.box-body -->
+        </div>
+    </div>
+</section>

@@ -1,0 +1,83 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        <%= locale.power_energy %>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-home"></i> <%= locale.home %></a></li>
+        <li><a href="#longRangeControl"><%= locale.parenttitle %></a></li>
+        <li class="active"><%= locale.power_energy %></li>
+    </ol>
+</section>
+<!-- Main content -->
+<section class="content tabs-content">
+
+    <div class="row" style="margin-top:-10px;margin-bottom:20px;">
+        <div class="col-md-12 tab">
+            <a id="pe_power_control" class="menu_tab" onclick="replace_url('#power-control')" ><%=locale.pe_power_control %></a>
+            <a id="pe_power_hot_standby" class="menu_tab" onclick="replace_url('#server-configuration/power_hot_standby')" ><%=locale.pe_power_hot_standby %></a>
+            <a id="pe_me_power_policy" class="menu_tab" onclick="replace_url('#server-configuration/me_power_policy')" ><%=locale.pe_me_power_policy %></a>
+            <a id="pe_power_restore_control" class="menu_tab menu_active" ><%=locale.pe_power_restore_control %></a>
+            <!-- // ks_lz_20170711  power button lock ++>>  -->
+            <a id="pe_power_button_lock" class="menu_tab" onclick="replace_url('#server-configuration/power_button_lock')" > <%=locale.pe_power_button_lock %></a>
+            <!-- // ks_lz_20170711  power button lock ++>>  -->          
+        </div>
+    </div>
+
+    <div class="box">
+            <div class="box-header">
+                <div class="pull-right help"><a class="col-sm-1 help-link" href="#"><i class="fa fa-question-circle"></i></a></div>
+                <h3 class="box-title"></h3>
+            </div>
+
+            <div class="alert alert-info help-item hide" role="alert"><%= locale.help_selection %></div>
+
+            <div class="box-body" id="pow_res_status">
+                    <div class='info'><i class='fa fa-info-circle'></i> <%=locale.load%></div>
+            </div>
+
+            <div class="box-body">
+                <form action="javascript://" method="POST" role="form">
+                    <div class="form-group">
+                        <label>
+                            <input type='radio' value='2' name='pow_res_command' id='pow_res_on_command'> <%= locale.always_on %>
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <input type='radio' value='0' name='pow_res_command' id='pow_res_off_command'> <%= locale.always_off %>
+                        </label>
+
+                    </div>
+                   <div class="form-group">
+                        <label>
+                            <input type='radio' value='1' name='pow_res_command' id='pow_res_last_state_command'> <%= locale.last_state %>
+                        </label>
+                    </div>
+                   <!--   ks_lz20190121_off_peak ++>> --> 
+                   <div class="form-group" id="pow_on_time_mode">
+                        <label>
+                            <input type='radio' value='0' name='pow_on_time_mode_name' id='pow_on_time_mode_off_peak'> <%= locale.off_peak_label %>
+                        </label>
+                        
+                        <label>
+                            <input type='radio' value='1' name='pow_on_time_mode_name' id='pow_on_time_mode_nonramdom'><%= locale.non_randome_time_label %>
+                        </label>
+                    </div>
+                   <!--   ks_lz20190121_off_peak ++<< -->                     
+                    
+                    <div class="form-group" id="pow_off_peak_div">
+                        	<label for="pow_off_peak_time" id="pow_on_time_mode_label"><%= locale.power_on_times %></label>
+							<input id="pow_off_peak_time" type="text" maxlength="3" value="" onkeyup="value=value.replace(/[^\0-9.-]/g,'');" style="border:1px solid #ccc;" data-toggle="tooltip">
+                    </div>
+
+
+                    <div class="pull-right">
+                        <a class="btn btn-primary" id="save"><i id='save-icon' class="fa fa-power-off"></i> &nbsp; <%= locale.perform_action %></a>
+                    </div>
+                    <div class="clearfix"></div>
+                </form>
+            </div>
+        </div>
+</section>
+<!-- /.content -->

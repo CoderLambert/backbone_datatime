@@ -1,0 +1,39 @@
+<section class="content-header">
+    <h1>
+        <%= locale.title %>
+        <small> <%= locale.tag %> </small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-home"></i><%= locale.home %></a></li><li><a href="#settings"><%= locale.settings %></a></li>
+        <li class="active">
+           <%= locale.title %>
+        </li>
+    </ol>
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="box box-solid bg-gray-transparent pad10 animated fadeInUp">
+    <div class="row">
+        <div class="col-md-3" data-feature='LDAP_SUPPORT'  >
+    <a href="#settings/ext_users/ldap" class="big-button">
+            
+            <div class="icon"><i class="fa fa-book"></i></div>
+            <span class="name"><%= locale.ldapedirectory_settings %></span>
+    </a>
+</div><div class="col-md-3" data-feature='AD_SUPPORT'  >
+    <a href="#settings/ext_users/active_directory" class="big-button">
+            
+            <div class="icon"><i class="ion-ios-book"></i></div>
+            <span class="name"><%= locale.active_directory_settings %></span>
+    </a>
+</div><div class="col-md-3" data-feature='RADIUS_SUPPORT'  >
+    <a href="#settings/ext_users/radius" class="big-button">
+            
+            <div class="icon"><i class="fa fa-phone"></i></div>
+            <span class="name"><%= locale.radius_settings %></span>
+    </a>
+</div>
+    </div>
+</div>
+</section>

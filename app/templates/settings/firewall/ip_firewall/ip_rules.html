@@ -1,0 +1,57 @@
+<section class="content-header">
+    <h1>
+        <%= locale.title %>
+        <small> <%= locale.tag %> </small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-home"></i><%= locale.home %></a></li><li><a href="#settings"><%= locale.settings %></a></li><li><a href="#settings/firewall"><%= locale.firewall %></a></li><li><a href="#settings/firewall/ip_firewall"><%= locale.ip_oriented_firewall_rules %></a></li>
+        <li class="active">
+           <%= locale.title %>
+        </li>
+    </ol>
+	<div class="pull-right help"><a class="col-sm-1 help-link" href="#"><i class="fa fa-question-circle"></i></a></div>
+</section>
+
+<!-- Main content -->
+<section class="content">
+
+<div class="alert alert-info help-item hide"   role="alert"><%= locale.ip_rulesthis_page_displays_list_of_existing_ip_firewall_rulesbrclick_i_classion_ionclosecircledi_icon_to_delete_an_item_from_the_listbrto_view_the_page_user_must_at_least_be_an_operator_to_add_or_delete_a_firewall_user_must_be_an_administrator %></div>
+
+        <div class="alert alert-success hide">             
+		<b><%= locale.strongSuccessMsg %></b> <%= locale.successMsg %>
+	</div>
+	<div class="alert alert-danger hide">
+		<b><%= locale.strongFailureMsg %></b> <%= locale.failureMsg %>
+	</div>
+	<div class="row">
+        <div class="col-md-12">
+            <!--search events -->
+            <!--<div class="col-sm-6">
+                <div class="form-group">
+                    <div class="input-group" id="filter">
+                        <input type="text" class="form-control" placeholder="Search <%= locale.title %>" />
+                        <span class="input-group-addon">
+                            <span class="glyphicon-search glyphicon"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>-->
+		
+        </div>
+    </div>
+   		
+    <div class="row">
+        <div class="col-md-12 list" id="rulegroup_list">
+            <div class="col-md-3 list-item list-add-item hide" style="height:150px;">
+                <a href='%%add-link'>
+                    <div class="col-md-3 icon">
+                        <i class="ion-plus-circled iconic"></i>
+                    </div>
+                    <div class="col-md-9 contents">
+                        %%add-text
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

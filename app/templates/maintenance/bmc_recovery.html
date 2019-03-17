@@ -1,0 +1,64 @@
+<section class="content-header">
+    <h1>
+        <%= locale.title %>
+        <small> <%= locale.tag %> </small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-home"></i><%= locale.home %></a></li><li><a href="#systemMaintenance"><%= locale.system_maintenance %></a></li>
+        <li class="active">
+           <%= locale.title %>
+        </li>
+    </ol>
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="col-md-5">
+    <div class="box box-primary animated fadeInUp">
+        <div class="box-header">
+            <div class="pull-right help"><a class="col-sm-1 help-link" href="#"><i class="fa fa-question-circle"></i></a></div>
+            <h3 class="box-title"><%= locale.bmc_recovery %></h3>
+        </div>
+        <div class="box-body">
+            <div class="alert alert-success hide">
+                <!-- <i class="fa fa-check"></i> -->
+                <!-- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> -->
+                <b><%= locale.strongSuccessMsg %></b> <%= locale.successMsg %>
+            </div>
+            <div class="alert alert-danger hide">
+                <!-- <i class="fa fa-ban"></i> -->
+                <!-- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> -->
+                <b><%= locale.strongFailureMsg %></b> <%= locale.failureMsg %>
+            </div>
+            <form action="javascript://" method="POST" role="form">
+                <div class="form-group"  >
+	<div class="alert alert-info help-item hide"    role="alert"><%= locale.bmc_recovery_choose_enabledisable_to_start_autorecovery_immediately_at_next_reboot %></div>
+    <label>
+        <input type="checkbox" value="1" id="idforceRecovery" > <%= locale.bmc_recoveryforce_recovery %>
+    </label>
+</div><div class="form-group"  >
+	<div class="alert alert-info help-item hide"    role="alert"><%= locale.bmc_recovery_enter_the_number_of_retries_to_reset_the_bmc_and_this_count_ranges_from_1_to_5 %></div>
+    <label for="bootRetryCount"><%= locale.bmc_recoveryboot_retry_count %></label>
+    <input type="text" class="form-control" id="idbootRetryCount" value="" placeholder="">
+</div><div class="form-group"  >
+	<div class="alert alert-info help-item hide"    role="alert"><%= locale.bmc_recovery_enter_the_number_of_retries_to_recover_firmware_image_during_the_recovery_process_and_this_count_ranges_from_1_to_5 %></div>
+    <label for="recoveryRetryCount"><%= locale.bmc_recoveryrecovery_retry_count %></label>
+    <input type="text" class="form-control" id="idrecoveryRetryCount" value="" placeholder="">
+</div><div class="form-group"  >
+	<div class="alert alert-info help-item hide"    role="alert"><%= locale.bmc_recoveryaddress_of_the_server_where_the_firmware_image_is_stored_ulli_ip_address_made_of_4_numbers_separated_by_dots_as_in_xxxxxxxxxxxxli_li_each_number_ranges_from_0_to_255li_li_first_number_must_not_be_0liul %></div>
+    <label for="serverAddress"><%= locale.bmc_recoveryserver_address %></label>
+    <input type="text" class="form-control" id="idserverAddress" value="" placeholder="">
+</div><div class="form-group"  >
+	<div class="alert alert-info help-item hide"    role="alert"><%= locale.bmc_recoveryenter_the_image_name_to_edit_the_default_recovery_image_name_is_mentioned_as_romima_ulli_image_name_should_contain_only_5_alpha_numeric_charactersli_li_if_you_enter_new_imagename_enter_the_imagename_without_extensionimaliul %></div>
+    <label for="imageName"><%= locale.bmc_recoveryimage_name %></label>
+    <input type="text" class="form-control" id="idimageName" value="" placeholder="<%= locale.image_name_without_extension %>">
+</div><div class="pull-right">
+    <a class="btn btn-primary" id="save"><i id='save-icon' class="fa fa-save"></i> &nbsp; <%= locale.saveLabel %></a>
+</div>
+                <div class="clearfix"></div>
+            </form>
+        </div>
+        <!-- /.box-body -->
+    </div>
+</div>
+</section>

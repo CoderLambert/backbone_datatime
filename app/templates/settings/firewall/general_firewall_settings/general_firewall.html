@@ -1,0 +1,95 @@
+<section class="content-header">
+    <h1>
+        <%= locale.title %>
+        <small> <%= locale.tag %> </small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-home"></i><%= locale.home %></a></li><li><a href="#settings"><%= locale.settings %></a></li><li><a href="#settings/firewall"><%= locale.firewall %></a></li><li><a href="#settings/firewall/general_firewall_settings"><%= locale.general_firewall_settings %></a></li>
+        <li class="active">
+           <%= locale.title %>
+        </li>
+    </ol>
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="col-md-5">
+    <div class="box box-primary animated fadeInUp">
+        <div class="box-header">
+            <div class="pull-right help"><a class="col-sm-1 help-link" href="#"><i class="fa fa-question-circle"></i></a></div>
+            <h3 class="box-title"><%= locale.general_firewall %></h3>
+        </div>
+        <div class="box-body">
+            <div class="alert alert-success hide">
+                <!-- <i class="fa fa-check"></i> -->
+                <!-- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> -->
+                <b><%= locale.strongSuccessMsg %></b> <%= locale.successMsg %>
+            </div>
+            <div class="alert alert-danger hide">
+                <!-- <i class="fa fa-ban"></i> -->
+                <!-- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> -->
+                <b><%= locale.strongFailureMsg %></b> <%= locale.failureMsg %>
+            </div>
+            <form action="javascript://" method="POST" role="form">
+                <div class="form-group"  >
+	<div class="alert alert-info help-item hide"    role="alert"><%= locale.general_firewallthis_option_will_block_all_incoming_ips_and_ports %></div>
+    <label for="block_all"><%= locale.general_firewallblock_all %></label>
+    <select name="block_all" id="idblock_all" class="form-control">
+    	<option value='IPv4'><%= locale.general_firewallipv4 %></option><option value='IPv6'><%= locale.general_firewallipv6 %></option><option value='Both'><%= locale.general_firewallboth %></option>
+    </select>
+</div><div class="form-group"  >
+	<div class="alert alert-info help-item hide"    role="alert"><%= locale.general_firewallthis_is_used_to_flush_all_the_system_firewall_rules %></div>
+    <label>
+        <input type="checkbox" value="1" id="idflush_all" > <%= locale.general_firewallflush_all %>
+    </label>
+</div><div class="form-group" data-feature='SYSTEM_FIREWALL_TIMEOUT' >
+	<div class="alert alert-info help-item hide"  data-feature='SYSTEM_FIREWALL_TIMEOUT'  role="alert"><%= locale.general_firewallthis_option_is_used_to_enable_or_disable_firewall_rules_with_timeout %></div>
+    <label>
+        <input type="checkbox" value="1" id="idtimeout" > <%= locale.general_firewalltimeout %>
+    </label>
+</div><div class="form-group"  >
+	<div class="alert alert-info help-item hide"    role="alert"><%= locale.general_firewallthe_respective_firewall_rule_effect_will_start_from_this_date %></div>
+    <label for="start-date"><%= locale.general_firewallstart_date %></label>
+    <div class='input-group date' id='idstart-date' data-date-format="YYYY/MM/DD">
+        <input type='text' class="form-control" placeholder="YYYY/MM/DD" />
+        <span class="input-group-addon">
+            <span class="fa fa-calendar"></span>
+        </span>
+    </div>
+</div><div class="form-group"  >
+	<div class="alert alert-info help-item hide"    role="alert"><%= locale.general_firewallthe_respective_firewall_rule_effect_will_start_from_this_time %></div>
+    <label for="start-time"><%= locale.general_firewallstart_time %></label>
+    <div class='input-group date' id='idstart-time'>
+        <input type='text' class="form-control" placeholder="" />
+        <span class="input-group-addon">
+            <span class="fa fa-clock-o"></span>
+        </span>
+    </div>
+</div><div class="form-group"  >
+	<div class="alert alert-info help-item hide"    role="alert"><%= locale.general_firewallthe_respective_firewall_rule_effect_will_end_from_this_date %></div>
+    <label for="end-date"><%= locale.general_firewallend_date %></label>
+    <div class='input-group date' id='idend-date' data-date-format="YYYY/MM/DD">
+        <input type='text' class="form-control" placeholder="YYYY/MM/DD" />
+        <span class="input-group-addon">
+            <span class="fa fa-calendar"></span>
+        </span>
+    </div>
+</div><div class="form-group"  >
+	<div class="alert alert-info help-item hide"    role="alert"><%= locale.general_firewallthe_respective_firewall_rule_effect_will_end_from_this_time %></div>
+    <label for="end-time"><%= locale.general_firewallend_time %></label>
+    <div class='input-group date' id='idend-time'>
+        <input type='text' class="form-control" placeholder="" />
+        <span class="input-group-addon">
+            <span class="fa fa-clock-o"></span>
+        </span>
+    </div>
+</div><div class="pull-right">
+    <a class="btn btn-primary" id="save"><i id='save-icon' class="fa fa-save"></i> &nbsp; <%= locale.saveLabel %></a>
+</div>
+                <div class="clearfix"></div>
+            </form>
+        </div>
+        <!-- /.box-body -->
+    </div>
+</div>
+</section>

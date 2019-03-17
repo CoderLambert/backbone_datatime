@@ -1,0 +1,35 @@
+<!-- timeline item -->
+
+<!-- timeline icon -->
+<i class="<%=sensor_icon%> bg-blue"></i>
+<div class="timeline-item">
+    <span class="time"><i class="fa fa-clock-o"></i><%=Client_fromnow%>
+    </span>
+
+
+    <h3 class="timeline-header">
+        <%=sensor_id%>
+        <label style="color: #72AEEE;">
+            <%=cause%>
+        </label>
+            sensor of type 
+            <%=sensor_type%>
+            <%=locale.created%>            
+            <%=event%>
+    </h3>
+    
+
+    <div class="timeline-body">
+        <%=event_message%><span class="bmc_time"><%=bmc_time%></span><span class="client_time"><%=client_time%></span>
+    </div>
+
+<!--
+    <div class='timeline-footer'>
+        <a class="btn btn-primary btn-xs">
+            <%=locale.suggestion%>
+        </a>
+    </div>
+-->
+</div>
+
+<!-- END timeline item -->

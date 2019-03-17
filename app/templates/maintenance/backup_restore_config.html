@@ -1,0 +1,134 @@
+<section class="content-header">
+    <h1>
+        <%= locale.title %>
+        <small> <%= locale.tag %> </small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-home"></i><%= locale.home %></a></li>
+        <li><a href="#systemMaintenance"><%= locale.system_maintenance %></a></li>
+        <li class="active"><%= locale.title %></li>
+    </ol>
+</section>
+
+<!-- Main content -->
+<section class="content">
+
+    <div class="col-md-6">
+    <div class="box  box-primary animated fadeInUp">
+        <div class="box-header">
+            <div class="pull-right help"><a class="col-sm-1 help-link" id="backup_help_link" href="#"><i class="fa fa-question-circle"></i></a></div>
+            <h3 class="box-title"><i class="fa fa-download"></i><%= locale.backup_config %></h3>
+        </div>
+        <div class="box-body">
+            <div class="alert alert-success hide" id="backup_alert_success">
+                <!-- <i class="fa fa-check"></i> -->
+                <!-- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> -->
+                <b><%= locale.backupStrongSuccessMsg %></b> <%= locale.backupSuccessMsg %>
+            </div>
+            <div class="alert alert-danger alert-danger-backup hide">
+                <!-- <i class="fa fa-ban"></i> -->
+                <!-- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> -->
+                <b><%= locale.backupStrongFailureMsg %></b> <%= locale.backupFailureMsg %>
+            </div>
+            <form action="javascript://" method="POST" role="form">
+                <div class="form-group"  >
+	<div class="alert alert-info help-item backup_help_item hide"    role="alert"><%= locale.backup_configcheck_the_configuration_that_needs_to_be_backed_up_you_will_get_a_file_download_you_can_use_the_same_to_restore_the_configuration_when_neededbrbnote_b_network_configurations_are_interrelated_to_ipmi_and_hence_by_default_ipmi_configurations_will_be_selected_automatically_when_you_select_network_and_services_to_be_backed_up %></div>
+    <label>
+        <input type="checkbox" value="1" id="idcheckall" > <%= locale.backup_configcheck_all %>
+    </label>
+</div><div class="form-group">
+	<hr/>
+</div>
+
+<!-- <div class="form-group hide" data-feature='SNMP' >
+
+    <label>
+        <input type="checkbox" value="1" id="idSNMP" > <%= locale.backup_configsnmp %>
+    </label>
+</div> -->
+
+
+<div class="form-group"  >
+
+    <label>
+        <input type="checkbox" value="1" id="idkvm" > <%= locale.backup_configkvm %>
+    </label>
+</div><div class="form-group"  >
+
+    <label>
+        <input type="checkbox" value="1" id="idnetwork" > <%= locale.backup_confignetwork_services %>
+    </label>
+</div><div class="form-group"  >
+
+    <label>
+        <input type="checkbox" value="1" id="idipmi" > <%= locale.backup_configipmi %>
+    </label>
+</div><div class="form-group"  >
+
+    <label>
+        <input type="checkbox" value="1" id="idntp" > <%= locale.backup_configntp %>
+    </label>
+</div><div class="form-group"  >
+
+    <label>
+        <input type="checkbox" value="1" id="idauthentication" > <%= locale.backup_configauthentication %>
+    </label>
+</div>
+
+<!-- <div class="form-group hide"  >
+
+    <label>
+        <input type="checkbox" value="1" id="idsyslog" > <%= locale.backup_configsyslog %>
+    </label>
+</div> -->
+
+<div class="pull-right">
+    <a class="btn btn-primary" id="download"><i id='download-icon' class="fa fa-download"></i> &nbsp; <%= locale.downloadLabel %></a>
+</div>
+                <div class="clearfix"></div>
+            </form>
+        </div>
+        <!-- /.box-body -->
+    </div>
+</div>
+
+    <div class="col-md-6">
+        <div class="box box-primary animated fadeInUp">
+            <div class="box-header">
+                <div class="pull-right help"><a class="col-sm-1 help-link" id="restore_help_link" href="#"><i class="fa fa-question-circle"></i></a></div>
+                <h3 class="box-title"><i class="fa fa-upload"></i><%= locale.restore_config %></h3>
+            </div>
+            <div class="box-body">
+                <div class="alert alert-success hide" id="restore_alert_success">
+                    <!-- <i class="fa fa-check"></i> -->
+                    <!-- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> -->
+                    <b><%= locale.restoreStrongSuccessMsg %></b> <%= locale.restoreSuccessMsg %>
+                </div>
+                <div class="alert alert-danger alert-danger-restore hide">
+                    <!-- <i class="fa fa-ban"></i> -->
+                    <!-- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> -->
+                    <b><%= locale.restoreStrongFailureMsg %></b> <%= locale.restoreFailureMsg %>
+                </div>
+                <form action="javascript://" method="POST" role="form">
+                    <div class="form-group"  >
+                        <div class="alert alert-info help-item restore_help_item hide"    role="alert"><%= locale.restore_configuse_browse_button_to_navigate_to_the_configuration_file %></div>
+                        <label for="config"><%= locale.restore_configconfig_file %></label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="idconfig" value="" readonly>
+                            <span class="input-group-btn">
+    		<span class="btn btn-primary btn-file">
+    			<i class="fa fa-folder-open"></i>&hellip; <input type="file" id="fileconfig">
+    		</span>
+    	</span>
+                        </div>
+                    </div><div class="pull-right">
+                    <a class="btn btn-primary" id="save"><i id='save-icon' class="fa fa-save"></i> &nbsp; <%= locale.saveLabel %></a>
+                </div>
+                    <div class="clearfix"></div>
+                </form>
+            </div>
+            <!-- /.box-body -->
+        </div>
+    </div>
+
+</section>

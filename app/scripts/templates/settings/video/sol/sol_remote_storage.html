@@ -1,0 +1,84 @@
+<section class="content-header">
+    <h1>
+        <%= locale.title %>
+        <small> <%= locale.tag %> </small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-home"></i><%= locale.home %></a></li><li><a href="#settings"><%= locale.settings %></a></li><li><a href="#settings/video"><%= locale.video %></a></li><li><a href="#settings/video/sol"><%= locale.sol %></a></li>
+        <li class="active">
+           <%= locale.title %>
+        </li>
+    </ol>
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="col-md-5">
+    <div class="box box-primary animated fadeInUp">
+        <div class="box-header">
+            <div class="pull-right help"><a class="col-sm-1 help-link" href="#"><i class="fa fa-question-circle"></i></a></div>
+            <h3 class="box-title"><%= locale.sol_remote_storage %></h3>
+        </div>
+        <div class="box-body">
+            <div class="alert alert-success hide">
+                <!-- <i class="fa fa-check"></i> -->
+                <!-- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> -->
+                <b><%= locale.strongSuccessMsg %></b> <%= locale.successMsg %>
+            </div>
+            <div class="alert alert-danger hide">
+                <!-- <i class="fa fa-ban"></i> -->
+                <!-- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> -->
+                <b><%= locale.strongFailureMsg %></b> <%= locale.failureMsg %>
+            </div>
+            <form action="javascript://" method="POST" role="form">
+                <div class="form-group"  >
+	<div class="alert alert-info help-item hide"    role="alert"><%= locale.sol_remote_storageenter_the_size_of_log_file_in_kbs_and_value_will_support_maximum_length_of_10_digits %></div>
+    <label for="log_size"><%= locale.sol_remote_storagelog_size_kb %></label>
+    <input type="text" class="form-control" id="idlog_size" value="" placeholder="">
+</div><div class="form-group"  >
+	<div class="alert alert-info help-item hide"    role="alert"><%= locale.sol_remote_storageenter_the_number_of_log_files_countdefault_values_ranges_from_1_to_10 %></div>
+    <label for="log_file_count"><%= locale.sol_remote_storagelog_file_count %></label>
+    <input type="text" class="form-control" id="idlog_file_count" value="" placeholder="">
+</div><div class="form-group"  >
+	<div class="alert alert-info help-item hide"    role="alert"><%= locale.sol_remote_storageto_enable_or_disable_remote_video_support_check_or_uncheck_the_enable_checkbox_respectively_strongnote_strongby_default_video_files_will_be_stored_in_local_path_of_bmc_if_remote_video_support_is_enabled_then_the_video_files_will_be_stored_only_in_remote_path_not_within_bmc %></div>
+    <label>
+        <input type="checkbox" value="1" id="idremote_support" > <%= locale.sol_remote_storagerecord_video_to_remote_server %>
+    </label>
+</div><div class="form-group"  >
+	<div class="alert alert-info help-item hide"    role="alert"><%= locale.sol_remote_storageserver_address_of_the_server_where_remote_videos_are_to_be_storedbr_server_address_will_support_the_following_ul_li_ip_address_both_ipv4_and_ipv6_formatli_li_fqdn_fully_qualified_domain_name_formatli_ul %></div>
+    <label for="ip_address"><%= locale.sol_remote_storageserver_address %></label>
+    <input type="text" class="form-control" id="idip_address" value="" placeholder="<%= locale.server_ip_or_host_name %>">
+</div><div class="form-group"  >
+	<div class="alert alert-info help-item hide"    role="alert"><%= locale.sol_remote_storagesource_path_to_directory_where_the_remote_videos_will_be_stored_ul_li_special_characters_less_than_greater_than_colon_asterisk_vertical_bar_dot_question_mark_are_not_allowedli_ul %></div>
+    <label for="remote_path"><%= locale.sol_remote_storagepath_in_server %></label>
+    <input type="text" class="form-control" id="idremote_path" value="" placeholder="<%= locale.eg_optbmcvideos %>">
+</div><div class="form-group"  >
+	<div class="alert alert-info help-item hide"    role="alert"><%= locale.sol_remote_storageshare_type_of_the_remote_video_server_either_nfs_or_sambacifs %></div>
+	<label for="share_type"><%= locale.sol_remote_storageshare_type %></label><br/>
+	<label>
+							        <input type='radio' value='NFS' name='share_type' id='idshare_type' > <%= locale.sol_remote_storagenfs %>
+							    </label>&nbsp;&nbsp;&nbsp;&nbsp;<label>
+							        <input type='radio' value='CIFS' name='share_type' id='idshare_type' > <%= locale.sol_remote_storagecifs %>
+							    </label>&nbsp;&nbsp;&nbsp;&nbsp;    
+</div><div class="form-group"  >
+	<div class="alert alert-info help-item hide"    role="alert"><%= locale.sol_remote_storageenter_the_domain_name_for_the_remote_video_server %></div>
+    <label for="domain_name"><%= locale.sol_remote_storagedomain_name %></label>
+    <input type="text" class="form-control" id="iddomain_name" value="" placeholder="">
+</div><div class="form-group"  >
+	<div class="alert alert-info help-item hide"    role="alert"><%= locale.sol_remote_storageenter_the_username_for_the_remote_video_server %></div>
+    <label for="user_name"><%= locale.sol_remote_storageusername %></label>
+    <input type="text" class="form-control" id="iduser_name" value="" placeholder="">
+</div><div class="form-group"  >
+	<div class="alert alert-info help-item hide"    role="alert"><%= locale.sol_remote_storageenter_the_password_for_the_remote_video_server %></div>
+    <label for="password"><%= locale.sol_remote_storagepassword %></label>
+    <input type="password" class="form-control" id="idpassword" value="" placeholder="">
+</div><div class="pull-right">
+    <a class="btn btn-primary" id="save"><i id='save-icon' class="fa fa-save"></i> &nbsp; <%= locale.saveLabel %></a>
+</div>
+                <div class="clearfix"></div>
+            </form>
+        </div>
+        <!-- /.box-body -->
+    </div>
+</div>
+</section>

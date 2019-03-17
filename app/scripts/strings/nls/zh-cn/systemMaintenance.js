@@ -1,0 +1,22 @@
+define({
+	"home":"主页",
+    "titletitle": "系统维护",
+    "system_administrator": "系统管理员",
+    "firmware_information": "固件信息",
+    "preserve_configuration": "保存配置",
+    "restore_factory_defaults": "恢复出厂设置",
+    "backup_restore_configuration": "备份/恢复配置",
+    "firmware_image_location": "固件镜像位置",
+    "firmware_update": "固件升级",
+    "hpm_firmware_update": "HPM固件更新",
+    "bmrecovery": "BMC恢复",
+    "bios_firmware_update": "BIOS固件更新",
+
+    "SystemMaintenance": "系统维护",
+    "BMCFirmwareUpgrade": "BMC 固件更新",
+    "BIOSFirmwareUpgrade": "BIOS 固件更新",
+    "CPLDUpgrade": "CPLD固件更新",
+    "PSUUpgrade": "PSU固件更新",
+    "RestoreFactorySettings": "恢复出厂设置",
+    "Administrator": "系统管理员",
+});

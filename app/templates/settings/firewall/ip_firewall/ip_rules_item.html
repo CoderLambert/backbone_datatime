@@ -1,0 +1,13 @@
+<div class="col-md-3 list-item" style="word-wrap:break-word;">
+       <div class='pull-right'>
+    <a class="hide delete" href="#settings/firewall/ip_firewall/ip_rules/edit/:id" title="Delete"><i class="ion ion-close-circled"></i></a>
+    </div>
+    <a href='#settings/firewall/ip_firewall/ip_rules/edit/:id'>
+        <div class="col-md-3 icon" style="float:left">
+            <i class="ion-gear-a iconic"></i>
+        </div>
+        <div class="col-md-9 contents" style="float:left">
+            <label  class='ip_start'><span><%= locale.ip_range_ %></span><%= model.get('ip_start') %></label> <label  class='ip_end'><span><%= locale._ %></span><%= model.get('ip_end') %></label> <div  class='rule'><span><%= locale.rule_ %></span><% var av = model.get('rule');var avset = false;%><% if(av == 'allow'){ avset = true; %><%= locale.allow %><% } %><% if(av == 'block'){ avset = true; %><%= locale.block %><% } %><% if(avset == false) { %><%= av %><% } %></div> <div  class='timeout'><span><%= locale.timeout_ %></span><% var av = model.get('timeout');var avset = false;%><% if(av == '0'){ avset = true; %><%= locale.disabled %><% } %><% if(av == '1'){ avset = true; %><%= locale.enabled %><% } %><% if(avset == false) { %><%= av %><% } %></div> <div  class='start_time'><span><%= locale.from_ %></span><% var val = model.get('start_time'); %><% if(val == 0 || val == '' || val === undefined) { %><%= 'None' %><% } else { %><%=(new Date( model.get('start_time')  * 1000).toString()).split('GMT')[0]%><% } %></div> <div  class='end_time'><span><%= locale.to_ %></span><% var val = model.get('end_time'); %><% if(val == 0 || val == '' || val === undefined) { %><%= 'None' %><% } else { %><%=(new Date( model.get('end_time')  * 1000).toString()).split('GMT')[0]%><% } %></div>             
+        </div>
+    </a>
+</div>

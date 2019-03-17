@@ -1,0 +1,39 @@
+<section class="content-header">
+    <h1>
+        <%= locale.title %>
+        <small> <%= locale.tag %> </small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-home"></i><%= locale.home %></a></li><li><a href="#systemInfo"><%= locale.system_information %></a></li>
+        <li class="active">
+           <%= locale.title %>
+        </li>
+    </ol>
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="box box-solid bg-gray-transparent pad10 animated fadeInUp">
+    <div class="row">
+        <div class="col-md-3"   >
+    <a href="#settings/sasit_management/sasit_controller_info" class="big-button">
+            
+            <div class="icon"><i class="ion-ios-information-outline"></i></div>
+            <span class="name"><%= locale.sas_it_controller_information %></span>
+    </a>
+</div><div class="col-md-3"   >
+    <a href="#settings/sasit_management/sasit_physical_device_info" class="big-button">
+            
+            <div class="icon"><i class="ion-social-buffer"></i></div>
+            <span class="name"><%= locale.physical_device_information %></span>
+    </a>
+</div><div class="col-md-3"   >
+    <a href="#settings/sasit_management/sasit_topology_info" class="big-button">
+            
+            <div class="icon"><i class="ion-social-buffer"></i></div>
+            <span class="name"><%= locale.topology_information %></span>
+    </a>
+</div>
+    </div>
+</div>
+</section>

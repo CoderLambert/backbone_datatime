@@ -1,0 +1,121 @@
+<HEAD>
+
+<meta http-equiv="Expires" CONTENT="0">
+<meta http-equiv="Cache-Control" CONTENT="no-cache">
+<meta http-equiv="Pragma" CONTENT="no-cache"> 
+
+</HEAD>
+   
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        <%= locale.tittle %>
+        <small><%= locale.tag %></small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-home"></i><%= locale.home %></a></li>
+        <li><a href="#systemInfo"><%= locale.systeminfo %></a></li>
+        <li class="active"><%= locale.tittle %></li>
+    </ol>
+</section>
+
+<!-- Main content -->
+<section class="content">
+
+    <div class="box">
+        <div class="box-header">
+            <h3 class="box-title"><%= locale.history_search_title %></h3>
+        </div>
+        <div class="box-body">
+                <form class="form-inline" role="form" action="javascript://">
+                    <div class="form-group">
+                        <label for="iddate_range_begin" style="width:120px;text-align:right"><%=locale.filter_bydate%></label>
+                        <div class='input-group date'   id='iddate_range_begin' data-date-format="YYYY/MM/DD">
+                            <input type='text'  class="form-control" placeholder="<%=locale.start_date%>" />
+                            <span class="input-group-addon">
+                                <span class="fa fa-clock-o glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="iddate_range_end">-</label>
+                        <div class='input-group date' id='iddate_range_end' data-date-format="YYYY/MM/DD">
+                            <input type='text'  class="form-control" placeholder="<%=locale.end_date%>" >
+                            <span class="input-group-addon">
+	                            <span class="fa fa-clock-o glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </div>
+                    </div>
+                     
+                    <div class="form-group">
+                        <label for="idevent_type" style="width:120px;text-align:right"><%=locale.common_setting%></label>
+                        <select class="form-control" id="idevent_type">
+                            <option value="1"><%=locale.one_day%></option>
+                            <option value="71"><%=locale.one_week%></option>
+                            <option value="301"><%=locale.one_month%></option>
+                            <option value="365"><%=locale.one_year%></option>
+                            <option value="255"><%=locale.custom%></option>
+                        </select>
+                    </div>
+                    
+                   <div style="margin-top:5px;">
+	                    <div class="form-group">
+		                    <label for="iddate_range_end" style="width:120px;text-align:right"><%=locale.inquery_type%></label>
+			                    <select class="form-control" id="historyimage_type"  >
+		                           <option value="type_pow"><%=locale.power_consumption%></option>
+		                           <option value="type_inlet"><%=locale.inlet_history%></option>
+		                   </select>
+	                   </div>
+                             
+                    <div class="form-group" style="float:right">
+                        <button class="btn btn-success" id="idcheck"><%=locale.check%></button>
+                      </div>
+                    </div>
+                </form>
+        </div>
+    </div>
+    
+        <div class="">
+	         <h4 id="history_display_string"><%=locale.tittle%></h4>
+         </div>
+
+         <div style="margin-bottom: 20px">
+	         <img id="historial-image" src="images/loading.gif"  />  
+	     </div>
+
+
+    <div class="box">
+        <div class="box-header">
+            <h3 class="box-title"><%= locale.history_download_title %></h3>
+        </div>
+        <div class="box-body">
+            <div class="alert alert-success hide">
+                <b><%= locale.strongSuccessMsg %></b> <%= locale.successMsg %>
+            </div>
+            <div class="alert alert-danger hide">
+                <b><%= locale.strongFailureMsg %></b> <%= locale.failureMsg %>
+            </div>
+            <div class="alert alert-info help-item " role="alert"><%=locale.help_information%></div>
+            <form action="javascript://" method="POST" role="form">
+                <div class="pull-left">
+                    <span><%=locale.download_tip1%></span>
+                    <br>
+                    <span><%=locale.download_tip2%></span>
+                </div>
+                <div class="btn-group pull-right">
+                    <button id="download" title="<%=locale.download%>" type="button" data-toggle="dropdown" class="btn btn-success dropdown-toggle ">
+                        <i class="fa fa-download"></i> <%=locale.download%>&nbsp;<span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li id="download_csv_file"><a style="cursor: pointer"><%=locale.csvFormat%></a></li>
+                        <li id="download_xml_file"><a style="cursor: pointer"><%=locale.xmlFormat%></a></li>
+                    </ul>
+                </div>
+
+                <div class="clearfix"></div>
+            </form>
+        </div>
+    </div>
+</section>
+<!-- /.content -->

@@ -1,0 +1,19 @@
+<div class="col-md-3">
+	<div class="list-item" style="margin-top:10px;margin-bottom:10px;margin-left:-5px;margin-right:-5px;background-color:#f6f6f6;">
+    <a href='#settings/users/edit/:id'>
+        <div class="col-md-3 icon pull-left" style="height:75px;">
+        	<img class="iconic" src="../../images/um_user.png">
+        </div>
+        <div class="col-md-9 contents" style="height:75px;">
+            <label class='username' style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;display: inline-block;vertical-align: middle"><%= model.get('name') %></label> <em class='status'><% var av = model.get('access'); %><% if(av == '0'){  %><%= locale.disabled %><% } %><% if(av == '1'){  %><%= locale.active %><% } %><% if(av == '-1'){  %><%= locale.empty_slot %><% } %></em>
+            <em class="status" style="float:right;">
+				<img id="um_userEdit_:id" src="../../images/um_edit.png" title="<%= locale.edit %>" style="cursor: pointer;">
+				<img id="um_userDelete_:id" src="../../images/um_delete.png" title="<%= locale.delete %>" style="margin-left:5px;cursor: pointer;">
+			</em>
+            <div class='privilege'><% var av = model.get('network_privilege'); %><% if(av == 'none'){  %><%= locale.no_access %><% } %><% if(av == 'administrator'){  %><%= locale.administrator %><% } %><% if(av == 'oem'){  %><%= locale.oem %><% } %><% if(av == 'operator'){  %><%= locale.operator %><% } %><% if(av == 'user'){  %><%= locale.user %><% } %></div>
+            <div class='email_id'><%= model.get('email_id') %></div>
+        </div>
+        <div class='tags' style='text-align:center;padding-bottom:10px;'><span class='kvm' style='margin-left:2px;background-color:#d6eaf8;'><%= locale.kvm %></span> <span class='vmedia' style='margin-left:2px;background-color:#d6eaf8;'><%= locale.vmedia %></span> <span class='snmp' style='margin-left:2px;background-color:#d6eaf8;'><%= locale.snmp %></span> </div>
+    </a>
+    </div>
+</div>

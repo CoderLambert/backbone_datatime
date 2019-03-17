@@ -1,0 +1,132 @@
+<section class="content-header">
+    <h1>
+        <%= locale.external_user_services %>
+        <small></small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-home"></i><%= locale.home %></a></li>
+        <li><a href="#settings"><%= locale.bmc_settings %></a></li>
+        <li class="active"><%= locale.external_user_services %></li>
+    </ol>
+</section>
+
+<!-- Main content -->
+<section class="content tabs-content">
+    <div class="row" style="margin-top:-10px;margin-bottom:20px;">
+        <div class="col-md-12 tab">
+            <a id="ext_ldap" class="menu_tab menu_active" ><%=locale.ext_ldap %></a>
+            <a id="ext_active_directory" class="menu_tab" onclick="replace_url('#settings/ext_users/active_directory/general_active_directory')" ><%=locale.ext_active_directory %></a>
+            <a id="ext_radius" class="menu_tab"  onclick="replace_url('#settings/ext_users/radius/general_radius')" ><%=locale.ext_radius %></a>
+        </div>
+    </div>
+    <div class="box">
+        <div class="box-header">
+            <ul class="my-tabs">
+                <li class="my-tabs-active"><a><%= locale.ext_general_ldap_settings %></a></li>
+                <li><a id="rolegroup_ldap" onclick="replace_url('#settings/ext_users/ldap/rolegroup_ldap')"><%= locale.ext_role_groups %></a></li>
+            </ul>
+            <div class="pull-right help"><a class="col-sm-1 help-link" href="#"><i class="fa fa-question-circle"></i></a></div>
+        </div>
+        <div class="box-body">
+            <div class="alert alert-success hide">
+                <!-- <i class="fa fa-check"></i> -->
+                <!-- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> -->
+                <b><%= locale.strongSuccessMsg %></b> <%= locale.successMsg %>
+            </div>
+            <div class="alert alert-danger hide">
+                <!-- <i class="fa fa-ban"></i> -->
+                <!-- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> -->
+                <b><%= locale.strongFailureMsg %></b> <%= locale.failureMsg %>
+            </div>
+            <form action="javascript://" method="POST" role="form">
+                <div class="form-group"  >
+	<div class="alert alert-info help-item hide"    role="alert"><%= locale.general_ldapcheck_the_box_below_to_enable_ldapedirectory_authentication %></div>
+    <label>
+        <input type="checkbox" value="1" id="idenable" > <%= locale.general_ldapenable_ldapedirectory_authentication %>
+    </label>
+</div><div class="form-group"  >
+	<div class="alert alert-info help-item hide"    role="alert"><%= locale.general_ldapselect_the_encryption_type_for_ldapedirectory_brstrongnotestrongconfigure_proper_port_number_when_ssl_is_enabled %></div>
+	<label for="encryption_type"><%= locale.general_ldapencryption_type %></label><br/>
+	<label>
+							        <input type='radio' value='0' name='encryption_type' id='idencryption_type' > <%= locale.general_ldapno_encryption %>
+							    </label>&nbsp;&nbsp;&nbsp;&nbsp;<label>
+							        <input type='radio' value='1' name='encryption_type' id='idencryption_type' > <%= locale.general_ldapssl %>
+							    </label>&nbsp;&nbsp;&nbsp;&nbsp;<label>
+							        <input type='radio' value='2' name='encryption_type' id='idencryption_type' > <%= locale.general_ldapstarttls %>
+							    </label>&nbsp;&nbsp;&nbsp;&nbsp;
+</div><div class="form-group"  >
+
+	<label for="common_name_type"><%= locale.general_ldapcommon_name_type %></label><br/>
+	<label>
+							        <input type='radio' value='ip' name='common_name_type' id='idcommon_name_type' > <%= locale.general_ldapip_address %>
+							    </label>&nbsp;&nbsp;&nbsp;&nbsp;<label>
+							        <input type='radio' value='fqdn' name='common_name_type' id='idcommon_name_type' > <%= locale.general_ldapfqdn %>
+							    </label>&nbsp;&nbsp;&nbsp;&nbsp;
+</div><div class="form-group"  >
+	<div class="alert alert-info help-item hide"    role="alert"><%= locale.general_ldapldapedirectory_server_address_will_support_the_following_ulliipv4_address_formatli_liipv6_address_formatliul_strongnotestrong_configure_fqdn_address_when_using_starttls_with_fqdn %></div>
+    <label for="server_address"><%= locale.general_ldapserver_address %></label>
+    <input type="text" class="form-control" id="idserver_address" value="" placeholder="">
+</div><div class="form-group"  >
+	<div class="alert alert-info help-item hide"    role="alert"><%= locale.general_ldapspecify_the_ldapedirectory_port_ulli_default_port_is_389li_li_for_ssl_connections_default_port_is_636li_li_port_value_ranges_from_1_to_65535liul %></div>
+    <label for="port"><%= locale.general_ldapport %></label>
+    <input type="text" class="form-control" id="idport" value="" placeholder="">
+</div><div class="form-group"  >
+	<div class="alert alert-info help-item hide"    role="alert"><%= locale.general_ldapthe_bind_dn_is_used_in_bind_operation_which_authenticates_the_client_to_the_server_ul_li_bind_dn_is_a_string_of_4_to_64_alphanumeric_charactersli_li_it_must_start_with_an_alphabetli_li_special_symbols_like_dot_comma_hyphen_underscore_equalto_are_allowedli_li_example_cnmanageroulogin_dcdomaindccomli_ul %></div>
+    <label for="bind_dn"><%= locale.general_ldapbind_dn %></label>
+    <input type="text" class="form-control" id="idbind_dn" value="" placeholder="<%= locale.eg_cnadminoulogindcdomaindccom %>">
+</div><div class="form-group"  >
+	<div class="alert alert-info help-item hide"    role="alert"><%= locale.general_ldapthe_bind_password_is_used_in_bind_operation_which_authenticates_the_client_to_the_server_ulli_password_must_be_at_least_1_character_longli_li_white_space_is_not_allowedliul_strongnotestrong_this_field_will_not_allow_more_than_20_characters %></div>
+    <label for="password"><%= locale.general_ldappassword %></label>
+    <input type="text" autocomplete="off" class="form-control" id="idpassword" value="" placeholder="<%= locale.whitespace_not_allowed %>" onfocus="this.type='password'">
+</div><div class="form-group"  >
+	<div class="alert alert-info help-item hide"    role="alert"><%= locale.general_ldapthe_search_base_allows_the_ldapedirectory_server_to_find_which_part_of_the_external_directory_tree_to_be_searched_the_search_base_may_be_something_equivalent_to_the_organization_group_of_external_directoryul_li_searchbase_is_a_string_of_4_to_64_alphanumeric_charactersli_li_it_must_start_with_an_alphabetical_characterli_li_special_symbols_like_dot_comma_hyphen_underscore_equalto_are_allowedli_li_example_oulogindcdomaindccomli_ul %></div>
+    <label for="search_base"><%= locale.general_ldapsearch_base %></label>
+    <input type="text" class="form-control" id="idsearch_base" value="" placeholder="<%= locale.eg_oulogindcdomaindccom %>">
+</div><div class="form-group"  >
+	<div class="alert alert-info help-item hide"    role="alert"><%= locale.general_ldapthe_attribute_of_user_login_field_allows_the_ldapedirectory_server_to_find_which_attribute_should_be_used_to_identify_the_user_ul_li_only_support_cn_or_uidli_ul %></div>
+    <label for="user_login_attribute"><%= locale.general_ldapattribute_of_user_login %></label>
+    <select name="user_login_attribute" id="iduser_login_attribute" class="form-control">
+    	<option value='cn'><%= locale.general_ldapcn %></option><option value='uid'><%= locale.general_ldapuid %></option>
+    </select>
+</div><div class="form-group"  style="display:none;">
+	<div class="alert alert-info help-item hide"    role="alert"><%= locale.general_ldapfile_that_contains_the_certificate_of_the_trusted_ca_certsulli_ca_certificate_file_should_be_of_the_type_pem_liul %></div>
+    <label for="ca_certificate_file"><%= locale.general_ldapca_certificate_file %></label>
+    <div class="input-group">
+    	<input type="text" class="form-control" id="idca_certificate_file" value="" readonly>
+    	<span class="input-group-btn">
+    		<span class="btn btn-primary btn-file">
+    			<i class="fa fa-folder-open"></i>&hellip; <input type="file" id="fileca_certificate_file">
+    		</span>
+    	</span>
+    </div>
+</div><div class="form-group"  style="display:none;">
+	<div class="alert alert-info help-item hide"    role="alert"><%= locale.general_ldapclient_certificate_filenameulli_certificate_file_should_be_of_the_type_pem_liul %></div>
+    <label for="certificate_file"><%= locale.general_ldapcertificate_file %></label>
+    <div class="input-group">
+    	<input type="text" class="form-control" id="idcertificate_file" value="" readonly>
+    	<span class="input-group-btn">
+    		<span class="btn btn-primary btn-file">
+    			<i class="fa fa-folder-open"></i>&hellip; <input type="file" id="filecertificate_file">
+    		</span>
+    	</span>
+    </div>
+</div><div class="form-group"  style="display:none;">
+	<div class="alert alert-info help-item hide"    role="alert"><%= locale.general_ldapclient_private_key_filenameulli_private_key_should_be_of_the_type_pem_liul_brstrongnotestrong_all_of_the_3_files_are_required_when_starttls_enabled %></div>
+    <label for="private_key"><%= locale.general_ldapprivate_key %></label>
+    <div class="input-group">
+    	<input type="text" class="form-control" id="idprivate_key" value="" readonly>
+    	<span class="input-group-btn">
+    		<span class="btn btn-primary btn-file">
+    			<i class="fa fa-folder-open"></i>&hellip; <input type="file" id="fileprivate_key">
+    		</span>
+    	</span>
+    </div>
+</div><div class="pull-right">
+    <a class="btn btn-primary" id="save"><i id='save-icon' class="fa fa-save"></i> &nbsp; <%= locale.saveLabel %></a>
+</div>
+                <div class="clearfix"></div>
+            </form>
+        </div>
+        <!-- /.box-body -->
+    </div>
+</section>

@@ -1,0 +1,395 @@
+<section class="content-header">
+    <h1>
+        <%= locale.title %>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-home"></i><%= locale.home %></a></li>
+        <li><a href="#systemInfo"><%= locale.systeminfo %></a></li>
+        <li class="active"><%= locale.title %></li>
+    </ol>
+</section>
+
+<style type="text/css">
+
+
+</style>
+
+<!-- Main content -->
+<section class="content">
+
+	<div class="row">
+
+		<div class="col-md-12">
+			<div style="margin-top:-20px;" class="col-md-4 form-group">
+				<label class="" for=""></label>
+				<select class="form-control" id="ss_controllerName" style="">
+				</select>
+			</div>
+			<div id="ss_eventType_div" style="margin-top:-20px; display:none;" class="col-md-4 form-group">
+				<label class="" for=""></label>
+				<select class="form-control" id="ss_eventType" style="">
+					<option value="-1"><%= locale.all_events %></option>
+					<option value="1"><%= locale.event_type_1 %></option>
+					<option value="2"><%= locale.event_type_2 %></option>
+					<option value="3"><%= locale.event_type_3 %></option>
+					<option value="4"><%= locale.event_type_4 %></option>
+					<option value="5"><%= locale.event_type_5 %></option>
+					<option value="6"><%= locale.event_type_6 %></option>
+					<option value="7"><%= locale.event_type_7 %></option>
+					<option value="8"><%= locale.event_type_8 %></option>
+				</select>
+			</div>
+			<div id="ss_clearAll_div" style="display:none;" class="col-md-4">
+				<button class="btn btn-danger" id="ss_clearAll" disabled="disabled">
+					<i class="fa fa-trash-o"></i><%= locale.clear_event_log %>
+			    </button>
+				<button class="btn btn-success" id="ss_downloadAll" disabled="disabled">
+					<i class="fa fa-download"></i><%= locale.downLoad_event_log %>
+			    </button>
+			    <a href="#" target="_blank" id="ss_downloadLink" class="hide"></a>
+		    </div>
+		</div>
+
+		<div class="col-md-12 panel-div">
+			<div class="panel panel-default">
+				<div class="panel-heading" style="height:55px;background:#fff;border-bottom: 2px solid #f3f3f3;">
+
+					<!-- 存储系统 - 菜单栏 -->
+					<div id="ss_controlInfo_tab" class="menu_tab menu_active"><%= locale.controller_info %></div>
+					<div id="ss_physicalDisk_tab" class="menu_tab"><%= locale.physical_disk %></div>
+					<div id="ss_logicalDisk_tab" class="menu_tab" style="display:none;"><%= locale.logical_disk %></div>
+					<div id="ss_bbu_tab" class="menu_tab" style="display:none;"><%= locale.bbu %></div>
+					<div id="ss_eventLog_tab" class="menu_tab" style="display:none;"><%= locale.event_logs %></div>
+				</div>
+
+				<div style="border-top: 0px;" class="box" >
+					<div class="box-body" style="margin-bottom:-20px;">
+						<div id="ss_alert_success" class="alert alert-success hide"></div>
+						<div id="ss_alert_danger" class="alert alert-danger hide"></div>
+						<div class="row">
+
+							<!-- 控制器信息 - 内容栏 -->
+							<div id="ss_controlInfo_div" class="col-md-12" >
+
+								<table class="table table-striped" >
+
+									<tbody id="ss_raid_controlInfo">
+										<tr style="margin-top:-10px;">
+											<td style="width:25%"><%= locale.serial_number %></td>
+											<td id="ss_serial_number" style="text-align:left;width:25%"></td>
+											<td style="border-left: 1px solid #dddddd;width:25%"><%= locale.pci_vendor_id %></td>
+                                            <td id="ss_pci_vendor_id" style="text-align:left;width:25%"></td>
+										</tr>
+										<tr>
+											<td style="width:25%"><%= locale.package_version %></td>
+											<td id="ss_package_version" style="text-align:left;width:25%"></td>
+											<td style="border-left: 1px solid #dddddd;width:25%"><%= locale.pci_device_id %></td>
+											<td id="ss_pci_device_id" style="text-align:left;width:25%"></td>
+										</tr>
+										<tr>
+										    <td style="width:25%"><%= locale.firmware_time %></td>
+                                            <td id="ss_firmware_time" style="text-align:left;width:25%"></td>
+											<td style="border-left: 1px solid #dddddd;width:25%"><%= locale.pci_subvendor_id %></td>
+											<td id="ss_pci_subvendor_id" style="text-align:left;width:25%"></td>
+										</tr>
+										<tr>
+										    <td style="width:25%"><%= locale.host_interface %></td>
+											<td id="ss_host_interface" style="text-align:left;width:25%"></td>
+											<td style="border-left: 1px solid #dddddd;width:25%"><%= locale.pci_subsystem_id %></td>
+											<td id="ss_pci_subsystem_id" style="text-align:left;width:25%"></td>
+										</tr>
+										<tr>
+										    <td style="width:25%"><%= locale.device_interface %></td>
+											<td id="ss_device_interface" style="text-align:left;width:25%"></td>
+											<td style="border-left: 1px solid #dddddd;width:25%"><%= locale.sas_Addr %></td>
+											<td id="ss_sas_Addr" style="text-align:left;width:25%"></td>
+										</tr>
+										<tr>
+										    <td style="width:25%"><%= locale.nvram_size %></td>
+                                            <td id="ss_nvram_size" style="text-align:left;width:25%"></td>
+											<td style="border-left: 1px solid #dddddd;width:25%"><%= locale.port_count %></td>
+                                            <td id="ss_port_count" style="text-align:left;width:25%"></td>
+										</tr>
+										<tr>
+										    <td style="width:25%"><%= locale.memory_size %></td>
+                                            <td id="ss_memory_size" style="text-align:left;width:25%"></td>
+											<td style="border-left: 1px solid #dddddd;width:25%"><%= locale.PD_count %></td>
+                                            <td id="ss_PD_count" style="text-align:left;width:25%"></td>
+										</tr>
+										<tr>
+										    <td style="width:25%"><%= locale.flash_size %></td>
+                                            <td id="ss_flash_size" style="text-align:left;width:25%"></td>
+											<td style="border-left: 1px solid #dddddd;width:25%"><%= locale.VD_count %></td>
+                                            <td id="ss_VD_count" style="text-align:left;width:25%"></td>
+                                        </tr>
+                                        <tr>
+										    <td style="width:25%"><%= locale.disable_AutoRebuild %></td>
+                                            <td id="ss_disable_AutoRebuild" style="text-align:left;width:25%"></td>
+											<td style="border-left: 1px solid #dddddd;width:25%"><%= locale.roc_temp %></td>
+                                            <td id="ss_roc_temp" style="text-align:left;width:25%"></td>
+                                        </tr>
+
+										<tr style="height: 70px;">
+											<td style="background-color: #fff;border-top: none;vertical-align: middle"  colspan="4">
+												<span id="moreInfoBtn" style="border: 1px solid #ddd;padding: 5px;cursor: pointer"><img src="../../../images/icon_open2.png" style="margin-right: 5px;"><span id="moreInfoTxt"><%= locale.show_more_info %></span></span>
+											</td>
+										</tr>
+										<tr style="display: none" id="moreInfo">
+											<td colspan="4" style="padding:0px;">
+												<table class="table table-striped" style="background-color: #ffffff;">
+													<tr>
+														<td style="width:25%"><%= locale.bios_version %></td>
+														<td id="ss_bios_version" style="text-align:left;width:25%"></td>
+														<td style="border-left: 1px solid #dddddd;width:25%"><%= locale.hii_version %></td>
+														<td id="ss_hii_version" style="text-align:left;width:25%"></td>
+													</tr>
+													<tr>
+													    <td style="width:25%"><%= locale.seeprom_version %></td>
+														<td id="ss_seeprom_version" style="text-align:left;width:25%"></td>
+														<td style="border-left: 1px solid #dddddd;width:25%"><%= locale.cpld_version %></td>
+														<td id="ss_cpld_version" style="text-align:left;width:25%"></td>
+													</tr>
+													<tr>
+													    <td style="width:25%"><%= locale.app_version %></td>
+			                                            <td id="ss_app_version" style="text-align:left;width:25%"></td>
+													    <td style="border-left: 1px solid #dddddd;width:25%"><%= locale.expander_version %></td>
+														<td id="ss_expander_version" style="text-align:left;width:25%"></td>
+													</tr>
+													<tr>
+													    <td style="width:25%"><%= locale.stripesize_min %></td>
+			                                            <td id="ss_stripesize_min" style="text-align:left;width:25%"></td>
+														<td style="border-left: 1px solid #dddddd;width:25%"><%= locale.stripesize_max %></td>
+			                                            <td id="ss_stripesize_max" style="text-align:left;width:25%"></td>
+													</tr>
+													<tr>
+													    <td style="width:25%"><%= locale.spindown_time %></td>
+			                                            <td id="ss_spindown_time" style="text-align:left;width:25%"></td>
+													    <td style="border-left: 1px solid #dddddd;width:25%"><%= locale.spinup_drive_count %></td>
+			                                            <td id="ss_spinup_drive_count" style="text-align:left;width:25%"></td>
+													</tr>
+													<tr>
+													    <td style="width:25%"><%= locale.spinup_delay %></td>
+			                                            <td id="ss_spinup_delay" style="text-align:left;width:25%"></td>
+														<td style="border-left: 1px solid #dddddd;width:25%"><%= locale.predfail_poll_interval %></td>
+			                                            <td id="ss_predfail_poll_interval" style="text-align:left;width:25%"></td>
+													</tr>
+													<tr>
+													    <td style="width:25%"><%= locale.cache_flush_interval %></td>
+			                                            <td id="ss_cache_flush_interval" style="text-align:left;width:25%"></td>
+													    <td style="border-left: 1px solid #dddddd;width:25%"><%= locale.expander_temp %></td>
+			                                            <td id="ss_expander_temp" style="text-align:left;width:25%"></td>
+													</tr>
+													<tr>
+													    <td style="width:25%"><%= locale.rebuild_rate %></td>
+			                                            <td id="ss_rebuild_rate" style="text-align:left;"></td>
+													    <td style="border-left: 1px solid #dddddd;width:25%"><%= locale.bgi_rate %></td>
+			                                            <td id="ss_bgi_rate" style="text-align:left;width:25%"></td>
+													</tr>
+													<tr>
+													    <td style="width:25%"><%= locale.recon_rate %></td>
+			                                            <td id="ss_recon_rate" style="text-align:left;width:25%"></td>
+														<td style="border-left: 1px solid #dddddd;width:25%"><%= locale.cc_rate %></td>
+			                                            <td id="ss_cc_rate" style="text-align:left;width:25%"></td>
+													</tr>
+													<tr>
+													    <td style="width:25%"><%= locale.coercion_Mode %></td>
+			                                            <td id="ss_coercion_Mode" style="text-align:left;width:25%"></td>
+													    <td style="border-left: 1px solid #dddddd;width:25%"><%= locale.maintain_PdFailHistory %></td>
+			                                            <td id="ss_maintain_PdFailHistory" style="text-align:left;width:25%"></td>
+													</tr>
+													<tr>
+														<td style="width:25%"><%= locale.disable_BatteryWarning %></td>
+			                                            <td id="ss_disable_BatteryWarning" style="text-align:left;width:25%"></td>
+				                                        <td style="border-left: 1px solid #dddddd;width:25%"><%= locale.disable_copyBack %></td>
+			                                            <td id="ss_disable_copyBack" style="text-align:left;width:25%"></td>
+													</tr>
+													<tr>
+														<td style="width:25%"><%= locale.enable_alarm %></td>
+			                                            <td id="ss_enable_alarm" style="text-align:left;width:25%"></td>
+														<td style="border-left: 1px solid #dddddd;width:25%"><%= locale.disable_NCQ %></td>
+			                                            <td id="ss_disable_NCQ" style="text-align:left;width:25%"></td>
+													</tr>
+													<tr>
+														<td style="width:25%"><%= locale.enable_cluster %></td>
+			                                            <td id="ss_enable_cluster" style="text-align:left;width:25%"></td>
+														<td style="border-left: 1px solid #dddddd;width:25%"><%= locale.support_ShieldState %></td>
+			                                            <td id="ss_support_ShieldState" style="text-align:left;width:25%"></td>
+													</tr>
+													<tr>
+			                                            <td style="width:25%"><%= locale.disable_CtrlR %></td>
+			                                            <td id="ss_disable_CtrlR" style="text-align:left;width:25%"></td>
+													</tr>
+												</td>
+											</table>
+										</td>
+									</tr>
+
+									</tbody>
+
+									<tbody id="ss_sas_controlInfo" style="display:none;">
+										<tr style="margin-top:-10px;">
+											<td ><%= locale.board_name %></td>
+											<td id="ss_sas_board_name" style="text-align:right;"></td>
+										</tr>
+										<tr>
+											<td ><%= locale.sas_address %></td>
+											<td id="ss_sas_sas_address" style="text-align:right;"></td>
+										</tr>
+										<tr>
+											<td ><%= locale.firmware_version %></td>
+											<td id="ss_sas_firmware_version" style="text-align:right;"></td>
+										</tr>
+										<tr>
+											<td ><%= locale.nvdata_version %></td>
+											<td id="ss_sas_nvdata_version" style="text-align:right;"></td>
+										</tr>
+										<tr>
+											<td ><%= locale.pci_vendor_id %></td>
+											<td id="ss_sas_pci_vendor_id" style="text-align:right;"></td>
+										</tr>
+										<tr>
+											<td ><%= locale.pci_device_id %></td>
+											<td id="ss_sas_pci_device_id" style="text-align:right;"></td>
+										</tr>
+										<tr>
+											<td ><%= locale.pci_subvendor_id %></td>
+											<td id="ss_sas_pci_subvendor_id" style="text-align:right;"></td>
+										</tr>
+										<tr>
+											<td ><%= locale.pci_subsystem_id %></td>
+											<td id="ss_sas_pci_subsystem_id" style="text-align:right;"></td>
+										</tr>
+										<tr>
+											<td ><%= locale.speed %></td>
+											<td id="ss_sas_speed" style="text-align:right;"></td>
+										</tr>
+										<tr>
+											<td ><%= locale.ioc_temp %></td>
+											<td id="ss_sas_ioc_temp" style="text-align:right;"></td>
+										</tr>
+									</tbody>
+								</table>
+
+							</div>
+
+							<!-- 物理盘信息 - 内容栏 -->
+							<div id="ss_physicalDisk_div" class="col-md-12" style="display:none;">
+
+								<table class="table table-body footable">
+
+									<tr id="ss_raid_physicalDisk" class="footable-odd">
+										<th width="10%"><%= locale.slot %></th>
+										<th width="30%"><%= locale.controller %></th>
+										<th width="10%"><%= locale.media_type %></th>
+										<th width="20%"><%= locale.state %></th>
+										<th width="10%"><%= locale.speed %></th>
+										<th width="10%"><%= locale.size_gb %></th>
+										<th width="10%"><%= locale.temp_c %></th>
+									</tr>
+									<tr id="ss_sas_physicalDisk" style="display:none;" class="footable-odd">
+										<th width="10%"><%= locale.slot %></th>
+										<th width="30%"><%= locale.controller %></th>
+										<th width="10%"><%= locale.media_type %></th>
+										<th width="20%"><%= locale.state %></th>
+										<th width="10%"><%= locale.speed %></th>
+										<th width="10%"><%= locale.size_gb %></th>
+										<th width="10%"><%= locale.temp_c %></th>
+									</tr>
+									<tbody id="ss_physical_tbody">
+
+									</tbody>
+								</table>
+								<div id="ss_physical_info" style="display:none;" class='info'><i class='fa fa-info-circle'></i><%= locale.physical_undata %></div>
+
+							</div>
+
+							<!-- 逻辑盘信息 - 内容栏 -->
+							<div id="ss_logicalDisk_div" class="col-md-12" style="display:none;">
+
+								<table class="table table-body footable">
+
+									<tr class="footable-odd">
+										<th width="10%"><%= locale.ld_ID %></th>
+										<th width="10%"><%= locale.ld_name %></th>
+										<th width="10%"><%= locale.controller %></th>
+										<th width="10%"><%= locale.type %></th>
+										<th width="10%"><%= locale.state %></th>
+										<th width="10%"><%= locale.read_policy %></th>
+										<th width="10%"><%= locale.write_policy %></th>
+										<th width="10%"><%= locale.cache_policy %></th>
+										<th width="10%"><%= locale.access_policy %></th>
+										<th width="10%"><%= locale.no_phy_devices %></th>
+									</tr>
+									<tbody id="ss_logical_tbody">
+
+									</tbody>
+								</table>
+								<div id="ss_logical_info" style="display:none;" class='info'><i class='fa fa-info-circle'></i><%= locale.logical_undata %></div>
+								<button class="btn btn-primary disabled" style="float:right;margin-top:20px;" id="ss_logical_create"><%= locale.create_logical %></button>
+
+							</div>
+
+							<!-- BBU信息 - 内容栏 -->
+							<div id="ss_bbu_div" class="col-md-12" style="display:none;">
+
+								<table class="table table-striped" >
+
+									<tbody>
+										<tr style="margin-top:-10px;">
+											<td ><%= locale.type %></td>
+											<td id="ss_bbu_type" style="text-align:right;"></td>
+										</tr>
+										<tr>
+											<td ><%= locale.state %></td>
+											<td id="ss_bbu_status" style="text-align:right;"></td>
+										</tr>
+										<tr>
+											<td ><%= locale.temp_c %></td>
+											<td id="ss_bbu_temperature" style="text-align:right;"></td>
+										</tr>
+										<tr>
+											<td ><%= locale.bbu_infovoltage_mv %></td>
+											<td id="ss_bbu_voltage" style="text-align:right;"></td>
+										</tr>
+										<tr>
+											<td ><%= locale.bbu_infocurrent_ma %></td>
+											<td id="ss_bbu_current" style="text-align:right;"></td>
+										</tr>
+
+									</tbody>
+								</table>
+
+							</div>
+
+							<!-- 事件日志 - 内容栏 -->
+							<div id="ss_eventLog_div" class="col-md-12" style="display:none;">
+
+								<table class="table table-body footable">
+
+									<tr class="footable-odd">
+										<th width="20%"><%= locale.controller %></th>
+										<th width="10%"><%= locale.record_id %></th>
+										<th width="20%"><%= locale.time_stamp %></th>
+										<th width="10%"><%= locale.event_code %></th>
+										<th width="10%"><%= locale.event_type %></th>
+										<th width="10%"><%= locale.event_class %></th>
+										<th width="20%"><%= locale.event_desc %></th>
+									</tr>
+									<tbody id="ss_eventLog_tbody">
+
+									</tbody>
+								</table>
+								<div id="ss_eventLog_info" style="display:none;" class='info'><i class='fa fa-info-circle'></i><%= locale.eventLog_undata %></div>
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+</section>
+

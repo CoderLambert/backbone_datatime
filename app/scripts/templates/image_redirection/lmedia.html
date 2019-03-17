@@ -1,0 +1,86 @@
+<div>
+    <section class="content-header">
+        <h1>
+            <%= locale.title %>
+                <small> <%= locale.tag %> </small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-home"></i><%= locale.home %></a></li>
+            <li><a href="#settings"><%= locale.settings %></a></li>
+            <li class="active"><%= locale.title %></li>
+        </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content  tabs-content" style="height: 200px; overflow: auto;">
+        
+        <div class="row" style="margin-top:-10px;margin-bottom:10px;">
+            <div class="col-md-12 tab">
+                <a id="Vmmidea_general" class="menu_tab" onclick="replace_url('#settings/media/general')">
+                    <%= locale.general_setting %>
+                </a>
+                
+                <!-- ks_lz_20181107_local_media ++ -->
+                <a id="lmedia_redirection" class="menu_tab menu_active">
+                   <%=locale.local_images%> 
+                </a>
+                    
+                <a id="rmedia_redirection" class="menu_tab" onclick="replace_url('#image_redirection/rmedia')">
+                    <%=locale.remote_images%>
+                </a>
+            </div>
+        </div>
+
+        <div class="box">
+
+            <!-- ���� -->
+            <div class="box-header" style="margin-bottom:0">
+                <h3 class="box-title">
+
+                </h3>
+            </div>
+    <div class="box-body">
+    <div class="alert alert-success hide"><b></b> </div>
+    <div class="alert alert-danger hide"><b></b></div>
+    <div class="alert alert-info hide"><b></b></div>
+    <div class="row">
+        <div class="col-md-12">
+        </div>
+    </div>
+    <div class="row">
+        <div class='col-md-12'>
+            <div class='box'>
+                <div class='box-body'>
+                    <div class='row'>
+                        <div class="col-md-12 table-list">
+
+                            <table class="footable table">
+                                <thead>
+                                    <tr>
+                                        <th ><%= locale.media_type %></th><th data-hide='phone'><%= locale.media_instance %></th><th ><%= locale.image_name %></th><th ><%= locale.status %></th><th data-hide='phone'><%= locale.session_index %></th>
+                                    </tr>
+                                </thead>
+                                <tbody class="table-body">
+
+                                </tbody>
+                            </table>
+
+                            <div class="col-md-12 table-list-add-item hide">
+                                <a href='%%add-link'>
+                                    <div class="col-md-3 icon">
+                                        <i class="ion-plus-circled iconic"></i>
+                                    </div>
+                                    <div class="col-md-9 contents">
+                                        %%add-text
+                                    </div>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</div>

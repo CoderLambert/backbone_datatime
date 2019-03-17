@@ -1,0 +1,41 @@
+<section class="content-header">
+    <h1>
+        <%= locale.title %>
+        <small> <%= locale.tag %> </small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-home"></i><%= locale.home %></a></li><li><a href="#settings"><%= locale.settings %></a></li>
+        <li class="active">
+           <%= locale.title %>
+        </li>
+    </ol>
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="box box-solid bg-gray-transparent pad10 animated fadeInUp">
+    <div class="row">
+        <div class="col-md-3"   >
+		    <a href="#settings/pef/event_filters" class="big-button">
+
+		            <div class="icon"><i class="ion-play"></i></div>
+		            <span class="name"><%= locale.event_filters %></span>
+		    </a>
+		</div>
+		<div class="col-md-3"   >
+		    <a href="#settings/pef/alert_policies" class="big-button">
+
+		            <div class="icon"><i class="fa fa-bell-o"></i></div>
+		            <span class="name"><%= locale.alert_policies %></span>
+		    </a>
+		</div>
+		<div class="col-md-3"   >
+		    <a href="#settings/pef/lan_destinations" class="big-button">
+
+		            <div class="icon"><i class="ion-flag"></i></div>
+		            <span class="name"><%= locale.lan_destinations %></span>
+		    </a>
+		</div>
+    </div>
+</div>
+</section>

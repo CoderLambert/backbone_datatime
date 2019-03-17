@@ -1,0 +1,89 @@
+
+<section class="content-header">
+    <h1>
+        <%= locale.title %>
+        <small> <%= locale.tag %> </small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-home"></i><%= locale.home %></a></li><li><a href="#settings"><%= locale.settings %></a></li>
+        <li id="ugm_title" class="active">
+        	<a href="#settings/users"> <%= locale.user_group %></a>          
+        </li>
+        <li id="ugm_title_editGroup" class="" style="display:none;">
+           <%= locale.edit_group %>
+        </li>
+    </ol>
+</section>
+<!-- Main content -->
+<section class="content" style="height: 278px; overflow: auto;">
+    <div id="ugm_edit" class="row">
+    	<!-- 用户组编辑栏 -->
+    	<div id="ugm_edit_group" class="col-md-12 panel-div" style="">
+			<div class="panel panel-default">
+				<div style="border-bottom: 0px;" class="panel-heading"><%= locale.group_info %></div>
+
+				<div class="box" style="border-top: 0px;margin-bottom:0px;">
+					<div class="box-body">
+						<div id="ugm_savaGroupSucess" class="alert alert-success hide" style="margin-top: 10px; text-align: center;"><b><%= locale.save_success %></b></div>
+						<table class="table table-hover">
+							<tbody>
+								<tr>
+									<td style="border-top: 0px; text-align: right;" width="20%">
+										<span style="margin-right: 10px;"><%= locale.group_name %></span>
+									</td>
+									<td style="border-top: 0px;">
+										<input class="form-control" id="ugm_groupName" value=""  type="text" style="width:70%;" data-toggle="tooltip">
+										<input id="ugm_groupId" value=""  type="hidden">
+									</td>
+								</tr>
+								<tr>
+									<td style="text-align: right;" width="20%">
+										<span style="margin-right: 10px;"><%= locale.role %></span>
+									</td>
+									<td>
+										<select name="ugm_groupRole" id="ugm_groupRole" class="form-control" style="width:70%;" data-toggle="tooltip">
+											<option value="Administrator" >Administrator</option>
+											<option value="None" >None</option>
+											<option value="OEM" >OEM</option>
+											<option value="Operator" >Operator</option>
+											<option value="User" >User</option>
+										</select>
+									</td>
+								</tr>
+								<tr>
+									<td style="text-align: right;" width="20%">
+										<span style="margin-right: 10px;"><%= locale.privilege %></span>
+									</td>
+									<td>
+										<label style="margin-left:10px;">
+											<input value="1" id="ugm_groupKVM" type="checkbox"> KVM Access
+										</label>
+										<label style="margin-left:10px;">
+											<input value="1" id="ugm_groupSNMP" type="checkbox"> SNMP Access
+										</label>
+										<label style="margin-left:10px;">
+											<input value="1" id="ugm_groupVMedia" type="checkbox"> VMedia Access
+										</label>
+									</td>
+								</tr>
+								<tr id="ugm_groupMembers">
+									<td width="20%" style="text-align: right;">
+										<span style="margin-right: 10px;"><%=locale.members %></span>
+									</td>
+									<td>
+										<textarea id="ugm_groupUsers" readonly="true" style="resize: none; width: 70%;" rows="3" ></textarea>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+
+						<div class="form-group" style="text-align:right">
+							<a class="btn btn-primary" id="ugm_save_group"><i class="fa fa-save"></i> &nbsp; <%= locale.save %></a>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+    </div>
+</section>

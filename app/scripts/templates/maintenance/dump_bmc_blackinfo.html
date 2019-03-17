@@ -1,0 +1,49 @@
+<section class="content-header">
+    <h1>
+        <%= locale.title %>
+       <small></small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-home"></i><%= locale.home %></a></li>
+
+        <li class="active">
+           <%= locale.title %>
+        </li>
+    </ol>
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="col-md-5">
+    <div class="box box-primary animated fadeInUp">
+        <div class="box-header">
+            <div class="pull-right help hide"><a class="col-sm-1 help-link" href="#"><i class="fa fa-question-circle"></i></a></div>
+            <h3 class="box-title"><%= locale.dump_bmc_blackinfo %></h3>
+        </div>
+        <div class="box-body">
+            <div class="alert alert-success hide">
+                <b><%= locale.strongSuccessMsg %></b> <%= locale.successMsg %>
+            </div>
+            <div class="alert alert-danger hide">
+                <b><%= locale.strongFailureMsg %></b> <%= locale.failureMsg %>
+            </div>
+            <div class="alert alert-info help-item " role="alert"><%=locale.help_information%></div>
+            <form action="javascript://" method="POST" role="form">
+                <div class="form-group hide"  >
+				    <label>
+				        <input type="checkbox" value="1" id="idcheckall" > <%= locale.dump_blackinfo %>
+				    </label>
+				</div>
+				<div class="pull-right">
+				    <a class="btn btn-success" id="download"><i id='download-icon' class="fa fa-download"></i> &nbsp; <%= locale.downloadLabel %></a>
+
+					<!-- bsod/bmcblackinfo.blkinfo -->
+					<a id=dbb_link href="bsod/bmcblackinfo.tar" style="display:none;"></a>
+				</div>
+                <div class="clearfix"></div>
+            </form>
+        </div>
+        <!-- /.box-body -->
+    </div>
+</div>
+</section>

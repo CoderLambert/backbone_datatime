@@ -1,0 +1,81 @@
+<section class="content-header">
+    <h1>
+        <%= locale.external_user_services %>
+        <small></small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-home"></i><%= locale.home %></a></li>
+        <li><a href="#settings"><%= locale.settings %></a></li>
+        <li class="active"><%= locale.external_user_services %></li>
+    </ol>
+</section>
+
+<!-- Main content -->
+<section class="content tabs-content">
+
+    <div class="row" style="margin-top:-10px;margin-bottom:20px;">
+        <div class="col-md-12 tab">
+            <a id="ext_ldap" class="menu_tab" onclick="replace_url('#settings/ext_users/ldap/general_ldap')"><%=locale.ext_ldap %></a>
+            <a id="ext_active_directory" class="menu_tab menu_active"><%=locale.ext_active_directory %></a>
+            <a id="ext_radius" class="menu_tab"  onclick="replace_url('#settings/ext_users/radius/general_radius')" ><%=locale.ext_radius %></a>
+        </div>
+    </div>
+
+    <div class="box">
+        <div class="box-header">
+            <ul class="my-tabs">
+                <li class="my-tabs-active"><a><%= locale.ext_active_directory_settings %></a></li>
+                <li><a id="rolegroup_active_directory" onclick="replace_url('#settings/ext_users/active_directory/rolegroup_active_directory')"><%= locale.ext_role_groups %></a></li>
+            </ul>
+            <div class="pull-right help"><a class="col-sm-1 help-link" href="#"><i class="fa fa-question-circle"></i></a></div>
+        </div>
+        <div class="box-body">
+            <div class="alert alert-success hide">
+                <!-- <i class="fa fa-check"></i> -->
+                <!-- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> -->
+                <b><%= locale.strongSuccessMsg %></b> <%= locale.successMsg %>
+            </div>
+            <div class="alert alert-danger hide">
+                <!-- <i class="fa fa-ban"></i> -->
+                <!-- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> -->
+                <b><%= locale.strongFailureMsg %></b> <%= locale.failureMsg %>
+            </div>
+            <form action="javascript://" method="POST" role="form">
+                <div class="form-group"  >
+	<div class="alert alert-info help-item hide"    role="alert"><%= locale.general_active_directoryselect_check_box_to_enable_active_directory_authentication %></div>
+    <label>
+        <input type="checkbox" value="1" id="idenable" > <%= locale.general_active_directoryenable_active_directory_authentication %>
+    </label>
+</div><div class="form-group"  >
+	<div class="alert alert-info help-item hide"    role="alert"><%= locale.general_active_directoryspecify_the_username_of_the_active_directory_server_ulli_user_name_is_a_string_of_1_to_64_alphanumeric_characterslili_it_must_start_with_an_alphabetical_characterlili_it_is_casesensitivelili_special_characters_and_space_are_not_allowedliulstrongnotestrong_if_secret_username_and_password_are_not_needed_both_can_stay_empty_ %></div>
+    <label for="secret_username"><%= locale.general_active_directorysecret_username %></label>
+    <input type="text" class="form-control" id="idsecret_username" value="" placeholder="">
+</div><div class="form-group"  >
+	<div class="alert alert-info help-item hide"    role="alert"><%= locale.general_active_directoryspecify_the_password_of_the_active_directory_serverulli_password_must_be_at_least_6_character_longlili_white_space_is_not_allowedliulstrongnotestrong_this_field_will_not_allow_more_than_127_characters %></div>
+    <label for="secret_password"><%= locale.general_active_directorysecret_password %></label>
+    <input type="text" class="form-control" id="idsecret_password" value="" placeholder="" autocomplete="off" onfocus="this.type='password'">
+</div><div class="form-group"  >
+	<div class="alert alert-info help-item hide"    role="alert"><%= locale.general_active_directoryspecify_the_domain_name_for_the_usereg_mydomaincom %></div>
+    <label for="user_domain_name"><%= locale.general_active_directoryuser_domain_name %></label>
+    <input type="text" class="form-control" id="iduser_domain_name" value="" placeholder="">
+</div><div class="form-group"  >
+	<div class="alert alert-info help-item hide"    role="alert"><%= locale.general_active_directoryenter_the_ip_address_of_active_directory_server_at_least_one_domain_controller_server_address_must_be_configured_domain_controller_server_address_supports_the_following_formatulliipv4_address_formatlili_ipv6_address_formatliul %></div>
+    <label for="domain_controller1"><%= locale.general_active_directorydomain_controller_server_address_1 %></label>
+    <input type="text" class="form-control" id="iddomain_controller1" value="" placeholder="">
+</div><div class="form-group"  >
+	
+    <label for="domain_controller2"><%= locale.general_active_directorydomain_controller_server_address_2 %></label>
+    <input type="text" class="form-control" id="iddomain_controller2" value="" placeholder="">
+</div><div class="form-group"  >
+	
+    <label for="domain_controller3"><%= locale.general_active_directorydomain_controller_server_address_3 %></label>
+    <input type="text" class="form-control" id="iddomain_controller3" value="" placeholder="">
+</div><div class="pull-right">
+    <a class="btn btn-primary" id="save"><i id='save-icon' class="fa fa-save"></i> &nbsp; <%= locale.saveLabel %></a>
+</div>
+                <div class="clearfix"></div>
+            </form>
+        </div>
+        <!-- /.box-body -->
+    </div>
+</section>

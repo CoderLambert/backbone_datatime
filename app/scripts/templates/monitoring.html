@@ -1,0 +1,39 @@
+
+
+<!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            <%= locale.title %>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-home"></i> <%= locale.home %></a></li>
+            <li><a href="#systemInfo"><%= locale.parentTitle %></a></li>
+            <li class="active"><%=locale.title%></li>
+        </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content rightIndex">
+
+         <div class="row" style="margin-top:-10px;">
+            <div class="col-md-12 panel-div">
+                <div class="panel panel-default">
+                    <div class="panel-heading"><%= locale.cpuUsageRate %></div>
+                    <div id="mt_cpu_line" class="panel-body1" style="height:300px;">
+						<!-- CPU监控 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 panel-div">
+                <div class="panel panel-default">
+                    <div class="panel-heading"><%= locale.memUsageRate %></div>
+                    <div id="mt_mem_line" class="panel-body1" style="height:300px;">
+                    	<!-- 内存监控 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+     </section><!-- /.content -->

@@ -1,0 +1,95 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        <%= locale.cooling_policy %>
+        <small><%= locale.tag %></small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-home"></i> <%= locale.home %></a></li>
+        <li><a href="#longRangeControl"><%= locale.parenttitle %></a></li>
+        <!-- <li><a href="#server-configuration"><%= locale.server_config %></a></li> -->
+        <li class="active"><%= locale.cooling_policy_action %></li>
+    </ol>
+</section>
+<!-- Main content -->
+<section class="content">
+    <!--
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <div class="input-group" id="filter">
+                        <input type="text" class="form-control" placeholder="Search settings" />
+                        <span class="input-group-addon">
+                            <span class="glyphicon-search glyphicon"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <div class="col-md-5">
+        <div class="box box-primary animated fadeInUp">
+            <div class="box-header">
+                <div class="pull-right help"><a class="col-sm-1 help-link" href="#"><i class="fa fa-question-circle"></i></a></div>
+                <h3 class="box-title"><%= locale.cooling_policy_action %></h3>
+            </div>
+
+			<div class="alert alert-info help-item hide" role="alert"><%=locale.help_selection%></div>
+
+             <div class="box-body" id="cool-policy-status">
+                    <div class='info'><i class='fa fa-info-circle'></i> <%=locale.load%></div>
+                </div>
+
+            <div class="box-body">
+                <form action="javascript://" method="POST" role="form">
+                    <div class="form-group">
+                        <label>
+                            <input type='radio' value='1' name='cool_policy_command' id='cool_balance_command'> <%= locale.balance %>
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label>
+                            <input type='radio' value='3' name='cool_policy_command' id='cool_performance_command'> <%= locale.performance %>
+                        </label>
+                    </div>
+
+                   <div class="form-group">
+                        <label>
+                            <input type='radio' value='2' name='cool_policy_command' id='cool_silent_command'> <%= locale.silent %>
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="" class="col-sm-12" style="padding-top: 6px;padding-left: 0;"><%=locale.is_manual_duty%></label>
+                        <input id="min_duty_checkbox" data-size="small" type="checkbox">
+                        <input style="display: inline-block; vertical-align: -2px; margin-left: 5px;height: 28px;border: 1px solid rgb(204, 204, 204);webkit-box-shadow: 0 0 0px 1000px white inset;" type='text' value='' name='min_duty' id='min_duty' onkeyup="value=value.replace(/[^\0-9.-]/g,'');" maxlength="3">
+                    </div>
+
+                    <div class="form-group">
+                        <hr>
+                    </div>
+
+                     <div class="form-group">
+                        <label>
+                            <input type='radio' value='0' name='cool_policy_command' id='cool_manual_command'> <%= locale.manual %>
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label>
+                           <%= locale.duty %> <input type='text' value='' name='cool_policy_duty_value' id='cool_policy_duty' onkeyup="value=value.replace(/[^\0-9.-]/g,'');" maxlength="3">
+                        </label>
+                    </div>
+
+                    <div class="pull-right">
+                        <a class="btn btn-primary" id="save"><i id='save-icon' class="fa fa-power-off"></i> &nbsp; <%= locale.perform_action %></a>
+                    </div>
+                    <div class="clearfix"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /.content -->

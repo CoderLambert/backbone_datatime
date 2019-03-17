@@ -1,0 +1,95 @@
+<section class="content-header">
+    <h1>
+        <%= locale.title %>
+        <small> <%= locale.tag %> </small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-home"></i><%= locale.home %></a></li><li><a href="#settings"><%= locale.settings %></a></li><li><a href="#settings/media"><%= locale.media_redirection %></a></li>
+        <li class="active">
+           <%= locale.title %>
+        </li>
+    </ol>
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="col-md-5">
+    <div class="box box-primary animated fadeInUp">
+        <div class="box-header">
+            <div class="pull-right help"><a class="col-sm-1 help-link" href="#"><i class="fa fa-question-circle"></i></a></div>
+            <h3 class="box-title"><%= locale.instance %></h3>
+        </div>
+        <div class="box-body">
+            <div class="alert alert-success hide">
+                <!-- <i class="fa fa-check"></i> -->
+                <!-- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> -->
+                <b><%= locale.strongSuccessMsg %></b> <%= locale.successMsg %>
+            </div>
+            <div class="alert alert-danger hide">
+                <!-- <i class="fa fa-ban"></i> -->
+                <!-- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> -->
+                <b><%= locale.strongFailureMsg %></b> <%= locale.failureMsg %>
+            </div>
+            <form action="javascript://" method="POST" role="form">
+                <div class="form-group" data-feature='FD_SERVER_APP' >
+	<div class="alert alert-info help-item hide"  data-feature='FD_SERVER_APP'  role="alert"><%= locale.instanceselect_the_number_of_floppy_devices_that_are_to_be_supported_for_virtual_media_redirection %></div>
+    <label for="num_fd"><%= locale.instancefloppy_device_instances %></label>
+    <select name="num_fd" id="idnum_fd" class="form-control">
+    	<option value='0'><%= locale.instancestr_0 %></option><option value='1'><%= locale.instancestr_1 %></option><option value='2'><%= locale.instancestr_2 %></option><option value='3'><%= locale.instancestr_3 %></option><option value='4'><%= locale.instancestr_4 %></option>
+    </select>
+</div><div class="form-group" data-feature='CD_SERVER_APP' >
+	<div class="alert alert-info help-item hide"  data-feature='CD_SERVER_APP'  role="alert"><%= locale.instanceselect_the_number_of_cddvd_devices_that_are_to_be_supported_for_virtual_media_redirection %></div>
+    <label for="num_cd"><%= locale.instancecddvd_device_instances %></label>
+    <select name="num_cd" id="idnum_cd" class="form-control">
+    	<option value='0'><%= locale.instancestr_0 %></option><option value='1'><%= locale.instancestr_1 %></option><option value='2'><%= locale.instancestr_2 %></option><option value='3'><%= locale.instancestr_3 %></option><option value='4'><%= locale.instancestr_4 %></option>
+    </select>
+</div><div class="form-group" data-feature='HD_SERVER_APP' >
+	<div class="alert alert-info help-item hide"  data-feature='HD_SERVER_APP'  role="alert"><%= locale.instance_select_the_number_of_hard_disk_devices_to_be_supported_for_virtual_media_redirection %></div>
+    <label for="num_hd"><%= locale.instancehard_disk_instances %></label>
+    <select name="num_hd" id="idnum_hd" class="form-control">
+    	<option value='0'><%= locale.instancestr_0 %></option><option value='1'><%= locale.instancestr_1 %></option><option value='2'><%= locale.instancestr_2 %></option><option value='3'><%= locale.instancestr_3 %></option><option value='4'><%= locale.instancestr_4 %></option>
+    </select>
+</div><div class="form-group" data-feature='VMEDIA_MAX_COUNT_FOR_KVM,FD_SERVER_APP' >
+	<div class="alert alert-info help-item hide"  data-feature='VMEDIA_MAX_COUNT_FOR_KVM,FD_SERVER_APP'  role="alert"><%= locale.instanceselect_the_number_of_remote_kvm_floppy_devices_that_are_to_be_supported_for_virtual_media_redirection %></div>
+    <label for="kvm_num_fd"><%= locale.instanceremote_kvm_floppy_device_instances %></label>
+    <select name="kvm_num_fd" id="idkvm_num_fd" class="form-control">
+    	<option value='0'><%= locale.instancestr_0 %></option><option value='1'><%= locale.instancestr_1 %></option><option value='2'><%= locale.instancestr_2 %></option><option value='3'><%= locale.instancestr_3 %></option><option value='4'><%= locale.instancestr_4 %></option>
+    </select>
+</div><div class="form-group" data-feature='VMEDIA_MAX_COUNT_FOR_KVM,CD_SERVER_APP' >
+	<div class="alert alert-info help-item hide"  data-feature='VMEDIA_MAX_COUNT_FOR_KVM,CD_SERVER_APP'  role="alert"><%= locale.instanceselect_the_number_of_remote_kvm_cddvd_devices_that_are_to_be_supported_for_virtual_media_redirection %></div>
+    <label for="kvm_num_cd"><%= locale.instanceremote_kvm_cddvd_device_instances %></label>
+    <select name="kvm_num_cd" id="idkvm_num_cd" class="form-control">
+    	<option value='0'><%= locale.instancestr_0 %></option><option value='1'><%= locale.instancestr_1 %></option><option value='2'><%= locale.instancestr_2 %></option><option value='3'><%= locale.instancestr_3 %></option><option value='4'><%= locale.instancestr_4 %></option>
+    </select>
+</div><div class="form-group" data-feature='VMEDIA_MAX_COUNT_FOR_KVM,HD_SERVER_APP' >
+	<div class="alert alert-info help-item hide"  data-feature='VMEDIA_MAX_COUNT_FOR_KVM,HD_SERVER_APP'  role="alert"><%= locale.instance_select_the_number_of_remote_kvm_hard_disk_devices_to_be_supported_for_virtual_media_redirection %></div>
+    <label for="kvm_num_hd"><%= locale.instanceremote_kvm_hard_disk_instances %></label>
+    <select name="kvm_num_hd" id="idkvm_num_hd" class="form-control">
+    	<option value='0'><%= locale.instancestr_0 %></option><option value='1'><%= locale.instancestr_1 %></option><option value='2'><%= locale.instancestr_2 %></option><option value='3'><%= locale.instancestr_3 %></option><option value='4'><%= locale.instancestr_4 %></option>
+    </select>
+</div>
+                <div class="form-group" data-feature='SD_SERVER_SUPPORT' >
+	<div class="alert alert-info help-item hide"  data-feature='SD_SERVER_SUPPORT'  role="alert"><%= locale.instancethis_options_will_emulate_sd_media_on_bmc_as_a_usb_device_to_host_server %></div>
+    <label>
+        <input type="checkbox" value="1" id="idsd_media" > <%= locale.instanceemulate_sd_media_as_usb_disk_to_host %>
+    </label>
+</div><div class="form-group"  data-runtime-not-feature='SINGLE_PORT_APP'>
+	<div class="alert alert-info help-item hide"   data-not-feature='SINGLE_PORT_APP' role="alert"><%= locale.instancecheck_this_option_to_enable_media_encryption_support_in_bmc_bnoteb_if_active_media_redirection_is_available_then_allow_this_field_alone_to_change_and_media_encryption_cannot_be_disabled_when_nonsecure_communication_is_not_allowed %></div>
+    <label>
+        <input type="checkbox" value="1" id="idsecure_channel" > <%= locale.instanceencrypt_media_redirection_packets %>
+    </label>
+</div><div class="form-group" data-feature='POWER_CONSUMPTION' >
+	<div class="alert alert-info help-item hide"  data-feature='POWER_CONSUMPTION'  role="alert"><%= locale.instancecheck_this_option_to_enable_power_save_mode_in_bmc %></div>
+    <label>
+        <input type="checkbox" value="1" id="idpower_save_mode" > <%= locale.instancepower_save_mode %>
+    </label>
+</div><div class="pull-right">
+    <a class="btn btn-primary" id="save"><i id='save-icon' class="fa fa-save"></i> &nbsp; <%= locale.saveLabel %></a>
+</div>
+                <div class="clearfix"></div>
+            </form>
+        </div>
+        <!-- /.box-body -->
+    </div>
+</div>
+</section>

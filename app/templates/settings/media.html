@@ -1,0 +1,43 @@
+<section class="content-header">
+    <h1>
+        <%= locale.title %>
+        <small> <%= locale.tag %> </small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-home"></i><%= locale.home %></a></li><li><a href="#settings"><%= locale.bmc_settings %></a></li>
+        <li class="active">
+           <%= locale.title %>
+        </li>
+    </ol>
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="box box-solid bg-gray-transparent pad10 animated fadeInUp">
+    <div class="row">
+        <div class="col-md-3"   >
+		    <a href="#settings/media/general" class="big-button">
+
+		            <div class="icon"><i class="fa fa-hdd-o"></i></div>
+		            <span class="name"><%= locale.general_settings %></span>
+		    </a>
+		</div>
+		<!-- 隐藏VMedia 实体装置设置		--- By cheng  20180330
+		<div class="col-md-3"   data-license='MEDIA'>
+		    <a href="#settings/media/instance" class="big-button">
+
+		            <div class="icon"><i class="fa fa-gears"></i></div>
+		            <span class="name"><%= locale.vmedia_instance_settings %></span>
+		    </a>
+		</div> -->
+        <!-- 隐藏ADVISER_SUPPORT 远程会话 整合到“远程控制 -> 控制台重定向”	--- By song  20180417
+		<div class="col-md-3" data-feature='ADVISER_SUPPORT'  data-license='KVM'>
+		    <a href="#settings/media/remotesession" class="big-button">
+
+		            <div class="icon"><i class="fa fa-gears"></i></div>
+		            <span class="name"><%= locale.remote_session %></span>
+		    </a>
+		</div>-->
+    </div>
+</div>
+</section>

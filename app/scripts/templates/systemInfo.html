@@ -1,0 +1,89 @@
+<section class="content-header">
+    <h1>
+        <%= locale.c_systemInfo %>
+        <small></small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-home"></i><%= locale.home %></a></li>
+        <li class="active">
+           <%= locale.c_systemInfo %>
+        </li>
+    </ol>
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="box box-solid bg-gray-transparent pad10 animated fadeInUp">
+    <div class="row">
+        <div class="col-md-3" data-feature='LMEDIA' >
+		    <a href="#assetInformation" class="big-button">
+
+		            <div class="icon"><i class="fa fa-navicon"></i></div>
+		            <span class="name"><%=locale.c_asset%></span>
+		    </a>
+		</div>
+		<div class="col-md-3" data-feature='RMEDIA' >
+		    <a href="#fru" class="big-button">
+		            <div class="icon"><i class="ion-information-circled"></i></div>
+		            <span class="name"><%= locale.fru_information %></span>
+		    </a>
+		</div>
+		<!-- 去除DMI信息    张昊    20161211
+		<div class="col-md-3" data-feature='RMEDIA' >
+		    <a href="#" class="big-button">
+		            <div class="icon"><i class="ion-document-text"></i></div>
+		            <span class="name"><%= locale.c_dmiInfo %></span>
+		    </a>
+		</div>
+		-->
+		<div class="col-md-3" data-feature='RMEDIA' >
+		    <a href="#hardwareMonitor" class="big-button">
+		            <div class="icon"><i class="fa fa-tasks"></i></div>
+		            <span class="name"><%= locale.c_monitor %></span>
+		    </a>
+		</div>
+		<div class="col-md-3" data-feature='RMEDIA' >
+		    <a href="#monitoring" class="big-button">
+		    		<div class="overlap icon"><i class="fa fa-globe"></i></div>
+		            <div class="icon"><i class="fa fa-folder-open-o"></i></div>
+		            <span class="name"><%= locale.c_realTimeMonitor %></span>
+		    </a>
+		</div>
+		<div class="col-md-3" data-feature='RMEDIA' >
+		    <a href="#sensors" class="big-button">
+		            <div class="icon"><i class="ion-document-text"></i></div>
+		            <span class="name"><%= locale.c_sensorInfo %></span>
+		    </a>
+		</div>
+		<div class="col-md-3" data-feature='RMEDIA' >
+		    <a href="#server-configuratiion/historyrecord" class="big-button">
+		            <div class="icon"><i class="fa fa-history"></i></div>
+		            <span class="name"><%= locale.c_historical %></span>
+		    </a>
+		</div>
+		 <!--
+		 <div  class="col-md-3" data-feature="RAID_SUPPORT" >
+             <a href="#settings/raid_management" class="big-button">
+                     <div class="icon"><i class="ion-help-buoy"></i>
+                     </div>
+                     <span class="name"><%=locale.c_raid_management%></span>
+             </a>
+         </div>
+         <div class="col-md-3" data-feature="SASIT_SUPPORT">
+            <a href="#settings/sasit_management" class="big-button">
+                    <div class="icon"><i class="ion-help-buoy"></i>
+                    </div>
+                    <span class="name"><%=locale.c_sasit_management%></span>
+            </a>
+        </div>
+        -->
+        <div class="col-md-3" data-feature="RAID_SUPPORT">
+            <a href="#storage/storageSystem" class="big-button">
+                    <div class="icon"><i class="fa fa-hdd-o"></i>
+                    </div>
+                    <span class="name"><%=locale.c_storage_system %></span>
+            </a>
+        </div>
+    </div>
+</div>
+</section>

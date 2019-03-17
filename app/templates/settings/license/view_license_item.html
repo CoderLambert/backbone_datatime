@@ -1,0 +1,13 @@
+<div class="col-md-3 list-item" style="word-wrap:break-word;">
+       <div class='pull-right'>
+    <a class="hide delete" href="#settings/license/view_license/edit/:id" title="Delete"><i class="ion ion-close-circled"></i></a>
+    </div>
+    <a href='#settings/license/view_license/edit/:id'>
+        <div class="col-md-3 icon" style="float:left">
+            <i class="fa fa-key iconic"></i>
+        </div>
+        <div class="col-md-9 contents" style="float:left">
+            <label  class='feature'><%= model.get('feature') %></label> <div  class='validity'><% var av = model.get('validity');var avset = false;%><% if(av == '255 days'){ avset = true; %><%= locale.full %><% } %><% if(avset == false) { %><%= av %><% } %></div>             
+        </div>
+    </a>
+</div>

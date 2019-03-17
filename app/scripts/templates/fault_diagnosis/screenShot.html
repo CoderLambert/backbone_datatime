@@ -1,0 +1,144 @@
+<section class="content-header">
+    <h1>
+        <%= locale.title %>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-home"></i><%= locale.home %></a></li>
+        <li class="active"><%= locale.title %></li>
+    </ol>
+</section>
+
+<style type="text/css">
+
+	.sv_img{
+		border: 1px solid #e3e3e3;
+	}
+
+	.sv_arrow_box {
+		position: relative;
+		background: #fff;
+		border: 2px solid #4f9bff;
+	}
+	.sv_arrow_box:after, .sv_arrow_box:before {
+		left: 100%;
+		top: 50%;
+		border: solid transparent;
+		content: " ";
+		height: 0;
+		width: 0;
+		position: absolute;
+		pointer-events: none;
+	}
+
+	.sv_arrow_box:after {
+		border-color: rgba(255, 255, 255, 0);
+		border-left-color: #fff;
+		border-width: 5px;
+		margin-top: -5px;
+	}
+	.sv_arrow_box:before {
+		border-color: rgba(79, 155, 255, 0);
+		border-left-color: #4f9bff;
+		border-width: 8px;
+		margin-top: -8px;
+	}
+
+</style>
+
+<!-- Main content -->
+<section class="content">
+
+	<div class="row">
+
+		<div class="col-md-12 panel-div">
+			<div class="panel panel-default">
+
+				<div class="box-body">
+
+					<!-- 菜单按钮 -->
+					<div class="col-md-12" style="margin-top:10px;padding-bottom:10px;border-bottom:2px solid #e3e3e3;">
+						<div>
+							<div id="sv_autoScreen" class="menu_tab menu_active"><%=locale.autoScreen %></div>
+							<div id="sv_manualScreen" class="menu_tab" ><%=locale.manualScreen %></div>
+							<div id="sv_OSCrashScreen" class="menu_tab" ><%=locale.OSCrashScreen %></div>
+						</div>
+
+						<div style="float:right;">
+							<a id="sv_downloadScreen" type="button" class="btn btn-success dropdown-toggle "  disabled="disabled" style="margin-left:10px;">
+								<i class="fa fa-download"></i><%=locale.downloadScreenshot %>
+							</a>
+						</div>
+						<!--TapdId1001877 by Song 2018-12-28-->
+						<div style="clear: both"></div>
+					</div>
+
+					<table class="table table-hover">
+					<div>
+						<div id="sv_autoScreen_img" >
+							<div id="sv_screenSwitch_div" class="col-md-12">
+								<div style="height:10px;"></div>
+								<%=locale.turnOnAuto %>&nbsp;<input id="sv_screenSwitch" type="checkbox" data-size="small">
+							</div>
+							<div class="col-md-12" style="position:relative;margin-top:10px;line-height:2;">
+							  <span><%=locale.explain1 %></span><br>
+							  <span><%=locale.explain2 %></span><br>
+							  <span><%=locale.explain3 %></span><br>
+							  <span><%=locale.explain4 %></span>
+							</div>
+
+
+							<div id="sv_thumbnail" class="col-md-2" style="position:relative;margin-top:10px;height:auto;overflow-x:hidden;">
+
+							</div>
+
+							<div class="col-md-10" style="position:relative;margin-top:10px;">
+								<div id="sv_HDPicture" style="margin-left:-10px;padding:5px;border:1px solid #e3e3e3;min-height:300px;">
+
+								</div>
+
+							</div>
+
+						</div>
+
+						<div id="sv_manualScreen_img" style="display:none;">
+							<div class="col-md-12">
+								<div style="height:10px;"></div>
+								<a id="sv_screenShot" class="btn btn-primary" style="margin-right:10px;"><%=locale.screenshot %></a>
+							    <a id="sv_deleteScreen" disabled="disabled" class="btn btn-danger"><%=locale.deleteScreenshot %></a>
+							</div>
+							<div class="col-md-12" style="position:relative;margin-top:10px;line-height:2;">
+								<div id="sv_alert" class="alert alert-success hide" style="text-align:center;" ><%=locale.processing %></div>
+							  	<span><%=locale.explain %></span><br>
+							</div>
+
+							<div class="col-md-12" style="position:relative;margin-top:10px;">
+								<div id="sv_manualPicture" style="padding:5px;border:1px solid #e3e3e3;min-height:300px;">
+
+
+								</div>
+							</div>
+
+						</div>
+						<div id="sv_OSCrashScreen_img" style="display:none;">
+							<div class="col-md-12">
+								<div style="height:10px;"></div>
+								<a id="sv_OSCrashScreenShot" class="btn btn-primary" style="margin-right:10px;"><%=locale.OSCrashScreenshot %></a>
+							</div>
+							<div class="col-md-12" style="position:relative;margin-top:10px;line-height:2;">
+								<div id="sv_crash_alert" class="alert alert-success hide" style="text-align:center;" ><%=locale.processing %></div>
+							  	<span><%=locale.OSCrashexplain %></span><br>
+							</div>
+						</div>
+						
+						</div>
+					</table>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+	<canvas id="sv_imag" width="1024px" height="768px" style="display: none"></canvas>
+	<a id="sv_alink" style="display: none" ></a>
+</section>
+

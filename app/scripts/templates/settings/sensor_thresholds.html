@@ -1,0 +1,82 @@
+<section class="content-header">
+    <h1>
+        <%= locale.title %>
+        <small> <%= locale.tag %> </small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-home"></i><%= locale.home %></a></li>
+        <li><a href="#systemInfo"><%= locale.system_info %></a></li>
+        <li><a href="#sensors"><%= locale.sensor_reading %></a></li>
+        <li class="active">
+           <%= locale.title %>
+        </li>
+    </ol>
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="col-md-5">
+    <div class="box box-primary animated fadeInUp">
+        <div class="box-header">
+            <div class="pull-right help"><a class="col-sm-1 help-link" href="#"><i class="fa fa-question-circle"></i></a></div>
+            <h3 class="box-title"><%= locale.sensor_thresholdschange_threshold_values %></h3>
+        </div>
+        <div class="box-body">
+            <div class="alert alert-success hide">
+                <!-- <i class="fa fa-check"></i> -->
+                <!-- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> -->
+                <b><%= locale.strongSuccessMsg %></b> <%= locale.successMsg %>
+            </div>
+            <div class="alert alert-danger hide">
+                <!-- <i class="fa fa-ban"></i> -->
+                <!-- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> -->
+                <b><%= locale.strongFailureMsg %></b> <%= locale.failureMsg %>
+            </div>
+            <form action="javascript://" method="POST" role="form">
+                <div class="form-group"  >
+					<div class="alert alert-info help-item hide"    role="alert"><%= locale.sensor_thresholdsall_data_in_the_text_box_will_be_converted_into_ipmi_data_type_for_more_information_please_refer_to_ipmi_spec_20_chapter_36_sensor_types_adn_data_conversion %></div>
+				    <label for="name"><%= locale.sensor_thresholdssensor_name %></label>
+				    <div class="form-control-static" id="idname"></div>
+				</div>
+
+				<div class="form-group"  >
+					<div class="alert alert-info help-item hide" role="alert"><%= locale.sensor_thresholdsset_upper_nonrecoverable_threshold %></div>
+				    <label for="higher_non_recoverable_threshold"><%= locale.sensor_thresholdsupper_nonrecoverable %></label>
+				    <input type="text" class="form-control" id="idhigher_non_recoverable_threshold" value="" onkeyup="value=value.replace(/[^\0-9.-]/g,''); " maxlength="10" placeholder="<%= locale.upper_nonrecoverable %>">
+				</div>
+				<div class="form-group"  >
+					<div class="alert alert-info help-item hide" role="alert"><%= locale.sensor_thresholdsset_upper_critical_threshold %></div>
+				    <label for="higher_critical_threshold"><%= locale.sensor_thresholdsupper_critical %></label>
+				    <input type="text" class="form-control" id="idhigher_critical_threshold" value="" onkeyup="value=value.replace(/[^\0-9.-]/g,''); " maxlength="10" placeholder="<%= locale.upper_critical %>">
+				</div>
+				<div class="form-group"  >
+					<div class="alert alert-info help-item hide" role="alert"><%= locale.sensor_thresholdsset_upper_noncritical_threshold %></div>
+				    <label for="higher_non_critical_threshold"><%= locale.sensor_thresholdsupper_noncritical %></label>
+				    <input type="text" class="form-control" id="idhigher_non_critical_threshold" value="" onkeyup="value=value.replace(/[^\0-9.-]/g,''); " maxlength="10" placeholder="<%= locale.upper_noncritical %>">
+				</div>
+				<div class="form-group"  >
+					<div class="alert alert-info help-item hide" role="alert"><%= locale.sensor_thresholdsset_lower_noncritical_threshold %></div>
+				    <label for="lower_non_critical_threshold"><%= locale.sensor_thresholdslower_noncritical %></label>
+				    <input type="text" class="form-control" id="idlower_non_critical_threshold" value="" onkeyup="value=value.replace(/[^\0-9.-]/g,''); " maxlength="10" placeholder="<%= locale.lower_noncritical %>">
+				</div>
+				<div class="form-group"  >
+					<div class="alert alert-info help-item hide" role="alert"><%= locale.sensor_thresholdsset_lower_critical_threshold %></div>
+				    <label for="lower_critical_threshold"><%= locale.sensor_thresholdslower_critical %></label>
+				    <input type="text" class="form-control" id="idlower_critical_threshold" value="" onkeyup="value=value.replace(/[^\0-9.-]/g,''); " maxlength="10" placeholder="<%= locale.lower_critical %>">
+				</div>
+				<div class="form-group"  >
+					<div class="alert alert-info help-item hide" role="alert"><%= locale.sensor_thresholdsset_lower_nonrecoverable_threshold %></div>
+				    <label for="lower_non_recoverable_threshold"><%= locale.sensor_thresholdslower_nonrecoverable %></label>
+				    <input type="text" class="form-control" id="idlower_non_recoverable_threshold" value="" onkeyup="value=value.replace(/[^\0-9.-]/g,''); " maxlength="10" placeholder="<%= locale.lower_nonrecoverable %>">
+				</div>
+
+				<div class="pull-right">
+				    <a class="btn btn-primary" id="save"><i id='save-icon' class="fa fa-save"></i> &nbsp; <%= locale.saveLabel %></a>
+				</div>
+                <div class="clearfix"></div>
+            </form>
+        </div>
+        <!-- /.box-body -->
+    </div>
+</div>
+</section>

@@ -1,0 +1,38 @@
+define({
+    "parenttitle": "远程控制",
+    "power_hot_standby": "电源备份策略设置 ",
+    "tag": "配置电源备份策略",
+    "home": "主页",
+    "power_button_lock_action": "电源备份策略选择",
+    "double": "双电源热备份",
+    "psu1": "电源1冷备份",
+    "psu2": "电源2冷备份",
+    "unknow": "未知",
+    "perform_action": "执行",
+    "server_config": "服务器配置",
+    "confirm": "确定执行操作？",
+    "long_control": "远程控制",
+    "help_selection": "展示并配置电源备份策略",
+    "status": "当前状态:",
+
+    "load_balancing": "负载均衡",
+    "main_standby_power": "主备供电",
+    "choose_powor": "选择电源",
+    "main_power": "主用电源",
+    "standby_power": "备用电源",
+    "select_power": "请选择电源。",
+    "select_main_power": "请选择主用电源。",
+    "operation_succeeded": "操作成功！",
+    "operation_failed": "操作失败，请稍后再试。",
+    "not_present": "不在位",
+    "not_power_on": "电源失效",
+
+    "power_energy": "电源与能耗",
+    "pe_power_control": "开关机控制",
+    "pe_power_hot_standby": "电源备份策略设置",
+    "pe_me_power_policy": "ME功耗封顶",
+    "pe_power_restore_control": "系统掉电恢复策略",
+    // ks_lz_20170711  power button lock ++>>
+    "pe_power_button_lock": "前面板锁定",
+    // ks_lz_20170711  power button lock ++>>
+});

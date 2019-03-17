@@ -1,0 +1,22 @@
+define({
+    "home": "Home",
+    "title": "Maintenance",
+    "system_administrator": "System Administrator",
+    "firmware_information": "Firmware Information",
+    "preserve_configuration": "Preserve Configuration",
+    "restore_factory_defaults": "Restore Factory Defaults",
+    "backup_restore_configuration": "Backup/Restore Configuration",
+    "firmware_image_location": "Firmware Image Location",
+    "firmware_update": "Firmware Update",
+    "hpm_firmware_update": "HPM Firmware Update",
+    "bmc_recovery": "BMC Recovery",
+    "bios_firmware_update": "BIOS Firmware Upgrade",
+
+    "SystemMaintenance": "System Maintenance",
+    "BMCFirmwareUpgrade": "BMC Firmware Upgrade",
+    "BIOSFirmwareUpgrade": "BIOS Firmware Upgrade",
+    "CPLDUpgrade": "CPLD Upgrade",
+    "PSUUpgrade": "PSU Upgrade",
+    "RestoreFactorySettings": "Restore Factory Settings",
+    "Administrator": "Administrator",
+});

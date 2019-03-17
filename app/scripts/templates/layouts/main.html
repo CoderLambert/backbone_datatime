@@ -1,0 +1,575 @@
+﻿
+<style>
+
+	@charset "UTF-8";
+
+	/* 菜单栏样式 */
+	.skin-black .sidebar a {
+	    color: #b0c4d4;
+	}
+	.skin-black .sidebar > .sidebar-menu > li {
+	    border-top: 1px solid #2b3f4f;
+	}
+	.skin-black .sidebar > .sidebar-menu > li > a {
+	    margin-right: 0px;
+	}
+	.sidebar .sidebar-menu > li > a {
+	    padding: 10px 5px 10px 15px;
+	    display: block;
+	    height: 40px;
+	}
+	.skin-black .sidebar > .sidebar-menu > li > a:hover, .skin-black .sidebar > .sidebar-menu > li.active > a {
+	    background: #3498db;
+	    color: #fff;
+	}
+
+	.first-menu-text {
+		font-size: 15px;
+		font-weight: bold;
+	}
+
+	.skin-black .sidebar > .sidebar-menu > li > .treeview-menu {
+	    margin: 0;
+	    background: #2a3946;
+	}
+	.treeview-menu-li:hover {
+	    background: #3498db;
+	    color: #fff;
+	}
+
+    .box .box-header {
+        height: 43px;
+    }
+
+    .right-side .content-header {
+        position: relative;
+        padding: 2px 0 0 20px;
+    }
+
+    /*标题字体大小修改*/
+    .right-side .content-header > h1 {
+        font-size: 20px;
+    }
+
+    .box .box-header .box-title {
+        font-size: 18px;
+    }
+	.content {
+	    padding: 20px 15px;
+	    background: #ecf0f1;
+	}
+    /*tab整合页面  3级菜单样式*/
+    .menu_tab {
+        color:#333;
+        width: auto;
+        padding: 0 20px;
+        border-radius: 4px;
+        border: 1px solid #cfdadd;
+        margin-left: 0;
+        margin-right: 5px;
+    }
+
+    .menu_tab:hover {
+        color: #333;
+    }
+
+    .menu_active {
+        color:#fff;
+    }
+
+    .menu_active:hover {
+        color:#fff;
+    }
+    /*tab整合页面 4级菜单样式*/
+    .tabs-content .box {
+        border: 1px solid #dee5e7;
+    }
+    .tabs-content .box .box-header {
+        padding-bottom: 0;
+        margin-bottom: 10px;
+        background: #f6f8f8;
+        border-bottom: 1px solid #dee5e7;
+    }
+    .tabs-content .protocol_type-td {
+        padding: 15px;
+        background-color: #eaf5fb;
+        color: #676664;
+        border: 1px solid #c8e3f6;
+    }
+    .tabs-content #protocol_type {
+        font-weight: normal;
+    }
+    .tabs-content .progress {
+        margin-top: 20px;
+    }
+    .tabs-content #progress-info {
+        color: #fff
+    }
+    .tabs-content .my-tabs {
+        list-style: none;
+        box-sizing: border-box;
+        margin-bottom: -1px;
+        display: inline-block;
+        padding-left: 10px;
+    }
+    .tabs-content .my-tabs li {
+        display: inline-block;
+        height: 43px;
+        line-height: 43px;
+    }
+    .tabs-content .my-tabs li a {
+        padding: 0 15px;
+        display: block;
+        cursor: pointer;
+    }
+    .tabs-content .my-tabs-active {
+        background-color: #fff;
+        position: relative;
+        border-right: 1px solid #dee5e7;
+        border-left: 1px solid #dee5e7;
+    }
+    .tabs-content .my-tabs-active:after {
+        position: absolute;
+        content: '';
+        background-color: #3399db;
+        height: 3px;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+    .tabs-content .my-tabs-active a {
+        color: #3399db;
+    }
+    /*按钮表单等改为与网站相同主色调*/
+    .btn.btn-primary {
+        background-color: #3498db;
+        border-color: #338fcd;
+    }
+
+    .btn.btn-primary:hover {
+        background-color: #338fcd;
+    }
+    .form-control:focus {
+        border-color: #3498db !important;
+    }
+    /*改为扁平化样式*/
+    .btn {
+        box-shadow: none;
+    }
+    .box {
+        box-shadow: none;
+    }
+
+    .breadcrumb a, .tabs-content a, .my-tabs a {
+        cursor: pointer;
+    }
+
+
+</style>
+
+<!-- header logo: style can be found in header.less -->
+<header class="header">
+    <label class="logo" style="background-color:#3498db;">
+        <!-- Add the class icon to your logo image or logo icon to add the margining
+      	<%=locale.brand%>
+       	-->
+       	<!-- set src="", will reset this in App.js by songjun 201803-->
+      	<img id="idsugonlogo_nav" src="" style="float:left;margin-top:15px;">
+    </label>
+
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top animated fadeInDownBig" role="navigation">
+        <!-- Sidebar toggle button-->
+        <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button">
+            <span class="sr-only"><%=locale.toggle_navigation%></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </a>
+        <div class="navbar-right">
+            <ul class="nav navbar-nav">
+                <!-- Messages: style can be found in dropdown.less-->
+
+                <!-- Notifications: style can be found in dropdown.less -->
+
+                <!-- Tasks: style can be found in dropdown.less -->
+
+                <!-- Live Polling:-->
+               	<!--  传感器和事件日志同步更新 -->
+                <li class="live-poll-section" style="display:none;">
+                    <a href="#" id="live-poll" alt="Live Polling" data-poll="on" title="<%=locale.sync_desc%>">
+                        <i class="ion ion-loop" style="color: deepskyblue"></i>
+                        <span><%=locale.sync%></span>
+                    </a>
+                </li>
+
+                <!-- Refresh Page:-->
+                <li class="refresh-section" title="<%=locale.refresh_desc%>">
+                    <a href="#" id="refreshPage" alt="Refresh Page">
+                        <i class="fa fa-refresh" style="color: deepskyblue"></i>
+                        <span><%=locale.refresh%></span>
+                    </a>
+                </li>
+
+                <!-- language choice -->
+                <li class="dropdown user user-menu" title="<%=locale.lang_choice%>">
+                    <a href="#"  id="lang-choice" class="dropdown-toggle" data-toggle="dropdown">
+                        <%=locale.languageChoice%>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="bg-light-blue">
+                        <a href="#" id="lang-english" >English</a>
+                        </li>
+                        <li class="bg-light-blue">
+                        <a href="#" id="lang-chinese" >简体中文</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <!-- User Account: style can be found in dropdown.less -->
+                <li class="dropdown user user-menu" title="<%=locale.admin_desc%>">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="glyphicon glyphicon-user"></i>
+                        <span><span class='username'></span> <i class="caret"></i>
+                        </span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <!-- User image -->
+                        <li class="user-header bg-light-blue">
+                            <span id="user-icon" class="img-circle"><i class="fa fa-user"></i></span>
+                            <!-- <img src="images/fem.png" class="img-circle" alt="User Image" /> -->
+                            <p>
+                                <span class='username'></span> - <span class='privilege'></span>
+                                <!-- <small>since <span class='since'></span></small> -->
+                            </p>
+                        </li>
+                        <!-- Menu Body -->
+                        <!-- Menu Footer-->
+                        <li class="user-footer">
+                            <% var userid = window.sessionStorage.getItem('id'); var displaytype="" %><% if(userid == '0') { %><% displaytype="display:none;" %><% } %>
+			    <div class="pull-left" style="<%=displaytype%>">
+                                <a id="user-profile-btn" href="#settings/users/edit/<%=window.sessionStorage.getItem('id')%>" class="btn btn-default btn-flat"><%=locale.user_profile%></a>
+                            </div>
+                            <div class="pull-right">
+                                <a href="#logout" class="btn btn-default btn-flat"><%=locale.sign_out%></a>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<div class="wrapper row-offcanvas row-offcanvas-left">
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="left-side sidebar-offcanvas" style="background-color:#2b3f4f;border-top: 1px solid #2b3f4f;">
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar" style="border-bottom:0px;">
+            <!-- /.search form -->
+            <!-- sidebar menu: : style can be found in sidebar.less -->
+
+           	<!-- 左侧菜单栏 -->
+            <ul class="sidebar-menu">
+
+				<li class="treeview active">
+                    <!-- <a href="#overview"> -->
+                    <a href="#dashboard" class="first-menu-text">
+                        <i class="fa fa-home"></i>
+                        <span><%=locale.c_overview%></span>
+                    </a>
+                </li>
+
+                <!--二级菜单整合-->
+                <!-- 系统信息 -->
+                <li class="treeview">
+                    <a href="#systemInfo" class="first-menu-text">
+                        <i class="fa fa-info-circle"></i>
+                        <span><%=locale.c_systemInfo%></span>
+                        <i class="fa fa-angle-right pull-right angle"></i>
+                    </a>
+                    <ul class="treeview-menu">
+                        <!-- 资产信息 -->
+                        <li class="treeview-menu-li">
+                            <a href="#assetInformation">
+                                <span style="margin-left: 30px;"><%=locale.c_asset%></span>
+                            </a>
+                        </li>
+                        <!-- FRU信息 -->
+                        <li class="treeview-menu-li">
+                            <a href="#fru">
+                                <span style="margin-left: 30px;"><%=locale.fru_information%></span>
+                            </a>
+                        </li>
+                        <!-- 硬件监控 -->
+                        <li class="treeview-menu-li">
+                            <a href="#hardwareMonitor">
+                                <span style="margin-left: 30px;"><%=locale.c_monitor%></span>
+                            </a>
+                        </li>
+                        <!-- 实时监控 -->
+                        <li class="treeview-menu-li">
+                            <a href="#monitoring">
+                                <span style="margin-left: 30px;"><%=locale.c_realTimeMonitor%></span>
+                            </a>
+                        </li>
+                        <!-- 传感器信息 -->
+                        <li class="treeview-menu-li">
+                            <a href="#sensors">
+                                <span style="margin-left: 30px;"><%=locale.c_sensorInfo%></span>
+                            </a>
+                        </li>
+                        <!-- 历史记录 -->
+                        <li class="treeview-menu-li ">
+                            <a href="#server-configuratiion/historyrecord">
+                                <span style="margin-left: 30px;"><%=locale.c_historical%></span>
+                            </a>
+                        </li>
+                        <!-- 存储系统 -->
+                        <li class="treeview-menu-li ">
+                            <a href="#storage/storageSystem">
+                                <span style="margin-left: 30px;"><%=locale.c_storage_system%></span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+				<!-- 远程控制 -->
+                <li class="treeview">
+                    <a href="#longRangeControl" class="first-menu-text">
+                        <i class="fa fa-desktop"></i>
+                        <span><%=locale.c_longRangeControl%></span>
+                        <i class="fa fa-angle-right pull-right angle"></i>
+                    </a>
+                    <ul class="treeview-menu">
+                        <!-- 控制台重定向 -->
+                        <li class="treeview-menu-li" data-feature='LMEDIA'>
+                            <a href="#remote">
+                                <span style="margin-left: 30px;"><%=locale.c_remoteControl%></span>
+                            </a>
+                        </li>
+                        <!-- 服务器定位 -->
+                        <li class="treeview-menu-li" data-feature='RMEDIA'>
+                            <a href="#server-configuration/id_led_ctrl">
+                                <span style="margin-left: 30px;"><%=locale.c_serverSelection%></span>
+                            </a>
+                        </li>
+                        <!-- 电源与能耗 -->
+                        <li class="treeview-menu-li" data-feature='RMEDIA'>
+                            <a href="#power-control">
+                                <span style="margin-left: 30px;"><%=locale.c_power_energy%></span>
+                            </a>
+                        </li>
+                        <!-- BIOS设置 -->
+                        <li class="treeview-menu-li" data-feature='RMEDIA'>
+                            <a href="#biosSetting">
+                                <span style="margin-left: 30px;"><%=locale.c_biosConifg%></span>
+                            </a>
+                        </li>
+                        <!-- 系统启动顺序 -->
+                        <li class="treeview-menu-li" data-feature='RMEDIA'>
+                            <a href="#server-configuration/first_boot_device">
+                                <span style="margin-left: 30px;"><%=locale.c_firstBootDevice%></span>
+                            </a>
+                        </li>
+                        <!-- 散热策略 -->
+                        <li class="treeview-menu-li" data-feature='RMEDIA'>
+                            <a href="#server-configuration/cool_policy">
+                                <span style="margin-left: 30px;"><%=locale.c_coolingPolicy%></span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <!-- BMC设置 -->
+                <li class="treeview">
+                    <a href="#settings" class="first-menu-text">
+                        <i class="fa fa-cog"></i>
+                        <span><%=locale.settings%></span>
+                        <i class="fa fa-angle-right pull-right angle"></i>
+                    </a>
+                    <ul class="treeview-menu">
+                        <!-- 日期 & 时间 -->
+                        <li class="treeview-menu-li">
+                            <a href="#settings/date_time">
+                                <span style="margin-left: 30px;"><%=locale.c_date_time%></span>
+                            </a>
+                        </li>
+                        <!-- 外部用户服务 -->
+                        <li class="treeview-menu-li">
+                            <a href="#settings/ext_users/ldap/general_ldap">
+                                <span style="margin-left: 30px;"><%=locale.c_external_userservice%></span>
+                            </a>
+                        </li>
+                        <!-- 告警设置 -->
+                        <li class="treeview-menu-li">
+                            <a href="#settings/alarmSettings">
+                                <span style="margin-left: 30px;"><%=locale.c_alarm_settings%></span>
+                            </a>
+                        </li>
+                        <!-- 管理授权 -->
+                        <li class="treeview-menu-li" data-feature="RUNTIME_LICENSE">
+                            <a href="#settings/license">
+                                <span style="margin-left: 30px;"><%=locale.c_manage_licence%></span>
+                            </a>
+                        </li>
+                        <!-- 媒体重定向设置 -->
+                        <li class="treeview-menu-li">
+                            <a href="#settings/media/general">
+                                <span style="margin-left: 30px;"><%=locale.c_media_redir_settings%></span>
+                            </a>
+                        </li>
+                        <!-- 网络设置 -->
+                        <li class="treeview-menu-li">
+                            <a href="#settings/network/ip">
+                                <span style="margin-left: 30px;"><%=locale.c_network_settings%></span>
+                            </a>
+                        </li>
+                        <!-- 服务 -->
+                        <li class="treeview-menu-li" data-feature="SERVICES">
+                            <a href="#settings/services">
+                                <span style="margin-left: 30px;"><%=locale.c_services%></span>
+                            </a>
+                        </li>
+                        <!-- 用户/用户组 -->
+                        <li class="treeview-menu-li">
+                            <a href="#settings/users">
+                                <span style="margin-left: 30px;"><%=locale.c_user_mngt%></span>
+                            </a>
+                        </li>
+                        <!-- 安全设置 -->
+                        <li class="treeview-menu-li">
+                            <a href="#settings/loginControl">
+                                <span style="margin-left: 30px;"><%=locale.c_safe_settings%></span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <!-- 日志和报告
+                <li class="">
+
+                	<a href="#logs/event-log" class="first-menu-text">
+                        <i class="fa fa-info-circle"></i>
+                        <span><%=locale.logs%></span>
+                    </a>
+				</li>
+				 -->
+
+				<!-- 日志管理 -->
+				<li class="treeview">
+                    <a href="#logs" class="first-menu-text">
+                        <i class="fa fa-database"></i>
+                        <span><%=locale.logs%></span>
+                        <i class="fa fa-angle-right pull-right angle"></i>
+                    </a>
+                    <ul class="treeview-menu">
+                    	<!-- 日志查询 -->
+                        <li class="treeview-menu-li ">
+                        	<a href="#logs/event-log">
+                        		<span style="margin-left: 30px;"><%=locale.c_logs_infor%></span>
+                       		</a>
+                        </li>
+                        <!-- SEL日志设置 -->
+						<li class="treeview-menu-li ">
+							<a href="#logs/general-log">
+								<span style="margin-left: 30px;"><%=locale.c_logs_settings%></span>
+							</a>
+						</li>
+                    </ul>
+                </li>
+
+				<!-- 故障诊断 -->
+                <li class="treeview">
+                    <a href="#maintenance" class="first-menu-text">
+                        <i class="fa fa-bar-chart-o"></i>
+                        <span><%=locale.c_faultDiagnosis%></span>
+                        <i class="fa fa-angle-right pull-right angle"></i>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li class="treeview-menu-li ">
+                        	<a href="#maintenance/troubleshoot">
+                        		<span style="margin-left: 30px;"><%=locale.c_troubleshooting%></span>
+                       		</a>
+                        </li>
+						<li class="treeview-menu-li ">
+							<a href="#maintenance/selfInspection"><!-- 开机自检 -->
+								<span style="margin-left: 30px;"><%=locale.c_BootSelfInspection%></span>
+							</a>
+						</li>
+						<!-- 故障截屏 -->
+						<li class="treeview-menu-li ">
+							<a href="#maintenance/screenShot">
+								<span style="margin-left: 30px;"><%=locale.c_faultScreenshot%></span>
+							</a>
+						</li>
+
+						<li class="treeview-menu-li ">
+							<a href="#maintenance/DumpBMCBlackInfo">
+								<span style="margin-left: 30px;"><%=locale.c_BlackBox%></span>
+							</a>
+						</li>
+                    </ul>
+                </li>
+
+                <!-- 系统维护 -->
+                <li class="treeview">
+                    <a href="#systemMaintenance" class="first-menu-text">
+                        <i class="fa fa-wrench"></i>
+                        <span><%=locale.c_SystemMaintenance%></span>
+                        <i class="fa fa-angle-right pull-right angle"></i>
+                    </a>
+                    <ul class="treeview-menu">
+                        <!--系统管理员-->
+                        <li class="treeview-menu-li">
+                            <a href="#maintenance/system_admin">
+                                <span style="margin-left: 30px;"><%=locale.c_system_admin%></span>
+                            </a>
+                        </li>
+                        <!--备份恢复-->
+                        <li class="treeview-menu-li" data-feature='BACKUP_CONFIG'>
+                            <a href="#maintenance/backup_restore_config">
+                                <span style="margin-left: 30px;"><%=locale.c_backup_restore_config%></span>
+                            </a>
+                        </li>
+                        <!-- 固件更新 -->
+                        <li class="treeview-menu-li">
+                            <a href="#maintenance/firmware_update">
+                                <span style="margin-left: 30px;"><%=locale.c_firmware_update%></span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+
+
+				<!-- 系统维护 -->
+                <!--<li class="">-->
+                    <!--<a href="#systemMaintenance" class="first-menu-text">-->
+                        <!--<i class="fa fa-wrench"></i>-->
+                        <!--<span><%=locale.c_SystemMaintenance%></span>-->
+                    <!--</a>-->
+                <!--</li>-->
+
+                <li class="treeview" data-feature="LONG_HELP">
+                    <a href="#help" class="first-menu-text">
+                        <i class="fa fa-question-circle"></i>
+                        <span><%=locale.help%></span>
+                    </a>
+                </li>
+                <li class="treeview">
+                    <a href="#logout" class="first-menu-text">
+                        <i class="fa fa-sign-out"></i>
+                        <span><%=locale.sign_out%></span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+        <!-- /.sidebar -->
+    </aside>
+
+    <!-- Right side column. Contains the navbar and content of the page -->
+    <aside class="right-side" style="background:#ecf0f1">
+
+    </aside>
+    <!-- /.right-side -->
+</div>
+<!-- ./wrapper -->

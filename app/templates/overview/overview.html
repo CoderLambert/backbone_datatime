@@ -1,0 +1,263 @@
+
+
+<style>
+
+	@charset "UTF-8";
+
+	/* 概览主页样式 */
+	.panel-default {border-color: #edf1f2;}
+	.panel-div-head {padding-left: 17px;padding-right: 0px;}
+	.rightIndex h3{color:#879098;margin-bottom:20px;}
+	.rightIndex .panel-heading{color:#6e7882;font-weight: bold;font-size: 14px;background-color:#f6f8f8; border-color:#edf1f2;}
+	.rightIndex .panel-body1{padding:0px;}
+	.rightIndex .list-group{margin:0px;}
+	.rightIndex .list-group-item{border-left: none;border-right: none;overflow:hidden;color:#8c959c;border-color:#edf1f2;}
+	.rightIndex .list-group-item:first-child{border:none;}
+	/* 首列左右边角弧度 */
+	.rightIndex .list-group-item:first-child{ border-top-right-radius: 4px;border-top-left-radius: 4px;}
+	/* 尾列左右边角弧度 */
+	.rightIndex .list-group-item:last-child{ border-bottom:none;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;}
+	.rightIndex .list-group-item .text-left{float:left;}
+	.rightIndex .list-group-item .text-right{float:right;}
+	.glyphicon-ok-circle{color:#34c657;}
+	.glyphicon-remove-circle{color:#d26a5c;}
+
+	.shortcut-div{padding-left: 5px;padding-right: 5px;margin-bottom: -9.5px;}
+	.thumbnail{cursor:pointer; padding:29px 10px;background-color:#f8f9fa; border:1px solid #f8f9fa;color:#6e7882;font-size:15px;}
+	.operate{background:url(../images/operateIcon.png) no-repeat; width:45px; height:45px;margin:0 auto;}
+	.operate:hover{animation:tada 1s;}
+	.thumbnail .text-center{margin-top:10px;}
+	.icon1{background-position: 0px 0px;}
+	.icon2{background-position: 0px -297px;}
+	.icon3{background-position: -1px -98px;}
+	.icon4{background-position: 0px -396px;}
+	.icon5{background-position: 0px -197px;}
+	.icon6{background-position: 0px -495px;}
+    #lan_switch, #ip_switch {
+        height: 28px;
+        outline: none;
+        display: inline-block;
+        vertical-align: middle;
+        border: 1px solid #edf1f2;
+        background-color: #fff;
+        border-radius: 3px;
+    }
+</style>
+
+<!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            <%= locale.title %>
+        </h1>
+    <ol class="breadcrumb">
+        <span id="server_led_info" style="padding-right:1.5cm;color:#8c959c">
+			        <span id="chassis_state_icon" style="border-radius: 15px;vertical-align:sub; display: inline-block; width: 10px; height: 10px; background-color: rgb(255, 153, 0);">
+			        	<span>&nbsp;</span>
+        </span>
+        <span style="padding-right:1cm"><%= locale.powersts %>
+			        	        
+			    </span>
+
+
+        <span id="ChassisCritical_state_icon" style="border-radius: 15px; vertical-align:sub;display: inline-block; width: 10px; height: 10px; background: rgb(0, 180, 7) none repeat scroll 0% 0%;">
+			       	<span>&nbsp;</span>
+        </span>
+        <span id="ChassisCritical_serverstate" style="cursor: pointer;padding-right:1cm"><%= locale.healthsts %> </span>
+
+
+        <span id="idledstate_state_icon" style="border-radius: 15px;vertical-align:sub; display: inline-block; width: 10px; height: 10px; background: rgb(52, 152, 219) none repeat scroll 0% 0%;">
+			        	<span>&nbsp;</span>
+        </span>
+        <span><%= locale.uid_led %></span>
+        </span>
+
+
+        <li><a href="#"><i class="fa fa-home"></i> <%= locale.home %></a></li>
+        <li class="active">
+            <%= locale.title %>
+        </li>
+    </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content rightIndex" style="margin-left: 2px; margin-right: 0px;" >
+
+         <div class="row" style="margin-top:-10px;margin-right: 4px;">
+            <div class="col-md-4 panel-div-head" >
+                <div class="panel panel-default">
+                    <div class="panel-heading"><%= locale.serverInfo %></div>
+                    <div class="panel-body1">
+                        <ul class="list-group">
+                            <li class="list-group-item"><span class="text-left"><%= locale.productType %></span><span class="text-right" style="float:right;" id="serInfo_prodecttype"></span></li>
+                            <li class="list-group-item"><span class="text-left"><%= locale.productName %></span><span class="text-right" style="float:right;" id="serInfo_prodectname"></span></li>
+                            <li class="list-group-item"><span class="text-left"><%= locale.guid %></span><span class="text-right" style="float:right;" id="serInfo_GUID"></span></li>
+                            <li class="list-group-item"><span class="text-left"><%= locale.uptime %></span><span class="text-right" style="float:right;" id="serInfo_uptime"></span></li>
+                            <li class="list-group-item"><span class="text-left"><%= locale.power %></span><span class="text-right" style="float:right;" id="serInfo_power"></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 panel-div-head" >
+                <div class="panel panel-default">
+                    <div class="panel-heading"><%= locale.fwInfo %></div>
+                    <div class="panel-body1">
+                        <ul class="list-group">
+                            <li class="list-group-item"><span class="text-left"><%= locale.biosVersion %></span><span class="text-right" style="float:right;" id="fwInfo_BIOSVersion"></span></li>
+                            <li class="list-group-item"><span class="text-left"><%= locale.meVersion %></span><span class="text-right" style="float:right;" id="fwInfo_MEVersion"></span></li>
+                            <li class="list-group-item"><span class="text-left"><%= locale.bmcVersion %></span><span class="text-right" style="float:right;" id="fwInfo_BMCVersion"></span></li>
+                            <li class="list-group-item"><span class="text-left"><%= locale.psuVersion %></span><span class="text-right" style="float:right;" id="fwInfo_PSUVersion"></span></li>
+							<li class="list-group-item"><span class="text-left"><%= locale.cpldVersion %></span><span class="text-right" style="float:right;" id="fwInfo_CPLDVersion"></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 panel-div-head" >
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                    	<span id="lan_current"><%= locale.lanDeicated %></span><span id="ip_current"><%= locale.IPv4_info %></span>
+                        <div style="float:right;position: relative;">
+                    		<!--<span style="margin-right:5px;"><%= locale.lanSwitchTo %></span>-->
+                    		<!--<a style="cursor:pointer;"><span id="lan_switch"><%= locale.lanShared %></span></a>-->
+                            <!--<a style="cursor:pointer;"><span id="ip_switch"> <%= locale.IPv6 %></span></a>-->
+                            <!--sugon_Song_tapd1002099_2019-01-17-->
+                            <select id="lan_switch" style="position: absolute;top: -3px;right: 55px;">
+                                <option value="deicatedLan"><%= locale.lanDeicated %></option>
+                                <option value="sharedLan"><%= locale.lanShared %></option>
+                            </select>
+                            <select id="ip_switch" style="position: absolute;top: -3px; right: 0;">
+                                <option value="IPv4"><%= locale.IPv4 %></option>
+                                <option value="IPv6"><%= locale.IPv6 %></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="panel-body1">
+                        <ul class="list-group">
+                            <li class="list-group-item"><span class="text-left"><%= locale.lineType %></span><span class="text-right" style="float:right;" id="lan_LineType"></span></li>
+                            <li class="list-group-item"><span class="text-left"><%= locale.macAddress %></span><span class="text-right" style="float:right;" id="lan_MACAddress"></span></li>
+                            <li class="list-group-item" id="lan_IPAddress_li"><span class="text-left"><%= locale.ipAddress %></span><span class="text-right" style="float:right;" id="lan_IPAddress"></span></li>
+                            <li class="list-group-item" id="lan_IPSource_li"><span class="text-left"><%= locale.ipSource %></span><span class="text-right" style="float:right;" id="lan_IPSource"></span></li>
+                            <li class="list-group-item" id="lan_IPv6Address_li" style="display: none;"><span class="text-left"><%= locale.ipv6Address %></span><span class="text-right" style="float:right;" id="lan_IPV6Address"></span></li>
+                            <li class="list-group-item" id="lan_IPv6Source_li" style="display: none;"><span class="text-left"><%= locale.ipv6Source %></span><span class="text-right" style="float:right;" id="lan_IPV6Source"></span></li>
+                            <li class="list-group-item"><span class="text-left"><%= locale.webOnline %></span><span class="text-right" style="float:right;" id="lan_Webonline"></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <div class="row" style="margin-right: 4px;">
+            <div class="col-md-8" style="padding-left: 0px;padding-right: 0px;">
+                <div class="row" style="margin-left: 0px;margin-right: 0px;">
+                    <div class="col-md-6 panel-div-head" >
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+	                            <span><%= locale.serverState %></span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp</span>
+								<span id="chassis_state_icon" style="border-radius: 15px; display: inline-block; width: 10px; height: 10px; background-color: #ffffff;"></span>
+								<span id="chassis_serverstate" style="cursor: pointer;"></span>
+	                            <a href="#hardwareMonitor" style="float:right;"><%= locale.alarmDetails %></a>
+                            </div>
+                            <div class="panel-body1">
+                                <ul class="list-group">
+                                    <li class="list-group-item"><span class="text-left"><%= locale.cpuState %>(<span id="ov_cpunum_online"></span>/<span id="ov_cpunum"></span>)</span><span class="text-right" style="float:right;" id="state_cpustate"></span></li>
+                                    <li class="list-group-item"><span class="text-left"><%= locale.memState %>(<span id="ov_memnum_online"></span>/<span id="ov_memnum"></span>)</span><span class="text-right" style="float:right;" id="state_memstate"></span></li>
+                                    <li class="list-group-item"><span class="text-left"><%= locale.hddState %>(<span id="ov_hddnum_online"></span>/<span id="ov_hddnum"></span>)</span><span class="text-right" style="float:right;" id="state_hddstate"></span></li>
+                                    <li class="list-group-item"><span class="text-left"><%= locale.psuState %>(<span id="ov_psunum_online"></span>/<span id="ov_psunum"></span>)</span><span class="text-right" style="float:right;" id="state_psustate"></span></li>
+                                    <li class="list-group-item"><span class="text-left"><%= locale.fanState %>(<span id="ov_fannum_online"></span>/<span id="ov_fannum"></span>)</span><span class="text-right" style="float:right;" id="state_fanstate"></span></li>
+                                    <!-- <li class="list-group-item"><span class="text-left">风扇</span><span class="text-right" style="float:right;"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></span></li>
+                                    <li class="list-group-item"><span class="text-left">电源</span><span class="text-right" style="float:right;"><span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span></span></li> -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 panel-div-head" >
+                        <div class="panel panel-default">
+                            <div class="panel-heading"><%= locale.alarmInfo %><a href="#logs/event-log" style="float:right;"><%=locale.alarmDetails%></a></div>
+                            <div class="panel-body1">
+                            	<div style="height:203px;">
+									<div id="alarm_chart" style="height:201px;">
+										<div class="text-center" style="height:203px;line-height:203px;"><%= locale.loading %></div>
+									</div>
+								</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-left: 0px;margin-right: 0px;">
+                    <div class="col-md-6 panel-div-head" >
+                        <div class="panel panel-default">
+                            <div class="panel-heading"><%= locale.cpuUsageRate %></div>
+                            <div class="panel-body1">
+								<div style="height:203px;">
+									<div id="cpu_chart" style="height:201px;">
+										<div class="text-center" style="height:203px;line-height:203px;"><%= locale.loading %></div>
+									</div>
+								</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 panel-div-head" >
+                        <div class="panel panel-default">
+                            <div class="panel-heading"><%= locale.memUsageRate %></div>
+                            <div class="panel-body1">
+                                <div style="height:203px;">
+									<div id="mem_chart" style="height:201px;">
+										<div class="text-center" style="height:203px;line-height:203px;"><%= locale.loading %></div>
+									</div>
+								</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 panel-div-head" >
+                <div class="panel panel-default">
+                    <div class="panel-heading"><%= locale.commonOperations%></div>
+                    <div class="panel-body" style="margin:5px 12px -7px 12px;">
+                        <div class="row">
+                            <div class="col-md-6 shortcut-div">
+                                <div class="thumbnail" onclick="location.href='#power-control'">
+                                    <div class="operate icon1"></div>
+                                    <div class="text-center"><%= locale.powerControl %></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 shortcut-div">
+                                <!--TapdId1002051 by Song  2019-01-12-->
+                                <div class="thumbnail" onclick="location.href='#remote'">
+                                    <div class="operate icon2"></div>
+                                    <div class="text-center"><%= locale.remoteControl %></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 shortcut-div" id="users-shortcut">
+                                <div class="thumbnail" onclick="location.href='#settings/users'">
+                                    <div class="operate icon3"></div>
+                                    <div class="text-center"><%= locale.userSettings %></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 shortcut-div" id="network-shortcut">
+                                <div class="thumbnail" onclick="location.href='#settings/network/ip'">
+                                    <div class="operate icon4"></div>
+                                    <div class="text-center"><%= locale.networkSettings %></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 shortcut-div" id="firmware-shortcut">
+                                <div class="thumbnail" onclick="location.href='#maintenance/firmware_update'">
+                                    <div class="operate icon5"></div>
+                                    <div class="text-center"><%= locale.firmwareUpdate %></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 shortcut-div">
+                                <div class="thumbnail" onclick="location.href='#settings/date_time'">
+                                    <div class="operate icon6"></div>
+                                    <div class="text-center"><%= locale.dateOrTime %></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+     </section><!-- /.content -->

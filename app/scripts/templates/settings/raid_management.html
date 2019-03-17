@@ -1,0 +1,57 @@
+<section class="content-header">
+    <h1>
+        <%= locale.title %>
+        <small> <%= locale.tag %> </small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-home"></i><%= locale.home %></a></li><li><a href="#systemInfo"><%= locale.system_information %></a></li>
+        <li class="active">
+           <%= locale.title %>
+        </li>
+    </ol>
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="box box-solid bg-gray-transparent pad10 animated fadeInUp">
+    <div class="row">
+        <div class="col-md-3"   >
+    <a href="#settings/raid_management/raid_controller_info" class="big-button">
+            
+            <div class="icon"><i class="ion-ios-information-outline"></i></div>
+            <span class="name"><%= locale.raid_controller_information %></span>
+    </a>
+</div><div class="col-md-3"   >
+    <a href="#settings/raid_management/storage_summary" class="big-button">
+            
+            <div class="icon"><i class="ion-briefcase"></i></div>
+            <span class="name"><%= locale.storage_summary %></span>
+    </a>
+</div><div class="col-md-3"   >
+    <a href="#settings/raid_management/physical_device_info" class="big-button">
+            
+            <div class="icon"><i class="ion-social-buffer"></i></div>
+            <span class="name"><%= locale.physical_device_information %></span>
+    </a>
+</div><div class="col-md-3"   >
+    <a href="#settings/raid_management/logical_device_info" class="big-button">
+            
+            <div class="icon"><i class="ion-social-buffer-outline"></i></div>
+            <span class="name"><%= locale.logical_device_information %></span>
+    </a>
+</div><div class="col-md-3"   >
+    <a href="#settings/raid_management/bbu_info" class="big-button">
+            
+            <div class="icon"><i class="ion-battery-half"></i></div>
+            <span class="name"><%= locale.bbu_information %></span>
+    </a>
+</div><div class="col-md-3"   >
+    <a href="#settings/raid_management/raid_event_log" class="big-button">
+            
+            <div class="icon"><i class="ion-flag"></i></div>
+            <span class="name"><%= locale.event_log %></span>
+    </a>
+</div>
+    </div>
+</div>
+</section>

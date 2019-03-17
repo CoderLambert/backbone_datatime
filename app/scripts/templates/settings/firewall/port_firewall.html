@@ -1,0 +1,33 @@
+<section class="content-header">
+    <h1>
+        <%= locale.title %>
+        <small> <%= locale.tag %> </small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-home"></i><%= locale.home %></a></li><li><a href="#settings"><%= locale.settings %></a></li><li><a href="#settings/firewall"><%= locale.firewall %></a></li>
+        <li class="active">
+           <%= locale.title %>
+        </li>
+    </ol>
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="box box-solid bg-gray-transparent pad10 animated fadeInUp">
+    <div class="row">
+        <div class="col-md-3"   >
+    <a href="#settings/firewall/port_firewall/port_rules" class="big-button">
+            
+            <div class="icon"><i class="ion-gear-a"></i></div>
+            <span class="name"><%= locale.existing_port_rules %></span>
+    </a>
+</div><div class="col-md-3"   >
+    <a href="#settings/firewall/port_firewall/add_port_rule" class="big-button">
+            
+            <div class="icon"><i class="fa fa-plus"></i></div>
+            <span class="name"><%= locale.add_new_port_rule %></span>
+    </a>
+</div>
+    </div>
+</div>
+</section>

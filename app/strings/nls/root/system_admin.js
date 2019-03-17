@@ -1,0 +1,23 @@
+define({
+    "home": "Home",
+    "system_maintenance": "System Maintenance",
+    "title": "System Administrator",
+    "system_admin": "",
+    "password_field_must_be_8_characters_atleast_and_white_space_is_not_allowed": "Password field must be 8 characters atleast and White space is not allowed",
+    "password_and_confirm_password_do_not_match": "Password and Confirm Password do not match",
+    "strongSuccessMsg": "System Administrator settings has been saved successfully.",
+    "successMsg": "",
+    "strongFailureMsg": "Error in saving the System Administrator configuration.",
+    "failureMsg": "",
+    "system_adminusername": "Username",
+    "system_adminusername_of_system_administrator_is_displayed_read_only": "Username of System Administrator is displayed (read only).",
+    "system_adminenable_user_access": "Enable User Access",
+    "system_admincheck_this_option_to_enable_user_access_for_system_administrator": "Check this option to enable user access for system administrator.",
+    "system_adminchange_password": "Change Password",
+    "system_admincheck_this_option_to_change_the_existing_password_this_will_enable_the_password_fields": "Check this option to change the existing password. This will enable the password fields.",
+    "system_adminpassword": "Password",
+    "system_adminenter_the_new_password_here_ul_lipassword_must_be_at_least_8_characters_longli_li_white_space_is_not_allowedli_ul_strongnotestrong_this_field_will_not_allow_more_than_64_characters": "Enter the new password here. <ul> <li>Password must be at least 8 characters long.<\/li> <li> White space is not allowed.<\/li> <\/ul> <strong>NOTE:<\/strong> This field will not allow more than 64 characters.",
+    "system_adminconfirm_password": "Confirm Password",
+    "system_adminenter_the_same_password_which_you_have_entered_in_the_password_field_to_confirm_the_password_ul_li_password_must_be_at_least_8_characters_longli_li_white_space_is_not_allowedli_ul_strongnotestrong_this_field_will_not_allow_more_than_64_characters": "Enter the same password which you have entered in the Password field to confirm the Password. <ul> <li>  Password must be at least 8 characters long.<\/li> <li>  White space is not allowed.<\/li> <\/ul> <strong>NOTE:<\/strong> This field will not allow more than 64 characters.",
+    "saveLabel": "Save"
+});

@@ -1,0 +1,159 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+	<h1>
+		 <%=locale.remote_control%>
+		<small> <%=locale.power_controlkvm%></small>
+	</h1>
+	<ol class="breadcrumb">
+		<li><a href="#"><i class="fa fa-home"></i><%=locale.home%></a></li>
+		<li><a href="#longRangeControl"><%= locale.parenttitle %></a></li>
+		<li class="active"><%=locale.remote_control%></li>
+	</ol>
+</section>
+<!-- Main content -->
+<!--启动KVM-->
+<!-- ks_lz20181108_Privilage -->
+<section class="content" id="Console_Redirection">
+	<div class="alert alert-success hide" id="kvm_alert_success"><b></b> </div>
+	<div class="alert alert-danger hide" id="kvm_alert_danger"><b><%= locale.operation_failed %></b></div>
+
+	<div class="form-group col-md-12">
+		<div class="alert alert-info "> <%= locale.kvm_help %></div>
+		<label class="col-md-3">
+			<input value="1" name="kvm_remoter_mode" id="kvm_remoter_java" type="radio" checked="checked"> <%= locale.remote_java %>
+		</label >
+		<label class="col-md-3">
+			<input value="2" name="kvm_remoter_mode" id="kvm_remoter_html5" type="radio"> <%= locale.remote_html5 %>
+		</label>
+	</div>
+
+	<div class="col-md-12">
+		<div id="kvm_download_java" class="form-group" style="float: left;">
+			<a class="btn btn-success" id="kvm_java"><i id='downloadKVM-icon' class="fa fa-download"></i> &nbsp; <%= locale.launch_java_KVM %></a>
+		</div>
+
+		<div id="kvm_download_html5" class="form-group" style="float: left;display: none;">
+			<a class="btn btn-success" id="kvm_html5"><i id='download-icon' class="fa fa-download"></i> &nbsp; <%= locale.launch_h5_KVM %></a>
+		</div>
+
+		<div style="clear:both;height: 20px"></div>
+	</div>
+
+<!--<input id='btnOpen' type="button" value="Open" />	-->
+	<!--远程会话-->
+	<div class="col-md-6">
+		<div class="box box-primary animated fadeInUp">
+			<div class="box-header">
+				<div class="pull-right help"><a class="col-sm-1 help-link" href="#" id="remotesession_help_link"><i class="fa fa-question-circle"></i></a></div>
+				<h3 class="box-title"><%= locale.remotesession %></h3>
+			</div>
+			<div class="box-body">
+				<div class="alert alert-success hide" id="remotesession_alert_success">
+					<!-- <i class="fa fa-check"></i> -->
+					<!-- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> -->
+					<b><%= locale.remoteSessionStrongSuccessMsg %></b> <%= locale.remoteSessionSuccessMsg %>
+				</div>
+				<div class="alert alert-danger hide" id="remotesession_alert_error">
+					<!-- <i class="fa fa-ban"></i> -->
+					<!-- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> -->
+					<b><%= locale.remoteSessionStrongFailureMsg %></b> <%= locale.remoteSessionFailureMsg %>
+				</div>
+				<form action="javascript://" method="POST" role="form">
+					<div class="form-group" data-feature='RUNTIME_SINGLEPORT_SUPPORT' >
+						<div class="alert alert-info help-item hide remotesession_help_item"  data-feature='RUNTIME_SINGLEPORT_SUPPORT'  role="alert"><%= locale.remotesessioncheck_this_option_to_enable_single_port_application_support_in_bmc_when_using_h5viewer %></div>
+						<label>
+							<input type="checkbox" value="1" id="idsingle_port" > <%= locale.remotesessionkvm_single_port_application %>
+						</label>
+					</div><div class="form-group"  data-runtime-not-feature='SINGLE_PORT_APP'>
+					<div class="alert alert-info help-item hide remotesession_help_item"   data-not-feature='SINGLE_PORT_APP' role="alert"><%= locale.remotesessioncheck_this_option_to_enable_kvm_encryption_when_using_h5viewer_note_if_single_port_application_support_is_enabled_kvm_encryption_will_not_be_set_and_it_cannot_be_disabled_when_nonsecure_communication_is_not_allowed_ %></div>
+					<label>
+						<input type="checkbox" value="1" id="idkvm_encryption" > <%= locale.remotesessionenable_kvm_encryption %>
+					</label>
+				</div><div class="form-group"  >
+					<div class="alert alert-info help-item hide remotesession_help_item"    role="alert"><%= locale.remotesessionselect_the_keyboard_language %></div>
+					<label for="keyboard_language"><%= locale.remotesessionkeyboard_language %></label>
+					<select name="keyboard_language" id="idkeyboard_language" class="form-control">
+						<option value='AD'><%= locale.remotesessionauto_detect_ad %></option><option value='DA'><%= locale.remotesessiondanish_da %></option><option value='NL-BE'><%= locale.remotesessiondutch_belgium_nlbe %></option><option value='NL-NL'><%= locale.remotesessiondutch_netherland_nlnl %></option><option value='GB'><%= locale.remotesessionenglish_uk_gb %></option><option value='US'><%= locale.remotesessionenglish_us_us %></option><option value='FI'><%= locale.remotesessionfinnish_fi %></option><option value='FR-BE'><%= locale.remotesessionfrench_belgium_frbe %></option><option value='FR'><%= locale.remotesessionfrench_france_fr %></option><option value='DE'><%= locale.remotesessiongerman_germany_de %></option><option value='DE-CH'><%= locale.remotesessiongerman_switzerland_dech %></option><option value='IT'><%= locale.remotesessionitalian_it %></option><option value='JP'><%= locale.remotesessionjapanese_jp %></option><option value='NO'><%= locale.remotesessionnorwegian_no %></option><option value='PT'><%= locale.remotesessionportuguese_pt %></option><option value='ES'><%= locale.remotesessionspanish_es %></option><option value='SV'><%= locale.remotesessionswedish_sv %></option><option value='TR_F'><%= locale.remotesessionturkish_f_tr_f %></option><option value='TR_Q'><%= locale.remotesessionturkish_q_tr_q %></option>
+					</select>
+				</div><div class="form-group" data-not-feature='POWER_CONSUMPTION' >
+					<div class="alert alert-info help-item hide remotesession_help_item"  data-not-feature='POWER_CONSUMPTION'  role="alert"><%= locale.remotesessionselect_the_virtual_media_attach_mode %></div>
+					<label for="vmedia_attach"><%= locale.remotesessionvirtual_media_attach_mode %></label>
+					<select name="vmedia_attach" id="idvmedia_attach" class="form-control">
+						<option value='0'><%= locale.remotesessionattach %></option><option value='1'><%= locale.remotesessionauto_attach %></option>
+					</select>
+				</div><div class="form-group"  data-feature="KVM_SESSION_RECONNECT">
+					<div class="alert alert-info help-item hide remotesession_help_item"    role="alert"><%= locale.remotesessionnumber_of_times_to_be_retried_when_a_kvm_failure_occurs_retry_count_ranges_from_1_to_6 %></div>
+					<label for="retry_count"><%= locale.remotesessionretry_count %></label>
+					<input type="text" class="form-control" id="idretry_count" value="" placeholder="<%= locale.retry_count %>">
+				</div><div class="form-group"  data-feature="KVM_SESSION_RECONNECT">
+					<div class="alert alert-info help-item hide remotesession_help_item"    role="alert"><%= locale.remotesessionnumber_of_seconds_to_wait_for_subsequent_retriestime_interval_ranges_from_5_to_30_seconds %></div>
+					<label for="retry_time_interval"><%= locale.remotesessionretry_time_intervalseconds %></label>
+					<input type="text" class="form-control" id="idretry_time_interval" value="" placeholder="<%= locale.retry_time_interval_in_seconds %>">
+				</div><div class="form-group" data-feature='RUNTIME_HOST_LOCK' >
+					<div class="alert alert-info help-item hide remotesession_help_item"  data-feature='RUNTIME_HOST_LOCK'  role="alert"><%= locale.remotesessioncheck_this_option_to_enable_server_monitor_off_feature_status %></div>
+					<label>
+						<input type="checkbox" value="1" id="idlocal_monitor_off" > <%= locale.remotesessionserver_monitor_off_feature_status %>
+					</label>
+				</div>
+				<div class="form-group" data-feature='HOST_LOCK_AUTO' >
+					<div class="alert alert-info help-item hide remotesession_help_item"  data-feature='HOST_LOCK_AUTO'  role="alert"><%= locale.remotesessioncheck_this_option_to_enable_automatically_off_server_monitor_when_kvm_launches %></div>
+					<label>
+						<input type="checkbox" value="1" id="idautomatic_off" > <%= locale.remotesessionautomatically_off_server_monitor_when_kvm_launches %>
+					</label>
+				</div>
+
+				<div class="form-group" data-feature='JVIEWER_ADAPT_TO_CLIENT_WINDOW' >
+					<div class="alert alert-info help-item hide remotesession_help_item"  data-feature='JVIEWER_ADAPT_TO_CLIENT_WINDOW'  role="alert"><%= locale.remotesessioncheck_this_option_to_enable_server_aspect_ratio %></div>
+					<label>
+						<input type="checkbox" value="1" id="idaspect_ratio" > <%= locale.remotesessionenable_server_aspect_ratio %>
+					</label>
+				</div><div class="pull-right">
+					<a class="btn btn-primary" id="remotesession_save"><i id='remotesession_save-icon' class="fa fa-save"></i> &nbsp; <%= locale.remoteSessionSaveLabel %></a>
+				</div>
+					<div class="clearfix"></div>
+				</form>
+			</div>
+			<!-- /.box-body -->
+		</div>
+	</div>
+
+	<!--KVM鼠标设置-->
+	<div class="col-md-6">
+		<div class="box box-primary animated fadeInUp">
+			<div class="box-header">
+				<div class="pull-right help"><a class="col-sm-1 help-link" href="#" id="mouse_help_link"><i class="fa fa-question-circle"></i></a></div>
+				<h3 class="box-title"><%= locale.mousemouse_mode_configuration %></h3>
+			</div>
+			<div class="box-body">
+				<div class="alert alert-success hide" id="mouse_alert_success">
+					<!-- <i class="fa fa-check"></i> -->
+					<!-- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> -->
+					<b><%= locale.mouseStrongSuccessMsg %></b> <%= locale.mouseSuccessMsg %>
+				</div>
+				<div class="alert alert-danger hide" id="mouse_alert_danger">
+					<!-- <i class="fa fa-ban"></i> -->
+					<!-- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> -->
+					<b><%= locale.mouseStrongFailureMsg %></b> <%= locale.mouseFailureMsg %>
+				</div>
+				<form action="javascript://" method="POST" role="form">
+					<div class="form-group"  >
+						<div class="alert alert-info help-item hide mouse_help_item"    role="alert"><%= locale.mousethe_redirection_console_handles_mouse_emulation_from_local_window_to_remote_screen_using_any_of_the_three_methods_administrator_only_have_the_rights_to_configure_this_option_ul_li_relative_mouse_modeli_li_absolute_mouse_modeli_li_other_mouse_modeli_ul_h4relative_mouse_modeh4_the_relative_mode_sends_the_calculated_relative_mouse_position_displacement_to_the_server_to_select_this_mode_select_the_set_mode_to_relative_option_h4absolute_mouse_modeh4_the_absolute_position_of_the_local_mouse_is_sent_to_the_server_to_select_this_mode_select_the_set_mode_to_absolute_option_recommended_for_windows_or_later_linux_releases_h4other_mouse_modeh4select_the_other_mode_to_have_the_calculated_displacement_from_the_local_mouse_in_the_centre_position_sent_to_the_server %></div>
+						<label for="mouse_mode"><%= locale.mousemouse_mode %></label><br/>
+						<label>
+							<input type='radio' value='relative' name='mouse_mode' id='idmouse_mode' > <%= locale.mouserelative_positioning_linux %>
+						</label><br/><label>
+						<input type='radio' value='absolute' name='mouse_mode' id='idmouse_mode' > <%= locale.mouseabsolute_positioning_windows %>
+					</label><br/><label>
+						<input type='radio' value='other' name='mouse_mode' id='idmouse_mode' > <%= locale.mouseother_mode_sles11_os_installation %>
+					</label><br/>
+					</div><div class="pull-right">
+					<a class="btn btn-primary" id="mouse_save"><i id='mouse_save-icon' class="fa fa-save"></i> &nbsp; <%= locale.mouseSaveLabel %></a>
+				</div>
+					<div class="clearfix"></div>
+				</form>
+			</div>
+			<!-- /.box-body -->
+		</div>
+	</div>
+</section>
+<!-- /.content -->

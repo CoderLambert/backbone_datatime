@@ -1,0 +1,79 @@
+<section class="content-header">
+    <h1>
+        <%= locale.external_user_services %>
+        <small> <%= locale.tag %> </small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-home"></i><%= locale.home %></a></li>
+        <li><a href="#settings"><%= locale.settings %></a></li>
+        <li class="active"><%= locale.external_user_services %></li>
+    </ol>
+</section>
+
+<!-- Main content -->
+<section class="content tabs-content">
+
+    <div class="row" style="margin-top:-10px;margin-bottom:20px;">
+        <div class="col-md-12 tab">
+            <a id="ext_ldap" class="menu_tab" onclick="replace_url('#settings/ext_users/ldap/general_ldap')"><%=locale.ext_ldap %></a>
+            <a id="ext_active_directory" class="menu_tab" onclick="replace_url('#settings/ext_users/active_directory/general_active_directory')" ><%=locale.ext_active_directory %></a>
+            <a id="ext_radius" class="menu_tab menu_active" ><%=locale.ext_radius %></a>
+        </div>
+    </div>
+
+    <div class="box">
+        <div class="box-header">
+            <ul class="my-tabs">
+                <li class="my-tabs-active"><a><%= locale.ext_general_radius_settings %></a></li>
+                <li><a id="advanced_radius" onclick="replace_url('#settings/ext_users/radius/advanced_radius')"><%= locale.ext_advanced_radius_settings %></a></li>
+            </ul>
+            <div class="pull-right help"><a class="col-sm-1 help-link" href="#"><i class="fa fa-question-circle"></i></a></div>
+        </div>
+        <div class="box-body">
+            <div class="alert alert-success hide">
+                <!-- <i class="fa fa-check"></i> -->
+                <!-- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> -->
+                <b><%= locale.strongSuccessMsg %></b> <%= locale.successMsg %>
+            </div>
+            <div class="alert alert-danger hide">
+                <!-- <i class="fa fa-ban"></i> -->
+                <!-- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> -->
+                <b><%= locale.strongFailureMsg %></b> <%= locale.failureMsg %>
+            </div>
+            <form action="javascript://" method="POST" role="form">
+                <div class="form-group"  >
+	<div class="alert alert-info help-item hide"    role="alert"><%= locale.general_radiusselect_this_option_to_enable_radius_authentication %></div>
+    <label>
+        <input type="checkbox" value="1" id="idenable" > <%= locale.general_radiusenable_radius_authentication %>
+    </label>
+</div><div class="form-group"  >
+	<div class="alert alert-info help-item hide"    role="alert"><%= locale.general_radiusspecify_radius_server_address_server_address_supports_the_following_formats_ul_liip_address_both_ipv4_and_ipv6_formatli_lifqdn_fully_qualified_domain_name_formatli_ul %></div>
+    <label for="server_address"><%= locale.general_radiusserver_address %></label>
+    <input type="text" class="form-control" id="idserver_address" value="" placeholder="">
+</div><div class="form-group"  >
+	<div class="alert alert-info help-item hide"    role="alert"><%= locale.general_radiusspecify_the_radius_port_number_ul_li_default_port_is_1812li_li_port_value_ranges_from_1_to_65535li_ulstrongnote_strong_port_80_is_blocked_for_tcpudp_protocols %></div>
+    <label for="port"><%= locale.general_radiusport %></label>
+    <input type="text" class="form-control" id="idport" value="" placeholder="">
+</div><div class="form-group"  >
+	<div class="alert alert-info help-item hide"    role="alert"><%= locale.general_radiusspecify_radius_server_secret_password_ul_lisecret_must_be_at_least_4_characters_longli_li_white_space_is_not_allowedli_ul_strongnotestrong_this_field_will_not_allow_more_than_32_characters %></div>
+    <label for="secret"><%= locale.general_radiussecret %></label>
+    <input type="password" class="form-control" id="idsecret" value="" placeholder="">
+</div><div class="form-group"  >
+	<div class="alert alert-info help-item hide"    role="alert"><%= locale.general_radiusthis_field_provides_access_to_kvm_for_radius_authenticated_users %></div>
+    <label>
+        <input type="checkbox" value="1" id="idkvm" > <%= locale.general_radiusenable_kvm_access %>
+    </label>
+</div><div class="form-group"  >
+	<div class="alert alert-info help-item hide"    role="alert"><%= locale.general_radiusthis_field_provides_access_to_vmedia_for_radius_authenticated_users %></div>
+    <label>
+        <input type="checkbox" value="1" id="idvmedia" > <%= locale.general_radiusenable_vmedia_access %>
+    </label>
+</div><div class="pull-right">
+    <a class="btn btn-primary" id="save"><i id='save-icon' class="fa fa-save"></i> &nbsp; <%= locale.saveLabel %></a>
+</div>
+                <div class="clearfix"></div>
+            </form>
+        </div>
+        <!-- /.box-body -->
+    </div>
+</section>

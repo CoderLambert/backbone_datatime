@@ -1,0 +1,148 @@
+<section class="content-header">
+    <h1>
+        <%= locale.title %>
+        <small> <%= locale.tag %> </small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-home"></i><%= locale.home %></a></li>
+		<li><a href="#settings"><%= locale.settings %></a></li>
+        <li id="ugm_title" class="active">
+           <%= locale.title %>
+        </li>
+        <li id="ugm_title_editGroup" class="" style="display:none;">
+           <%= locale.edit_group %>
+        </li>
+    </ol>
+</section>
+
+<!-- Main content -->
+<section class="content">
+
+	<!-- 用户管理栏目 -->
+	<!-- <div class="row">
+        <div class="col-md-12">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <div class="input-group" id="filter">
+                        <input type="text" class="form-control" placeholder="Search <%= locale.title %>" />
+                        <span class="input-group-addon">
+                            <span class="glyphicon-search glyphicon"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>-->
+	<!--<div class="pull-right help"><a class="col-sm-1 help-link" href="#"><i class="fa fa-question-circle"></i></a></div>-->
+    <div id="um_content" class="row">
+
+        <div class="col-md-12 list panel-div">
+			<div class="panel panel-default">
+				<div style="border-top: 0px;" class="box">
+					<div class="box-body" style="margin-bottom:-20px;">
+
+						<div class="row form-inline" id="um_group_form">
+
+							<div class="col-md-8 form-group">
+								<label class="" style="margin-top:5px;"><%= locale.users_list %></label>
+							</div>
+
+							<div class="col-md-4 form-group">
+								<button id="um_add_user" type="button" class="btn btn-primary" data-toggle="button" style="float:right;width:120px;">
+								<span class="glyphicon glyphicon-plus-sign"></span>&nbsp;<%= locale.add_user %>
+								</button>
+								<span id="um_allowNumber" style="float: right;margin-top:5px;display:none;"></span>
+							</div>
+						</div>
+
+
+		 	<div class="row">
+		 		<div id="um_operationInfo" class="col-md-12 list" style="margin-top:20px;margin-bottom:-15px;display:none;">
+				  <div class="alert alert-success" style="text-align: center; "></div>
+				</div>
+
+                <!--
+                <div class="alert alert-info help-item hide" role="alert"><%= locale.user_hlp %></div>
+ 					-->
+				<div id="um_content_list" class="col-md-12 list"  >
+		            <div class="col-md-3 list-add-item" style="display:none;">
+		            	<div class="list-item" style="margin-top:10px;margin-bottom:10px;margin-left:-5px;margin-right:-5px;">
+		                <a href=''>
+		                    <div class="col-md-3 icon">
+		                        <i class="ion-plus-circled iconic"></i>
+		                    </div>
+		                    <div class="col-md-9 contents">
+		                        <%= locale.add_user %>
+		                    </div>
+		                </a>
+		                </div>
+	                </div>
+	                <span id="um_content_info" class="col-md-12" style="text-align:center;margin-top:50px;height:100px;"><%= locale.loading %></span>
+	            </div>
+			</div>
+            		</div>
+				</div>
+			</div>
+		</div>
+
+    </div>
+
+	<!-- 用户组管理栏目 -->
+	<div id="ugm_content" class="row">
+
+		<div class="col-md-12 panel-div">
+			<div class="panel panel-default">
+
+				<div style="border-top: 0px;" class="box" >
+					<div class="box-body" style="margin-bottom:-20px;">
+
+						<!-- 用户组表单栏 -->
+						<div id="ugm_group_form" class="row form-inline">
+
+							<div class="col-md-4 form-group" >
+								<label class="" for="ugm_group_role"><%= locale.role %></label>
+								<select class="form-control" id="ugm_group_role" style="width:150px;">
+									<option value="Any" selected="selected"><%= locale.any_role %></option>
+									<option value="Administrator" >Administrator</option>
+									<option value="None" >None</option>
+									<option value="OEM" >OEM</option>
+									<option value="Operator" >Operator</option>
+									<option value="User" >User</option>
+								</select>
+							</div>
+							<div class="col-md-4 form-group" >
+								<label class="" for="ugm_group_access"><%= locale.privilege %></label>
+								<select class="form-control" id="ugm_group_access" style="width:150px;">
+									<option value="Any" selected="selected"><%= locale.any_privilege %></option>
+									<option value="KVM Access" >KVM Access</option>
+									<option value="SNMP Access" >SNMP Access</option>
+									<option value="VMedia Access" >VMedia Access</option>
+								</select>
+							</div>
+
+							<div class="col-md-4 form-group" >
+								<button id="ugm_add_group" type="button" class="btn btn-primary" data-toggle="button" style="float:right;width:120px;">
+								<span class="glyphicon glyphicon-plus-sign"></span>&nbsp;<%= locale.add_group %>
+								</button>
+								<span id="ugm_allowNumber" style="float: right;margin-top:6px;display:none;"></span>
+							</div>
+						</div>
+
+						<div class="row">
+							<div id="ugm_operationInfo" class="col-md-12 list" style="margin-top:20px;margin-bottom:-10px;display:none;">
+							  <div class="alert alert-success" style="text-align: center; "></div>
+							</div>
+							<!-- 用户组列表栏 -->
+					        <div id="ugm_group_list" class="col-md-12 list" style="margin-left:5px;">
+					        </div>
+					        <span id="ugm_content_info" class="col-md-12" style="text-align:center;margin-top:50px;height:100px;"><%= locale.loading %></span>
+				    	</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+    </div>
+
+</section>
